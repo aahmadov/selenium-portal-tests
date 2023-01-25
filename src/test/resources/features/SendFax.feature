@@ -10,9 +10,4 @@ Feature:I want validate Send Fax functionality
     Examples:
       | usernameData         | passwordData       |
       |  faxsending@acme1    |    Softlinx1!      |
-<<<<<<< HEAD
-#    testing git
-=======
 
-#    hjsllnlncnknnlinmkcnknj
->>>>>>> 41adae5 (testing)
