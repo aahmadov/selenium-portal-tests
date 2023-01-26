@@ -32,17 +32,7 @@ LoginPage loginPageObj = new LoginPage();
     public void i_enter_valid_password(String password) {
         loginPageObj.PasswordTextBox.sendKeys(password);
     }
-//    @When("i enter valid username")
-//    public void i_enter_valid_username() throws InterruptedException {
-//        loginPageObj.UsernameTextBox.sendKeys("replix");
-//        Thread.sleep(1000*5);
-//    }
-//
-//    @Then("i enter valid password")
-//    public void i_enter_valid_password() throws InterruptedException {
-//        loginPageObj.PasswordTextBox.sendKeys("softlinx");
-//        Thread.sleep(1000*5);
-//    }
+
 
     @Then("i click to Login button")
     public void i_click_to_login_button() throws InterruptedException {

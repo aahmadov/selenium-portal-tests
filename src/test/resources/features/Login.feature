@@ -17,7 +17,7 @@ Feature:I want validate Login functionality
     Then i click to Login button
     And I should verify "Please include organization name." error message
 
-  @testCase3
+  @testCase
   Scenario Outline: I should be able to Login ReplixFax portal with valid credentials
 
     Given Given I navigate to portal Login page

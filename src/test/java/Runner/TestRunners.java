@@ -10,8 +10,8 @@ import org.junit.runner.RunWith;
         features ="src/test/resources/features",
         glue = {"StepDefinitions"},
         dryRun = false,
-        tags = "@testCase3",
-        plugin ={"pretty","html:target/cucumber/cucumber-reports","json:target/cucumber/cucumber.json" },
+        tags = "@testCaseSenFax",
+        plugin ={"pretty","html:target/cucumber-report-html","json:target/cucumber.json" },
         monochrome = true,
         publish=true
 )

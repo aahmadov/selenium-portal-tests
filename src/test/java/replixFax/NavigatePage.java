@@ -5,11 +5,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+
 
 public class NavigatePage {
 
 
-    public static void main (String[] args) throws InterruptedException {
+    public static void main (String[] args) throws InterruptedException, AWTException {
 
         System.setProperty("webdriver.chrome.driver","src/test/resources/chromeDriver/chromedriver.exe");
 
@@ -86,6 +90,22 @@ public class NavigatePage {
         uploadedElement.sendKeys("C:\\Users\\faxes\\Pages_2.pdf");
         uploadedElement.sendKeys("C:\\Users\\faxes\\Pages_3.pdf");
         uploadedElement.sendKeys("C:\\Users\\faxes\\Pages_5.pdf");
+
+        Robot rb = new Robot();
+        rb.delay(1000*2);
+        //put the path to file in clipboard
+        StringSelection Filepath =new StringSelection("C:\\Users\\faxes\\Pages_2.pdf");
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(Filepath,null);
+
+
+        rb.keyPress(KeyEvent.VK_CONTROL);
+        rb.keyPress(KeyEvent.VK_V);
+
+        rb.keyRelease(KeyEvent.VK_CONTROL);
+        rb.keyRelease(KeyEvent.VK_V);
+
+        rb.keyPress(KeyEvent.VK_ENTER);
+        rb.keyRelease(KeyEvent.VK_ENTER);
 
 //        driver.navigate().back();
 //        driver.close();
