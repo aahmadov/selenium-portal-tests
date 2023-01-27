@@ -32,7 +32,6 @@ public class HomePage {
     @FindBy(xpath = "//*[@id='send_fax_btn']")
     public WebElement sendButton;
 
-
     @FindBy(xpath = "//*[@class='btn btn-orange btn-sm dialogBtn']")
     public WebElement confirmationOKafterSend;
 

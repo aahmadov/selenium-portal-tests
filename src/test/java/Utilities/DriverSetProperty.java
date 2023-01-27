@@ -5,7 +5,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class DriverSetProperty {
 
-//    }private Driver(){
     private static WebDriver driver;
 
 

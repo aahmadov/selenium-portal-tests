@@ -11,7 +11,9 @@ import org.junit.runner.RunWith;
         glue = {"StepDefinitions"},
         dryRun = false,
         tags = "@testCaseSenFax",
-        plugin ={"pretty","json:target/cucumber/report.json","html:target/cucumber/report.html" },
+        plugin ={"pretty","json:target/cucumber/report.json",
+                "html:target/cucumber/report.html",
+                "junit:target/cucumber/report.xml" },
         monochrome = true
 
 

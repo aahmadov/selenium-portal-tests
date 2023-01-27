@@ -88,8 +88,7 @@ public class NavigatePage {
 
         WebElement uploadedElement= driver.findElement(By.xpath("//*[@class='btn btn-outline-orange btn-sm']"));
         uploadedElement.sendKeys("C:\\Users\\faxes\\Pages_2.pdf");
-        uploadedElement.sendKeys("C:\\Users\\faxes\\Pages_3.pdf");
-        uploadedElement.sendKeys("C:\\Users\\faxes\\Pages_5.pdf");
+
 
         Robot rb = new Robot();
         rb.delay(1000*2);
