@@ -22,11 +22,13 @@ LoginPage loginPageObj = new LoginPage();
         Thread.sleep(1000*3);
         /*This operation will maximize window*/
         driver.manage().window().maximize();
+        Thread.sleep(1000*3);
     }
 
     @When("i enter valid {string} username")
     public void i_enter_valid_username(String username) {
         loginPageObj.UsernameTextBox.sendKeys(username);
+
     }
     @Then("i enter valid {string} password")
     public void i_enter_valid_password(String password) {

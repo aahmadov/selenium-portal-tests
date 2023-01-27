@@ -5,6 +5,7 @@ import Pages.LoginPage;
 import Utilities.DriverSetProperty;
 import Utilities.FileReader;
 import io.cucumber.java.en.*;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 import java.awt.*;
@@ -29,15 +30,16 @@ public class SendFaxSteps {
     @Then("landing the HomePage")
     public void landing_the_home_page() throws InterruptedException {
         String print = homepageObj.DropDownHomepage.getText();
+        String ActualMessage ="Fax Administrator";
         System.out.println(":Verification of HomePage -this is the "+"* "+print+" *");
-
+        Assert.assertEquals("Assertion Failed ",print,ActualMessage);
         Thread.sleep(1000*5);
          homepageObj.DropDownHomepage.click();
         Thread.sleep(1000*3);
 
     }
-    @Then("i add {string},coverPage and {string} to send fax")
-    public void i_add_and_to_send_fax(String faxNumber, String PageSize) throws InterruptedException, AWTException {
+    @Then("i add {string},coverPage and {string},{string} to send fax")
+    public void i_add_and_to_send_fax(String faxNumber, String PageSize,String fileType) throws InterruptedException, AWTException {
         homepageObj.FaxNumber.click();
         Thread.sleep(1000*2);
         homepageObj.FaxNumber.sendKeys(faxNumber);
@@ -48,7 +50,7 @@ public class SendFaxSteps {
         Thread.sleep(1000*3);
         homepageObj.uploadPage.click();
         Thread.sleep(1000*2);
-       File pagesSize = FileReader.getFileUsingPageSize(PageSize);
+       File pagesSize = FileReader.getFileUsingPageSize(PageSize,fileType);
         Robot rb = new Robot();
         rb.delay(1000*2);
         //put the path to file in clipboard

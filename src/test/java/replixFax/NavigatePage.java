@@ -106,7 +106,9 @@ public class NavigatePage {
         rb.keyPress(KeyEvent.VK_ENTER);
         rb.keyRelease(KeyEvent.VK_ENTER);
 
+
 //        driver.navigate().back();
 //        driver.close();
     }
 }
+//

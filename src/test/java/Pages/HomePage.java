@@ -27,14 +27,25 @@ public class HomePage {
     @FindBy(xpath = "//*[@class='btn btn-outline-orange btn-sm']")
     public WebElement uploadPage;
 
-    @FindBy(xpath = "//*[@id='dropzone']")
-     public WebElement ClickuploadPage;
+//    @FindBy(xpath = "//*[@id='dropzone']")
+//     public WebElement ClickuploadPage;
     @FindBy(xpath = "//*[@id='send_fax_btn']")
     public WebElement sendButton;
 
     @FindBy(xpath = "//*[@class='btn btn-orange btn-sm dialogBtn']")
     public WebElement confirmationOKafterSend;
 
+    @FindBy(xpath = "//*[@id=\"faxing\"]/div/ul/li[2]/a")
+    public WebElement FaxeButton;
+
+    @FindBy(xpath = "//*[@id=\"collapseFilter\"]/div[1]/div/div/div[1]/label")
+    public WebElement OutboundButton;
+
+    @FindBy(xpath = "//*[@id='SearchForFaxes']")
+    public WebElement SearchButton;
+
+    @FindBy(xpath = "//*[@id='82_infobtn']")
+    public WebElement InfoButton;
 }
 
 //

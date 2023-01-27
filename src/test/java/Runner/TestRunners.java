@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features ="src/test/resources/features",
         glue = {"StepDefinitions"},
         dryRun = false,
-        tags = "@testCaseSenFax",
+        tags = "@SeleniumSmoke",
         plugin ={"pretty","json:target/cucumber/report.json",
                 "html:target/cucumber/report.html",
                 "junit:target/cucumber/report.xml" },
