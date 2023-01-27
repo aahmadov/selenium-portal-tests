@@ -27,6 +27,8 @@ public class HomePage {
     @FindBy(xpath = "//*[@class='btn btn-outline-orange btn-sm']")
     public WebElement uploadPage;
 
+    @FindBy(xpath = "//*[@id='dropzone']")
+     public WebElement ClickuploadPage;
     @FindBy(xpath = "//*[@id='send_fax_btn']")
     public WebElement sendButton;
 

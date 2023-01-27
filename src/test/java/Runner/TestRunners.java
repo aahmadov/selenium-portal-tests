@@ -12,8 +12,9 @@ import org.junit.runner.RunWith;
         dryRun = false,
         tags = "@testCaseSenFax",
         plugin ={"pretty","json:target/cucumber/report.json","html:target/cucumber/report.html" },
-        monochrome = true,
-        publish=true
+        monochrome = true
+
+
 )
 public class TestRunners {
 }

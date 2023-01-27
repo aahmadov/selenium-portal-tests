@@ -7,9 +7,10 @@ Feature:I want validate Send Fax functionality
     When user enter "<usernameData>" username and "<passwordData>" password
     Then i click to Login button
     Then landing the HomePage
-    And i add "<number>",coverPage and "<attachments>" to send fax
+    And i add "<number>",coverPage and "<PageSize>" to send fax
 
     Examples:
-      | usernameData    | passwordData  |     number      | attachments                  |
-      |  admin@auto1    |    softlinx |    2222222222     |  C:\\Users\\faxes\\Pages_1.pdf|
+      | usernameData    | passwordData|     number        | PageSize |
+      |  admin@auto1    |    softlinx |    2222222222     |  2       |
+
 

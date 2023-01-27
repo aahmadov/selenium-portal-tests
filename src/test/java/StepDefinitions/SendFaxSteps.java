@@ -3,12 +3,21 @@ package StepDefinitions;
 import Pages.HomePage;
 import Pages.LoginPage;
 import Utilities.DriverSetProperty;
+import Utilities.FileReader;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.WebDriver;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.net.URISyntaxException;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class SendFaxSteps {
 
@@ -28,7 +37,7 @@ public class SendFaxSteps {
 
     }
     @Then("i add {string},coverPage and {string} to send fax")
-    public void i_add_and_to_send_fax(String faxNumber, String attachments) throws InterruptedException, AWTException {
+    public void i_add_and_to_send_fax(String faxNumber, String PageSize) throws InterruptedException, AWTException {
         homepageObj.FaxNumber.click();
         Thread.sleep(1000*2);
         homepageObj.FaxNumber.sendKeys(faxNumber);
@@ -39,14 +48,13 @@ public class SendFaxSteps {
         Thread.sleep(1000*3);
         homepageObj.uploadPage.click();
         Thread.sleep(1000*2);
-
+       File pagesSize = FileReader.getFileUsingPageSize(PageSize);
         Robot rb = new Robot();
         rb.delay(1000*2);
         //put the path to file in clipboard
-        StringSelection Filepath =new StringSelection(attachments);
+        StringSelection Filepath =new StringSelection(pagesSize.toString());
+
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(Filepath,null);
-
-
         rb.keyPress(KeyEvent.VK_CONTROL);
         rb.keyPress(KeyEvent.VK_V);
         rb.delay(1000*2);
@@ -55,7 +63,7 @@ public class SendFaxSteps {
 
         rb.keyPress(KeyEvent.VK_ENTER);
         rb.keyRelease(KeyEvent.VK_ENTER);
-        rb.delay(1000*2);
+        rb.delay(1000*5);
 
         homepageObj.sendButton.click();
         Thread.sleep(1000*3);
