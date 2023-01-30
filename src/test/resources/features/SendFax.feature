@@ -18,4 +18,4 @@ Feature:I want validate Send Fax functionality
 
 @testCaseReceive
 Scenario: I should able see fax successfully received
-  Given validation of Inbound fax
+  Given validation of Status fax

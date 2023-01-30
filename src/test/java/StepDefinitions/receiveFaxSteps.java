@@ -11,7 +11,7 @@ public class receiveFaxSteps {
     HomePage homepageObj = new HomePage();
 
 
-    @Given("validation of Inbound fax")
+    @Given("validation of Status fax")
     public void validation_of_inbound_fax() throws InterruptedException {
         homepageObj.FaxeButton.click();
         Thread.sleep(1000*3);
