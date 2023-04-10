@@ -19,6 +19,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.TimeUnit;
 
 public class SendFaxSteps {
 
@@ -40,16 +41,17 @@ public class SendFaxSteps {
     }
     @Then("i add {string},coverPage and {string},{string} to send fax")
     public void i_add_and_to_send_fax(String faxNumber, String PageSize,String fileType) throws InterruptedException, AWTException {
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         homepageObj.FaxNumber.click();
-        Thread.sleep(1000*2);
+        //Thread.sleep(1000*2);
         homepageObj.FaxNumber.sendKeys(faxNumber);
-        Thread.sleep(1000*3);
+        //Thread.sleep(1000*3);
         homepageObj.CoverPage.click();
-        Thread.sleep(1000*3);
+        //Thread.sleep(1000*3);
         homepageObj.ChoseCoverpage.click();
-        Thread.sleep(1000*3);
+        //Thread.sleep(1000*3);
         homepageObj.uploadPage.click();
-        Thread.sleep(1000*2);
+        //Thread.sleep(1000*2);
        File pagesSize = FileReader.getFileUsingPageSize(PageSize,fileType);
         Robot rb = new Robot();
         rb.delay(1000*2);
@@ -68,9 +70,8 @@ public class SendFaxSteps {
         rb.delay(1000*5);
 
         homepageObj.sendButton.click();
-        Thread.sleep(1000*3);
+        //Thread.sleep(1000*3);
         homepageObj.confirmationOKafterSend.click();
     }
-
 
 }

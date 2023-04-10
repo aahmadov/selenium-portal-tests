@@ -18,7 +18,7 @@ LoginPage loginPageObj = new LoginPage();
 
     @Given("I navigate to portal Login page")
     public void i_navigate_to_portal_login_page() throws InterruptedException {
-        driver .get("http://10.250.1.100");
+        driver.get("http://10.250.1.100");
         Thread.sleep(1000*3);
         /*This operation will maximize window*/
         driver.manage().window().maximize();
@@ -70,11 +70,6 @@ LoginPage loginPageObj = new LoginPage();
         loginPageObj.confirmationButton.click();
 
     }
-
-
-
-
-
     @When("i enter invalid {string} username")
     public void i_enter_invalid_username(String InvalidUsername) {
       loginPageObj.UsernameTextBox.sendKeys(InvalidUsername);
@@ -107,5 +102,6 @@ LoginPage loginPageObj = new LoginPage();
         Thread.sleep(1000*3);
         /*This operation will maximize window*/
         driver.manage().window().maximize();
+
     }
 }

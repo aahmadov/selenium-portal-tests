@@ -10,7 +10,7 @@ Feature:I want validate Login functionality
     And I should able successfully send Fax with cover page
 
  @testCase2
-  Scenario: I should not be able to Login ReplixFax portal with Invalid credentilas
+  Scenario: I should not be able to Login ReplixFax portal with Invalid credentials
     Given I navigate to portal Login page
     When i enter invalid "Invalid username" username
     Then i enter invalid "Invalid Password" password

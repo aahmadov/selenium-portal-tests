@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
@@ -15,9 +16,10 @@ public class NavigatePage {
 
     public static void main (String[] args) throws InterruptedException, AWTException {
 
-        System.setProperty("webdriver.chrome.driver","src/test/resources/chromeDriver/chromedriver.exe");
-
-        WebDriver driver = new ChromeDriver();
+        System.setProperty("webdriver.chrome.driver","src/test/resources/chromeDrive/chromedriver.exe");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        WebDriver driver = new ChromeDriver(options);
         String Url="http://10.250.1.100";
         driver .get(Url);
         Thread.sleep(1000*5);

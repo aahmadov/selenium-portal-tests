@@ -45,5 +45,3 @@ public class LoginPage {
     public WebElement ErrorMessage;
 
 }
-////div[@id='login_message']
-//
