@@ -56,7 +56,7 @@ public class SendFaxSteps {
         Robot rb = new Robot();
         rb.delay(1000*2);
         //put the path to file in clipboard
-        StringSelection Filepath =new StringSelection(pagesSize.toString());
+        StringSelection Filepath = new StringSelection(pagesSize.toString());
 
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(Filepath,null);
         rb.keyPress(KeyEvent.VK_CONTROL);

@@ -17,7 +17,7 @@ public class HomePage {
     @FindBy(xpath = "/html/body/nav/div[3]/ul/li[2]/div/a")
     public WebElement DropDownHomepage;
 
-    @FindBy(xpath = "//*[@name='fax_num']")
+    @FindBy(xpath = "//*[@id='recipientcol']/div[2]/div/div[2]/input")
     public WebElement FaxNumber;
 
     @FindBy(xpath = "//*[@id='coverpageTemplate']")
@@ -27,8 +27,8 @@ public class HomePage {
     @FindBy(xpath = "//*[@class='btn btn-outline-orange btn-sm']")
     public WebElement uploadPage;
 
-//    @FindBy(xpath = "//*[@id='dropzone']")
-//     public WebElement ClickuploadPage;
+//  @FindBy(xpath = "//*[@id='dropzone']")
+//  public WebElement ClickuploadPage;
     @FindBy(xpath = "//*[@id='send_fax_btn']")
     public WebElement sendButton;
 
@@ -44,8 +44,18 @@ public class HomePage {
     @FindBy(xpath = "//*[@id='SearchForFaxes']")
     public WebElement SearchButton;
 
-    @FindBy(xpath = "//*[@id='82_infobtn']")
+    @FindBy(xpath="//table[@id='outboundFaxes']/tbody/tr[1]/td[5]")
+    public WebElement Table;
+
+    @FindBy(xpath = "//table[@id='outboundFaxes']/tbody/tr[1]//button[5]")
     public WebElement InfoButton;
+
+    @FindBy(xpath = "//*[@id='out_detail_status']")
+    public WebElement sendbuttonHighlight;
+
+    @FindBy(xpath = "//*[@id='faxDetailOutbound']/div/div/div[1]/button/span")
+    public WebElement closeInfoPage;
 }
 
-//
+////*[@id="out_detail_status"]
+////*[@id="faxDetailOutbound"]/div/div/div[1]/button/span

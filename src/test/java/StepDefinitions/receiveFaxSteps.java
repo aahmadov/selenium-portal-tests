@@ -3,9 +3,14 @@ package StepDefinitions;
 import Pages.HomePage;
 import Utilities.DriverSetProperty;
 import io.cucumber.java.en.*;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.concurrent.TimeUnit;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class receiveFaxSteps {
 
@@ -15,18 +20,29 @@ public class receiveFaxSteps {
 
     @Given("validation of Status fax")
     public void validation_of_inbound_fax() throws InterruptedException {
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         homepageObj.FaxeButton.click();
-        //Thread.sleep(1000*3);
         homepageObj.OutboundButton.click();
-        //Thread.sleep(1000*3);
         homepageObj.SearchButton.click();
-        //Thread.sleep(1000*6);
         homepageObj.SearchButton.click();
-        //Thread.sleep(1000*10);
+        Thread.sleep(1000*30);
+        homepageObj.SearchButton.click();
+        Thread.sleep(1000*30);
+        homepageObj.SearchButton.click();
+        Thread.sleep(1000*3);
+        homepageObj.Table.getText();
+        Thread.sleep(1000*3);
         homepageObj.InfoButton.click();
+        Thread.sleep(1000*3);
+//        Actions actions = new Actions(driver);
+//        WebElement status = driver.findElement(By.xpath("//*[@id='out_detail_status']"));
+//        actions.moveToElement(status).click().build().perform();
+//        Thread.sleep(1000*5);
+        homepageObj.closeInfoPage.click();
+        assertEquals("Sent",homepageObj.Table.getText());
 
-        driver.quit();
+        DriverSetProperty.closeDriver();
+
     }
 
 

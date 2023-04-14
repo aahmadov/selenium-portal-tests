@@ -10,6 +10,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.server.log.LoggingOptions;
 
+import java.util.concurrent.TimeUnit;
+
 
 public class loginSteps {
 
@@ -48,25 +50,16 @@ LoginPage loginPageObj = new LoginPage();
     }
     @Then("I should able successfully send Fax with cover page")
     public void i_should_able_successfully_send_fax_with_cover_page() throws InterruptedException {
-        Thread.sleep(1000*3);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         loginPageObj.FaxingButton.click();
-        Thread.sleep(1000*3);
         loginPageObj.ClickDropDown.click();
-        Thread.sleep(1000*3);
         loginPageObj.ChooseOrgName.click();
-        Thread.sleep(1000*10);
         loginPageObj.FaxingButton2.click();
-        Thread.sleep(1000*3);
         loginPageObj.sendFaxButton.click();
-        Thread.sleep(1000*3);
         loginPageObj.faxNumber.sendKeys(String.valueOf(2222222222l));
-        Thread.sleep(1000*3);
         loginPageObj.coverPage.click();
-        Thread.sleep(1000*3);
         loginPageObj.selectCoverPage.click();
-        Thread.sleep(1000*3);
         loginPageObj.ClickSendButton.click();
-        Thread.sleep(1000*3);
         loginPageObj.confirmationButton.click();
 
     }
