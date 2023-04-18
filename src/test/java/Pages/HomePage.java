@@ -57,5 +57,3 @@ public class HomePage {
     public WebElement closeInfoPage;
 }
 
-////*[@id="out_detail_status"]
-////*[@id="faxDetailOutbound"]/div/div/div[1]/button/span

@@ -1,0 +1,10 @@
+{
+  "sendFaxDataFromPortal": {
+    "post_call_Url": "http://10.250.1.100:8080/softlinx/replixfax/restapi/v1/outboundfaxes",
+    "credentials": "faxsending@acme1:Softlinx1!",
+    "Pages": "1",
+    "fileType": "pdf",
+    "Recipent_data1": "{ \"FaxNumber\": \"1-555-1212\", \"RcptName\": \"Alice Doherty\" }",
+    "expectedStatusCode": "201"
+  }
+}
