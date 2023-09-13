@@ -2,9 +2,15 @@
 <suite name="My Test Suite" parallel="tests" thread-count="1" >
 
 
-    <test name="LoginTest">
+    <test name="sendFaxDataFromPortal">
         <classes>
-            <class name ="TestSuiteSel.LoginTest"/>
+            <class name ="Portal_LoginPages_and_StepsTestNG.LoginTestStepsTestNG"/>
+        </classes>
+    </test>
+
+    <test name="splitPageFromPortal">
+        <classes>
+            <class name ="Portal_LoginPages_and_StepsTestNG.PageSplitSteps"/>
         </classes>
     </test>
 

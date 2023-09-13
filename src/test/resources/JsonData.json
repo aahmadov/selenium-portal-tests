@@ -1,10 +1,20 @@
 {
   "sendFaxDataFromPortal": {
-    "post_call_Url": "http://10.250.1.100:8080/softlinx/replixfax/restapi/v1/outboundfaxes",
-    "credentials": "faxsending@acme1:Softlinx1!",
-    "Pages": "1",
+    "Username": "admin@auto1",
+    "password": "softlinx",
+    "FaxNumber": "2222222222L",
     "fileType": "pdf",
-    "Recipent_data1": "{ \"FaxNumber\": \"1-555-1212\", \"RcptName\": \"Alice Doherty\" }",
-    "expectedStatusCode": "201"
+    "pageSize": 2
+  },
+  "splitPageFromPortal": {
+    "Username": "admin@auto1",
+    "password": "softlinx",
+    "FaxNumber": "2222222222L",
+    "fileType": "pdf",
+    "pageSize": 100,
+    "claimNumber": 20,
+    "ReferenceKeyword": "test",
+    "desired_date": "09/14/2023"
   }
 }
+
