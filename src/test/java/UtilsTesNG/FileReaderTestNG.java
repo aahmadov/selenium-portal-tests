@@ -18,7 +18,7 @@ public class FileReaderTestNG {
 
     public static Map<String, String> getDataBasedOnTestCaseNameSelenium(final String testcaseName) {
         try {
-            File file = readJsonFileSelenium("UploadTestData.json");
+            File file = readJsonFileSelenium("NewTestData.json");
             File finalFile = file.exists() ? file : readJsonFileSelenium("JsonData.json");
             Map<String, HashMap<String, String>> testCases = mapper.readValue(finalFile, new TypeReference<>() {
             });
