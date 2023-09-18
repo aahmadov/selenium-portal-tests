@@ -12,9 +12,10 @@
     "FaxNumber": "2222222222L",
     "fileType": "pdf",
     "pageSize": 100,
+    "pageSize2": 50,
     "claimNumber": 20,
     "ReferenceKeyword": "test",
-    "desired_date": "09/14/2023"
+    "desired_date": "09/16/2023"
   }
 }
 

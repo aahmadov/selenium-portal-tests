@@ -1,10 +1,7 @@
 package Portal_LoginPages_and_StepsTestNG;
 
 import Utilities.FileReader;
-import UtilsTesNG.DataBaseUTIL;
-import UtilsTesNG.FileReaderTestNG;
-import UtilsTesNG.SetProperty;
-import UtilsTesNG.TestBase;
+import UtilsTesNG.*;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -21,13 +18,13 @@ import java.time.Duration;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-public class PageSplitSteps extends TestBase {
+public class PageSplitSteps extends TestBase  {
 
 
     WebDriver driver = SetProperty.getDriverTesTNG();
     LoginPageTestNG loginPageObj = new LoginPageTestNG();
 
-    @Test(testName = "Send Fax from portal with valid credentials", groups = {"Regression"})
+    @Test(testName = "Send Fax and split page", groups = {"Regression"})
     public void splitPageFromPortal() throws InterruptedException, AWTException, SQLException {
         // driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
@@ -76,7 +73,10 @@ public class PageSplitSteps extends TestBase {
         rb.keyPress(KeyEvent.VK_ENTER);
         rb.keyRelease(KeyEvent.VK_ENTER);
         rb.delay(1000*5);
-        Thread.sleep(1000*5);
+
+
+
+        Thread.sleep(1000*3);
         loginPageObj.splitCheckPagebox.click();
         loginPageObj.claimNumber.click();
         loginPageObj.claimNumber.sendKeys(data.get("claimNumber"));

@@ -2,6 +2,7 @@ package Portal_LoginPages_and_StepsTestNG;
 
 import Utilities.FileReader;
 import UtilsTesNG.FileReaderTestNG;
+import UtilsTesNG.LoginPageTestNG;
 import UtilsTesNG.SetProperty;
 import UtilsTesNG.TestBase;
 import org.openqa.selenium.WebDriver;

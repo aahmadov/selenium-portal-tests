@@ -1,6 +1,5 @@
-package Portal_LoginPages_and_StepsTestNG;
+package UtilsTesNG;
 
-import UtilsTesNG.SetProperty;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
