@@ -15,7 +15,15 @@
     "pageSize2": 50,
     "claimNumber": 20,
     "ReferenceKeyword": "test",
-    "desired_date": "09/19/2023"
+    "desired_date": "09/23/2023"
+  },
+  "sendMailToFaxForPortal": {
+    "to": "1222222222@auto1.rpxqa.com",
+    "times": "1",
+    "faxNumFileLoc": "input/FaxNumberMail2fax.txt",
+    "pageSize": "3",
+    "subject": "receivedSuccesSubject",
+    "sendBody": "true"
   }
 }
 

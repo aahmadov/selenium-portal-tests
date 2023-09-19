@@ -4,13 +4,13 @@
 
     <test name="sendFaxDataFromPortal">
         <classes>
-            <class name ="Portal_LoginPages_and_StepsTestNG.LoginTestStepsTestNG"/>
+            <class name ="testng.LoginTestStepsTestNG"/>
         </classes>
     </test>
 
     <test name="splitPageFromPortal">
         <classes>
-            <class name ="Portal_LoginPages_and_StepsTestNG.PageSplitSteps"/>
+            <class name ="testng.PageSplitSteps"/>
         </classes>
     </test>
 

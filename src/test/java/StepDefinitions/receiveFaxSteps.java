@@ -10,7 +10,8 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
+
 
 public class receiveFaxSteps {
 

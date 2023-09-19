@@ -7,7 +7,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class FileReaderTestNG {
     private static final ObjectMapper mapper = new ObjectMapper();
@@ -28,6 +30,8 @@ public class FileReaderTestNG {
         }
         return null;
     }
-
+    public static List<String> convertToList(final List<String[]> values) {
+        return values.stream().map(value -> value[0]).collect(Collectors.toList());
+    }
 
 }

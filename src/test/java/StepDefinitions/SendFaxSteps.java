@@ -1,9 +1,8 @@
 package StepDefinitions;
 
 import Pages.HomePage;
-import Pages.LoginPage;
 import Utilities.DriverSetProperty;
-import Utilities.FileReader;
+import Utilities.FileReaderCucumber;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
@@ -12,13 +11,6 @@ import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.File;
-import java.net.URISyntaxException;
-import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 
 public class SendFaxSteps {
@@ -52,7 +44,7 @@ public class SendFaxSteps {
         //Thread.sleep(1000*3);
         homepageObj.uploadPage.click();
         //Thread.sleep(1000*2);
-       File pagesSize = FileReader.getFileUsingPageSize(PageSize,fileType);
+       File pagesSize = FileReaderCucumber.getFileUsingPageSize(PageSize,fileType);
         Robot rb = new Robot();
         rb.delay(1000*2);
         //put the path to file in clipboard
