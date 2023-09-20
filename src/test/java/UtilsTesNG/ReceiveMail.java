@@ -79,14 +79,6 @@ public class ReceiveMail {
                 System.out.println("Text: " + message.getContent().toString());
                 message.setFlag(Flags.Flag.SEEN, true); // opening the email - marking it as read
 
-                long diff = getMessageTimeDiff(message);
-                System.out.println("Difference between mailNotif received and local time by minutes: " + diff);
-                int numOfPages = getNumberOfPages(message);
-
-
-                if (diff < 5 && result == false) {
-                    result = true;
-                }
             }
 
             // 5) close the store and folder objects
@@ -101,37 +93,9 @@ public class ReceiveMail {
         return result;
     }
 
-    public static long getMessageTimeDiff(Message message) throws MessagingException, IOException, ParseException {
-        String body = IOUtils.toString(MimeUtility.decode(message.getInputStream(), "quoted-printable"),
-                StandardCharsets.UTF_8);
-        try {
-            String dateTime = StringUtils.substringBetween(body, "Time received: ", "\r\nNumber of pages");
-            SimpleDateFormat dateFormat = new SimpleDateFormat("EEEEE, MMMM dd, yyyy hh:mm aaa");
-            Date date = dateFormat.parse(dateTime);
-
-            //System.out.println("-----------"+date);
-
-            long diffInMillies = Math.abs(Calendar.getInstance().getTime().getTime() - date.getTime());
-            return TimeUnit.MILLISECONDS.toMinutes(diffInMillies);
-        } catch (Exception e) {
-            System.out.println("Exception occurred while accessing Time from mail:" + e.getMessage());
-            return 10;
-        }
     }
 
-    public static int getNumberOfPages(Message message) throws MessagingException, IOException {
-        String body = IOUtils.toString(MimeUtility.decode(message.getInputStream(), "quoted-printable"),
-                StandardCharsets.UTF_8);
-        try {
-            String numOfPages = StringUtils.substringBetween(body, "Number of pages received: ",
-                    "\r\nSender fax machine ID:");
-            return Integer.parseInt(numOfPages);
-        } catch (Exception e) {
-            System.out.println("Exception occurred while accessing Time number of pages from mail:" + e.getMessage());
-            return 11111;
-        }
-    }
 
-}
+
 
 

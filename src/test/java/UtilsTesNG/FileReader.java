@@ -91,7 +91,13 @@ public class FileReader {
 //        uuid.substring(0, Math.min(uuid.length(), 15))
         return "?TSI=Test" + uuid.substring(0, Math.min(uuid.length(), 8));
     }
+    public static String randomNumberFor_TSI_forPortal() {
 
+        String uuid = UUID.randomUUID().toString();
+
+//        uuid.substring(0, Math.min(uuid.length(), 15))
+        return  uuid.substring(0, Math.min(uuid.length(), 2));
+    }
     public static String randomFaxNumberforTSI() {
 
         Random TSINumber = new Random();

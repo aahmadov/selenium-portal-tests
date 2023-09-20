@@ -24,6 +24,14 @@
     "pageSize": "3",
     "subject": "receivedSuccesSubject",
     "sendBody": "true"
+  },
+  "SendingWelcomeMail": {
+    "Username": "admin@auto1",
+    "password": "softlinx",
+    "UserName": "Test",
+    "USerId": "Test",
+    "Email": "auto@softlinx.com",
+    "FaxNumber": "2222222222L"
+
   }
 }
-

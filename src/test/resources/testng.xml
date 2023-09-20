@@ -13,6 +13,10 @@
             <class name ="testng.PageSplitSteps"/>
         </classes>
     </test>
-
+    <test name="SendingWelcomeMail">
+        <classes>
+            <class name ="testng.WelcomeMailSteps"/>
+        </classes>
+    </test>
 
 </suite>

@@ -20,7 +20,7 @@ public class PageSplitSteps extends TestBase  {
     WebDriver driver = SetProperty.getDriverTesTNG();
     LoginPageTestNG loginPageObj = new LoginPageTestNG();
 
-    @Test(testName = "Send Fax and split page", groups = {"Regression"})
+    @Test(testName = "Send Fax and split page", groups = {"RegressionAb"})
     public void splitPageFromPortal() throws InterruptedException, AWTException, SQLException {
         // driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
