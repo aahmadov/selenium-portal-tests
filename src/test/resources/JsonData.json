@@ -26,9 +26,9 @@
     "sendBody": "true"
   },
   "SendingWelcomeMail": {
-    "Username": "admin@auto1",
-    "password": "softlinx",
-    "UserName": "Test",
+    "UserName": "admin@auto1",
+    "Password": "softlinx",
+    "Name": "Test",
     "USerId": "Test",
     "Email": "auto@softlinx.com",
     "FaxNumber": "2222222222L"

@@ -57,6 +57,15 @@ public class WelcomeMail {
     public WebElement SaveBtnConfirmation;
     @FindBy(xpath = " //*[@id=\"successmessage\"]")
     public WebElement passCode;
+    @FindBy(partialLinkText = "Fax Administrator")
+    public WebElement faxAdminDropdown;
 
+    @FindBy(xpath= "(//a[contains(@href,'Logout')])[2]")
+    public WebElement Logout;
+
+    @FindBy(xpath = "//*[@class='btn btn-orange btn-sm dialogBtn']")
+    public WebElement confirmButton2;
+
+//"//a[contains(@href, 'Logout')]"
 
 }

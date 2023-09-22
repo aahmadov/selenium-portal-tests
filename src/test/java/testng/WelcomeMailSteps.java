@@ -2,20 +2,17 @@ package testng;
 
 import UtilsTesNG.*;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import java.awt.*;
 import java.sql.SQLException;
-import java.sql.SQLOutput;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
-
-import static org.junit.Assert.fail;
-import static org.testng.Assert.assertEquals;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class WelcomeMailSteps extends TestBase {
     String from = "no-reply@rpxqa.com";
@@ -30,45 +27,37 @@ public class WelcomeMailSteps extends TestBase {
         assert data != null;
 
         driver.get("http://10.250.1.100");
-        Thread.sleep(1000 * 3);
+
         /*This operation will maximize window*/
         driver.manage().window().maximize();
 
-        Oj.UsernameTextBox.sendKeys(data.get("Username"));
-        Oj.PasswordTextBox.sendKeys(data.get("password"));
-        Thread.sleep(1000 * 3);
+        Oj.UsernameTextBox.sendKeys(data.get("UserName"));
+        Oj.PasswordTextBox.sendKeys(data.get("Password"));
         Oj.loginButton.click();
-
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         Oj.AdministrationHeading.click();
-        Thread.sleep(1000 * 3);
         Oj.SubMenuManage.click();
 
-        Thread.sleep(1000 * 3);
         Oj.Users.click();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Oj.OptionButton.click();
         Oj.OptionDropdown.click();
         Oj.WlcMailRadioBtn.click();
-        String Username = data.get("UserName");
+        String Username = data.get("Name");
         String number = FileReader.randomNumberFor_TSI_forPortal();
         String NewGeneratedUsername = Username + number;
         System.out.println(Username + number);
-
         Oj.USerIDBtn.sendKeys(NewGeneratedUsername);
         Oj.USerNameBtn.sendKeys(NewGeneratedUsername);
         Oj.paswGenerationBtn.click();
-        Thread.sleep(1000 * 3);
         Oj.EmailUserbox.sendKeys(data.get("Email"));
-        Thread.sleep(1000 * 3);
         Oj.UserFaxNumber.sendKeys(data.get("FaxNumber"));
-        Thread.sleep(1000 * 3);
         Oj.SaveBtn.click();
-        Thread.sleep(1000 * 3);
-
-
+        Thread.sleep(1000 * 5);
         String statement = Oj.passCode.getText();//"User added with password ;
-
+        Oj.confirmButton2.click();
+        Thread.sleep(1000 * 3);
+        Oj.faxAdminDropdown.click();
+        Thread.sleep(1000 * 3);
+        Oj.Logout.click();
         String regex = "'.*?'";
         java.util.regex.Pattern pattern = java.util.regex.Pattern.compile(regex);
         java.util.regex.Matcher matcher = pattern.matcher(statement);
@@ -80,48 +69,45 @@ public class WelcomeMailSteps extends TestBase {
             // Remove the single quotes
             contentInsideQuotes = contentInsideQuotes.substring(1, contentInsideQuotes.length() - 1);
         }
+        Pattern pattern1 = Pattern.compile("admin");
+        Matcher matcher1 = pattern1.matcher(data.get("UserName"));
 
+        // Replace all occurrences of "admin" with an empty string
+        String result2 = matcher1.replaceAll("");
+        System.out.println("Result: " + result2);
+
+        String UserId = NewGeneratedUsername + result2;
         // Print the content outside of the if statement
-            System.out.println(contentInsideQuotes);
-
-
-
-        String UserId = NewGeneratedUsername + data.get(Username).split("@")[0];
-
+        System.out.println(contentInsideQuotes);
         Thread.sleep(1000 * 5);
-
-
 
         Date startTime = Calendar.getInstance().getTime();
         String emailSubject = ConfigReader.getProperty("subject");
 
         Boolean result = ReceiveMail.receiveEmail(from, emailSubject);
-
         if (!result) {
-
             // System.out.println("*** after 5 min iteration, there is not a expected notification");
-
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String startTimeString = formatter.format(startTime);
             Date endTime = Calendar.getInstance().getTime();
             String endTimeString = formatter.format(endTime);
 
-
             System.out.println("Start time message: " + startTimeString);
             System.out.println("End time message: " + endTimeString);
-
         }
-            Thread.sleep(1000*10);
-            driver.get("http://10.250.1.100");
-            Thread.sleep(1000 * 3);
-            /*This operation will maximize window*/
-            driver.manage().window().maximize();
+        Thread.sleep(1000 * 10);
+        driver.get("http://10.250.1.100");
+        /*This operation will maximize window*/
+        driver.manage().window().maximize();
+        Thread.sleep(1000 * 3);
+        Oj.UsernameTextBox.sendKeys(UserId);
+        Oj.PasswordTextBox.sendKeys(contentInsideQuotes);
 
-            Oj.UsernameTextBox.sendKeys(UserId);
-            Oj.PasswordTextBox.sendKeys(contentInsideQuotes);
-            Thread.sleep(1000 * 3);
-            Oj.loginButton.click();
-
-            SetProperty.closeDriverTestNG();
-        }
+        Oj.loginButton.click();
     }
+
+    @AfterMethod(alwaysRun = true)
+    public void cleanup() {
+        SetProperty.closeDriverTestNG();
+    }
+}

@@ -6,6 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.time.Duration;
+
 public class SetProperty {
 
     private static WebDriver driver;
@@ -20,6 +22,9 @@ public class SetProperty {
             options.setAcceptInsecureCerts(true);
             options.addArguments("--remote-allow-origins=*");
             driver = new ChromeDriver(options);
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+            driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+            driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(30));
 //            System.setProperty("webdriver.gecko.driver","src/test/resources/geckoDriver/geckodriver.exe");
 //            driver = new FirefoxDriver();
         }
