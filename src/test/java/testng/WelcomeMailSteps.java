@@ -1,8 +1,7 @@
 package testng;
 
+import Pages.WelcomeMail;
 import UtilsTesNG.*;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import java.awt.*;
@@ -16,10 +15,8 @@ import java.util.regex.Pattern;
 
 public class WelcomeMailSteps extends TestBase {
     String from = "no-reply@rpxqa.com";
-    WebDriver driver = SetProperty.getDriverTesTNG();
-    WelcomeMail Oj = new WelcomeMail();
 
-    @Test(testName = "Send Welcome Mail", groups = {"RegressionEmail"})
+    @Test(priority = 2, testName = "Send Welcome Mail", groups = {"Regression"})
     public void SendingWelcomeMail() throws InterruptedException, AWTException, SQLException {
         // driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
@@ -30,6 +27,8 @@ public class WelcomeMailSteps extends TestBase {
 
         /*This operation will maximize window*/
         driver.manage().window().maximize();
+
+        WelcomeMail Oj = new WelcomeMail(driver);
 
         Oj.UsernameTextBox.sendKeys(data.get("UserName"));
         Oj.PasswordTextBox.sendKeys(data.get("Password"));
@@ -102,12 +101,8 @@ public class WelcomeMailSteps extends TestBase {
         Thread.sleep(1000 * 3);
         Oj.UsernameTextBox.sendKeys(UserId);
         Oj.PasswordTextBox.sendKeys(contentInsideQuotes);
-
+        Thread.sleep(1000 * 5);
         Oj.loginButton.click();
-    }
-
-    @AfterMethod(alwaysRun = true)
-    public void cleanup() {
-        SetProperty.closeDriverTestNG();
+        Thread.sleep(1000 * 5);
     }
 }

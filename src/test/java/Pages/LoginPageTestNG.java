@@ -1,4 +1,4 @@
-package UtilsTesNG;
+package Pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,10 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPageTestNG {
     WebDriver driver;
 
-    public LoginPageTestNG(){
-        driver = SetProperty.getDriverTesTNG();
-        PageFactory.initElements(driver,this);
+    public LoginPageTestNG(WebDriver driver) {
+        PageFactory.initElements(driver, this);
     }
+
     @FindBy(id = "username")
     public WebElement UsernameTextBox;
     @FindBy(name = "password")
@@ -79,7 +79,7 @@ public class LoginPageTestNG {
     @FindBy(xpath = "//*[@id='SearchForFaxes']")
     public WebElement SearchAfterradioBtn;
 
-    @FindBy(xpath="//*[@id=\"outboundFaxes\"]/tbody/tr[1]/td[5]")
+    @FindBy(xpath = "//*[@id=\"outboundFaxes\"]/tbody/tr[1]/td[5]")
     public WebElement TableBody;
 
     @FindBy(xpath = "//table[@id='outboundFaxes']/tbody/tr[1]//button[5]")

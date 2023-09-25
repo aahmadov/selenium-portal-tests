@@ -1,7 +1,7 @@
 package UtilsTesNG;
 
-import Utilities.FileReaderCucumber;
 import org.testng.annotations.Test;
+import testng.TestBase;
 
 
 import java.io.File;

@@ -1,12 +1,9 @@
 package testng;
 
 import Utilities.FileReaderCucumber;
+import UtilsTesNG.DriverFactory;
 import UtilsTesNG.FileReaderTestNG;
-import UtilsTesNG.LoginPageTestNG;
-import UtilsTesNG.SetProperty;
-import UtilsTesNG.TestBase;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
+import Pages.LoginPageTestNG;
 import org.testng.annotations.Test;
 
 import java.awt.*;
@@ -17,8 +14,6 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class LoginTestStepsTestNG extends TestBase {
-    WebDriver driver = SetProperty.getDriverTesTNG();
-    LoginPageTestNG loginPageObj = new LoginPageTestNG();
 
     @Test(testName = "Send Fax from portal with valid credentials", groups = {"Regression1"})
     public void sendFaxDataFromPortal() throws InterruptedException, AWTException {
@@ -31,6 +26,7 @@ public class LoginTestStepsTestNG extends TestBase {
         Thread.sleep(1000 * 3);
         /*This operation will maximize window*/
         driver.manage().window().maximize();
+        LoginPageTestNG loginPageObj = new LoginPageTestNG(driver);
 
         loginPageObj.UsernameTextBox.sendKeys(data.get("Username"));
         loginPageObj.PasswordTextBox.sendKeys(data.get("password"));
@@ -73,11 +69,6 @@ public class LoginTestStepsTestNG extends TestBase {
 
         loginPageObj.ClickSendButton.click();
         loginPageObj.confirmationButton.click();
-        SetProperty.closeDriverTestNG();
-    }
-
-    @AfterMethod(alwaysRun = true)
-    public void cleanup() {
-        SetProperty.closeDriverTestNG();
+        DriverFactory.closeDriver();
     }
 }

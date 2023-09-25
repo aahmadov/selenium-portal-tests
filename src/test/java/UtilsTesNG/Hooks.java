@@ -7,6 +7,6 @@ public class Hooks {
 
     @After
     public void after(Scenario scenario) {
-        SetProperty.closeDriverTestNG();
+        DriverFactory.closeDriver();
     }
 }

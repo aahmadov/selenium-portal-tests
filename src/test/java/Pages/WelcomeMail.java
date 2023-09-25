@@ -1,4 +1,4 @@
-package UtilsTesNG;
+package Pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,10 +9,10 @@ public class WelcomeMail {
 
     WebDriver driver;
 
-    public WelcomeMail(){
-        driver = SetProperty.getDriverTesTNG();
-        PageFactory.initElements(driver,this);
+    public WelcomeMail(WebDriver driver) {
+        PageFactory.initElements(driver, this);
     }
+
     @FindBy(id = "username")
     public WebElement UsernameTextBox;
     @FindBy(name = "password")
@@ -60,7 +60,7 @@ public class WelcomeMail {
     @FindBy(partialLinkText = "Fax Administrator")
     public WebElement faxAdminDropdown;
 
-    @FindBy(xpath= "(//a[contains(@href,'Logout')])[2]")
+    @FindBy(xpath = "(//a[contains(@href,'Logout')])[2]")
     public WebElement Logout;
 
     @FindBy(xpath = "//*[@class='btn btn-orange btn-sm dialogBtn']")

@@ -4,18 +4,17 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
 
-public class SetProperty {
+public class DriverFactory {
 
     private static WebDriver driver;
 
-    public static WebDriver getDriverTesTNG (){
+    public static WebDriver getDriver() {
 
 
-        if (driver == null){
+        if (driver == null) {
 //            System.setProperty("webdriver.chrome.driver","src/test/resources/chromeDriver114_TestNG/chromedriver.exe");
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
@@ -32,10 +31,10 @@ public class SetProperty {
         return driver;
     }
 
-    public static void closeDriverTestNG() {
-        if(driver!=null) {
+    public static void closeDriver() {
+        if (driver != null) {
             driver.quit();
-            driver= null;
+            driver = null;
         }
 
 
