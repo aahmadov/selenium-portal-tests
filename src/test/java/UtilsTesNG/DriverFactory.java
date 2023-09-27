@@ -4,7 +4,10 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 
 public class DriverFactory {
@@ -16,11 +19,22 @@ public class DriverFactory {
 
         if (driver == null) {
 //            System.setProperty("webdriver.chrome.driver","src/test/resources/chromeDriver114_TestNG/chromedriver.exe");
-            WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
             options.setAcceptInsecureCerts(true);
             options.addArguments("--remote-allow-origins=*");
-            driver = new ChromeDriver(options);
+
+            if (ConfigReader.getProperty("testLocation").equalsIgnoreCase("local")) {
+                WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver(options);
+            } else {
+                try {
+                    driver = new RemoteWebDriver(new URL("http://localhost:4444"), options);
+                } catch (MalformedURLException e) {
+                    System.out.println(e.getMessage());
+                    throw new RuntimeException(e);
+                }
+            }
+
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
             driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
             driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(30));

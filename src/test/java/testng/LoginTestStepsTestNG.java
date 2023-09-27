@@ -34,7 +34,6 @@ public class LoginTestStepsTestNG extends TestBase {
         loginPageObj.loginButton.click();
         Thread.sleep(1000 * 3);
         //loginPageObj.confirmButton.click();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         loginPageObj.FaxingButton.click();
 //       loginPageObj.ClickDropDown.click();
 //       loginPageObj.ChooseOrgName.click();
