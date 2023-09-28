@@ -44,7 +44,7 @@ public class LoginTestStepsTestNG extends TestBase {
         loginPageObj.faxNumber.sendKeys(String.valueOf(data.get("FaxNumber")));
         loginPageObj.coverPage.click();
 
-        Thread.sleep(1000 * 10);
+        Thread.sleep(1000 * 5);
         loginPageObj.ChoseCoverpage.click();
 
         loginPageObj.uploadPage.click();
@@ -54,7 +54,7 @@ public class LoginTestStepsTestNG extends TestBase {
         rb.delay(1000 * 2);
         //put the path to file in clipboard
         StringSelection Filepath = new StringSelection(pagesSize.toString());
-
+        Thread.sleep(1000*3);
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(Filepath, null);
         rb.keyPress(KeyEvent.VK_CONTROL);
         rb.keyPress(KeyEvent.VK_V);
