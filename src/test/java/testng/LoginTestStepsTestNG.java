@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 public class LoginTestStepsTestNG extends TestBase {
 
-    @Test(testName = "Send Fax from portal with valid credentials", groups = {"Regression1"})
+    @Test(testName = "Send Fax from portal with valid credentials", groups = {"Regression"})
     public void sendFaxDataFromPortal() throws InterruptedException, AWTException {
         // driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
