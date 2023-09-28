@@ -45,9 +45,8 @@ public class PageSplitSteps extends TestBase {
 
         loginPageObj.coverPage.click();
 
-
         loginPageObj.uploadPage.click();
-
+        Thread.sleep(1000*3);
         File pagesSize = FileReaderCucumber.getFileUsingPageSize(data.get("pageSize"), data.get("fileType"));
         Robot rb = new Robot();
         rb.delay(1000 * 2);
@@ -75,7 +74,7 @@ public class PageSplitSteps extends TestBase {
         loginPageObj.referenceKeywords.sendKeys(data.get("ReferenceKeyword"));
         loginPageObj.Send_After.click();
         loginPageObj.Send_After.sendKeys(data.get("desired_date"));
-        Thread.sleep(1000 * 3);
+        Thread.sleep(1000 * 5);
 
         loginPageObj.ClickSendButton.click();
         String message = loginPageObj.successMessage.getText();
