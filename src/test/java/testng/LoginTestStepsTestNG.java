@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 public class LoginTestStepsTestNG extends TestBase {
 
-    @Test(testName = "Send Fax from portal with valid credentials", groups = {"Regression"})
+    @Test(testName = "Send Fax from portal with valid credentials", groups = {"RegressionTest"})
     public void sendFaxDataFromPortal() throws InterruptedException, AWTException {
         // driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
@@ -54,13 +54,14 @@ public class LoginTestStepsTestNG extends TestBase {
         //put the path to file in clipboard
         StringSelection Filepath = new StringSelection(pagesSize.toString());
         System.out.println("File Name: " + pagesSize.toString());
-        Thread.sleep(1000*3);
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(Filepath, null);
+        Thread.sleep(1000*3);
         rb.keyPress(KeyEvent.VK_CONTROL);
         rb.keyPress(KeyEvent.VK_V);
-        rb.delay(1000 * 2);
+        rb.delay(1000);
         rb.keyRelease(KeyEvent.VK_CONTROL);
         rb.keyRelease(KeyEvent.VK_V);
+        rb.delay(300);
 
         rb.keyPress(KeyEvent.VK_ENTER);
         rb.keyRelease(KeyEvent.VK_ENTER);
