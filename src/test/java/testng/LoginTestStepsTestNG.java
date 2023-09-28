@@ -43,15 +43,11 @@ public class LoginTestStepsTestNG extends TestBase {
         loginPageObj.sendFaxButton.click();
         loginPageObj.faxNumber.click();
         loginPageObj.faxNumber.sendKeys(String.valueOf(data.get("FaxNumber")));
-
         loginPageObj.coverPage.click();
-
-        Thread.sleep(1000 * 5);
         loginPageObj.ChoseCoverpage.click();
-        Thread.sleep(1000 * 5);
+        Thread.sleep(1000 * 3);
         loginPageObj.uploadPage.click();
 
-        Thread.sleep(1000 * 5);
         File pagesSize = FileReader.getFileUsingPageSize(data.get("pageSize"), data.get("fileType"));
         Robot rb = new Robot();
         rb.delay(1000 * 2);

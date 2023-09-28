@@ -41,13 +41,11 @@ public class PageSplitSteps extends TestBase {
         loginPageObj.sendFaxButton.click();
         loginPageObj.faxNumber.click();
         loginPageObj.faxNumber.sendKeys(String.valueOf(data.get("FaxNumber")));
-
-        Thread.sleep(1000 * 5);
-
         loginPageObj.coverPage.click();
 
-        loginPageObj.uploadPage.click();
         Thread.sleep(1000*3);
+        loginPageObj.uploadPage.click();
+
         File pagesSize = FileReader.getFileUsingPageSize(data.get("pageSize"), data.get("fileType"));
         Robot rb = new Robot();
         rb.delay(1000 * 2);
