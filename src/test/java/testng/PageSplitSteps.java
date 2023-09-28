@@ -2,6 +2,7 @@ package testng;
 
 import Utilities.FileReaderCucumber;
 import UtilsTesNG.DataBaseUTIL;
+import UtilsTesNG.FileReader;
 import UtilsTesNG.FileReaderTestNG;
 import Pages.LoginPageTestNG;
 import org.openqa.selenium.JavascriptExecutor;
@@ -47,7 +48,7 @@ public class PageSplitSteps extends TestBase {
 
         loginPageObj.uploadPage.click();
         Thread.sleep(1000*3);
-        File pagesSize = FileReaderCucumber.getFileUsingPageSize(data.get("pageSize"), data.get("fileType"));
+        File pagesSize = FileReader.getFileUsingPageSize(data.get("pageSize"), data.get("fileType"));
         Robot rb = new Robot();
         rb.delay(1000 * 2);
         //put the path to file in clipboard

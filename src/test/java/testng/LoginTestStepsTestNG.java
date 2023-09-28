@@ -2,6 +2,7 @@ package testng;
 
 import Utilities.FileReaderCucumber;
 import UtilsTesNG.DriverFactory;
+import UtilsTesNG.FileReader;
 import UtilsTesNG.FileReaderTestNG;
 import Pages.LoginPageTestNG;
 import org.testng.annotations.Test;
@@ -49,8 +50,9 @@ public class LoginTestStepsTestNG extends TestBase {
         loginPageObj.ChoseCoverpage.click();
         Thread.sleep(1000 * 5);
         loginPageObj.uploadPage.click();
+
         Thread.sleep(1000 * 5);
-        File pagesSize = FileReaderCucumber.getFileUsingPageSize(data.get("pageSize"), data.get("fileType"));
+        File pagesSize = FileReader.getFileUsingPageSize(data.get("pageSize"), data.get("fileType"));
         Robot rb = new Robot();
         rb.delay(1000 * 2);
         //put the path to file in clipboard
