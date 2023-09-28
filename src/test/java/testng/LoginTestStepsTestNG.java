@@ -56,6 +56,9 @@ public class LoginTestStepsTestNG extends TestBase {
         System.out.println("File Name: " + pagesSize.toString());
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(Filepath, null);
         Thread.sleep(1000*3);
+        rb.keyPress(KeyEvent.VK_ENTER);
+        rb.keyRelease(KeyEvent.VK_ENTER);
+        rb.delay(1000);
         rb.keyPress(KeyEvent.VK_CONTROL);
         rb.keyPress(KeyEvent.VK_V);
         rb.delay(1000);
