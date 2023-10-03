@@ -47,7 +47,12 @@ public class LoginTestStepsTestNG extends TestBase {
         loginPageObj.ChoseCoverpage.click();
         Thread.sleep(1000 * 3);
         loginPageObj.uploadPage.click();
-
+        Thread.sleep(1000 * 5);
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        js.executeScript("arguments[0].style.display = 'block';", loginPageObj.uploadPage); // Make the element visible
+//        loginPageObj.uploadPage.sendKeys(" C:\\Users\\Administrator\\workspace\\com-selenium-test\\src\\test\\resources\\requestBody\\2page.pdf");
+        //driver.findElement(By.xpath("//input[@type=\"file\"]"));
+                //find_element_by_xpath('//input[@type="file"]').get_attribute('outerHTML')
         File pagesSize = FileReader.getFileUsingPageSize(data.get("pageSize"), data.get("fileType"));
         Robot rb = new Robot();
         rb.delay(1000 * 2);

@@ -2,6 +2,8 @@ package Pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.FileDetector;
+import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -35,8 +37,12 @@ public class LoginPageTestNG {
     @FindBy(xpath = "//*[@id='dropzone']/div/button")
     public WebElement uploadPage;
 
+    @FindBy(xpath = "//input[@type='file']")
+    public WebElement uploadPageCopy;
+//driver.find_element_by_xpath('//input[@type="file"]').get_attribute('outerHTML')
     @FindBy(xpath = "//*[@id='recipientcol']/div[6]")
     public WebElement splitCheckPagebox;
+
 
 
     @FindBy(xpath = "//*[@id='splitfaxID']")

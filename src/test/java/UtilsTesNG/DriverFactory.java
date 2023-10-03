@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
@@ -28,13 +29,15 @@ public class DriverFactory {
                 driver = new ChromeDriver(options);
             } else {
                 try {
-                    driver = new RemoteWebDriver(new URL("http://localhost:4444"), options);
+                    RemoteWebDriver remoteWebDriver = new RemoteWebDriver(new URL("http://localhost:4444"), options);
+                    remoteWebDriver.setFileDetector(new LocalFileDetector());
+                    driver = remoteWebDriver;
+
                 } catch (MalformedURLException e) {
                     System.out.println(e.getMessage());
                     throw new RuntimeException(e);
                 }
             }
-
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
             driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
             driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(30));
