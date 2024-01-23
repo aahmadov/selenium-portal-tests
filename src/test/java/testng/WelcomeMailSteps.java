@@ -49,6 +49,7 @@ public class WelcomeMailSteps extends TestBase {
         Oj.paswGenerationBtn.click();
         Oj.EmailUserbox.sendKeys(data.get("Email"));
         Oj.UserFaxNumber.sendKeys(data.get("FaxNumber"));
+        Thread.sleep(1000*3);
         Oj.SaveBtn.click();
         Thread.sleep(1000 * 5);
         String statement = Oj.passCode.getText();//"User added with password ;

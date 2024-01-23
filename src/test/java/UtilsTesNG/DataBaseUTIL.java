@@ -1,4 +1,7 @@
 package UtilsTesNG;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,6 +13,7 @@ public class DataBaseUTIL {
     private static Connection connection;
     private static Connection connection2;
     private static Connection connection3;
+    private static Connection connection81;
     private static Statement statement;
     private static ResultSet resultSet;
 
@@ -33,6 +37,10 @@ public class DataBaseUTIL {
 
 
         connection3 = DriverManager.getConnection(ConfigReader.getProperty("mysql.url_IgnoreBusyFeatureNEw"),
+                ConfigReader.getProperty("replixdb.username"),
+                ConfigReader.getProperty("replixdb.password"));
+
+        connection81 = DriverManager.getConnection(ConfigReader.getProperty("mysql.url_IgnoreBusyFeatureNEw81"),
                 ConfigReader.getProperty("replixdb.username"),
                 ConfigReader.getProperty("replixdb.password"));
     }
@@ -86,6 +94,52 @@ public class DataBaseUTIL {
         return table;
     }
 
+    public static List<Map<String, Object>> executeSQLQueryOCRNew(String query) throws SQLException {
+        openConnection();
+        statement = connection81.createStatement();
+        resultSet = statement.executeQuery(query);
+
+        ResultSetMetaData metaData = resultSet.getMetaData();
+        int columnCount = metaData.getColumnCount();
+        List<Map<String, Object>> table = new ArrayList<>();
+
+        while (resultSet.next()) {
+            Map<String, Object> map = new HashMap<>();
+            for (int column = 1; column <= columnCount; column++) {
+                String columnName = metaData.getColumnName(column);
+                Object columnValue = resultSet.getObject(column);
+                map.put(columnName, columnValue);
+
+                // Print column name and value
+                System.out.println(columnName + ": " + columnValue);
+            }
+
+            table.add(map);
+        }
+
+        // Close the database connection
+        closeConnection();
+
+        // Extract and print the "metadata" object
+        if (!table.isEmpty()) {
+            Map<String, Object> firstRow = table.get(0);
+            if (firstRow.containsKey("metadata")) {
+                try {
+                    ObjectMapper objectMapper = new ObjectMapper();
+                    JsonNode metadataNode = objectMapper.readTree((String) firstRow.get("metadata"));
+
+                    // Print the "metadata" object
+                    System.out.println("metadata:");
+                    System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(metadataNode));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return table;
+    }
+
     public static void executeSQLUpdate(final String query) throws SQLException {
         openConnection();
         statement = connection.createStatement();
@@ -105,6 +159,14 @@ public class DataBaseUTIL {
         int noOfLines = statement.executeUpdate(query);
         closeConnection();
     }
+
+    public static void executeSQLUpdateRecvD81(final String query) throws SQLException {
+        openConnection();
+        statement = connection81.createStatement();
+        int noOfLines = statement.executeUpdate(query);
+        closeConnection();
+    }
+
 
     public static void closeConnection() {
         try {

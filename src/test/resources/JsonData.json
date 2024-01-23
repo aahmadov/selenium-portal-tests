@@ -15,7 +15,7 @@
     "pageSize2": 50,
     "claimNumber": 20,
     "ReferenceKeyword": "test",
-    "desired_date": "10/10/2023"
+    "desired_date": "11/15/2024"
   },
   "sendMailToFaxForPortal": {
     "to": "1222222222@auto1.rpxqa.com",
@@ -33,5 +33,13 @@
     "Email": "auto@softlinx.com",
     "FaxNumber": "2222222222L"
 
+  },
+  "sendFaxHasOCRdata": {
+    "Username": "triage1@auto1",
+    "password": "Softlinx1!",
+    "FaxNumber": "4443333333L",
+    "name": "Cierra",
+    "fileType": "txt",
+    "pageSize": 1
   }
 }

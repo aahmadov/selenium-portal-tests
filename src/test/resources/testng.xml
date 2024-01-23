@@ -19,4 +19,12 @@
         </classes>
     </test>
 
+    <test name="sendFaxHasOCRdata">
+        <classes>
+            <class name ="testng.OCR_test"/>
+        </classes>
+    </test>
+
+
+
 </suite>

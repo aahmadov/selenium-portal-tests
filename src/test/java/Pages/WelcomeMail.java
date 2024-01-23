@@ -66,6 +66,6 @@ public class WelcomeMail {
     @FindBy(xpath = "//*[@class='btn btn-orange btn-sm dialogBtn']")
     public WebElement confirmButton2;
 
-//"//a[contains(@href, 'Logout')]"
+
 
 }
