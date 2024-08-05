@@ -9,9 +9,11 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
@@ -25,23 +27,18 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
-
-
-
-
-
 import static org.junit.Assert.assertEquals;
 
 public class OCR_test extends TestBase {
 
-    @Test(testName = "Send Fax from portal with valid credentials", groups = {"Regression"})
+    @Test(testName = "Send Fax from portal with valid credentials", groups = {"Regression81"})
     public void sendFaxHasOCRdata() throws InterruptedException, AWTException, SQLException, IOException {
         // driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
         Map<String, String> data = FileReaderTestNG.getDataBasedOnTestCaseNameSelenium(testName);
         assert data != null;
 
-        driver.get("http://10.250.1.81:8585/");
+        driver.get("http://10.250.1.84:80/");
         Thread.sleep(1000 * 3);
         /*This operation will maximize window*/
         driver.manage().window().maximize();
@@ -61,14 +58,7 @@ public class OCR_test extends TestBase {
             Thread.sleep(1000 * 3);
             loginPageObj.uploadPage.click();
             Thread.sleep(1000 * 5);
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------
-////        JavascriptExecutor js = (JavascriptExecutor) driver;
-////        js.executeScript("arguments[0].style.display = 'block';", loginPageObj.uploadPage); // Make the element visible
-////        loginPageObj.uploadPage.sendKeys(" C:\\Users\\Administrator\\workspace\\com-selenium-test\\src\\test\\resources\\requestBody\\2page.pdf");
-////        //driver.findElement(By.xpath("//input[@type=\"file\"]"));
-////        //find_element_by_xpath('//input[@type="file"]').get_attribute('outerHTML')
 
-//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
             File pagesSize = FileReader.getFileUsingPageSize(data.get("pageSize"), data.get("fileType"));
             Robot rb = new Robot();
             rb.delay(1000 * 2);
@@ -93,8 +83,7 @@ public class OCR_test extends TestBase {
 
             loginPageObj.ClickSendButton.click();
             loginPageObj.confirmationButton.click();
-//
-//
+
             Thread.sleep(1000 * 3);
             loginPageObj.TriageQueueBox.click();
             Thread.sleep(1000 * 3);
@@ -103,77 +92,54 @@ public class OCR_test extends TestBase {
             loginPageObj.SelectQueueBox.click();
             Thread.sleep(1000 * 3);
             loginPageObj.ClickSearchBtn.click();
-            Thread.sleep(1000 * 3);
+            Thread.sleep(1000 * 10);
 
-        JavascriptExecutor js1 = (JavascriptExecutor) driver;
-        // Scroll down the page by pixel (e.g., 500 pixels)
-        js1.executeScript("window.scrollBy(100, 3000)");
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//        JavascriptExecutor js2 = (JavascriptExecutor) driver;
-//        //js2.executeScript("arguments[0].scrollTop = arguments[1];", tableScroll, "arguments[0].scrollHeight", "");
-//        js2.executeScript("window.scrollTo(0, document.body.scrollHeight);");
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-       WebElement searchBtn = loginPageObj.ClickSearchBtn;
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        // Define the timeout duration in seconds
+        int timeoutInSeconds = 300; // Adjust the timeout as needed
 
-        WebElement TableScroll=loginPageObj.Scrollbtn;
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollTop = arguments[1];", TableScroll, 1000);
+     // Loop until the Lock and Edit button is visible or timeout occurs
+        long startTime = System.currentTimeMillis();
+        boolean lockAndEditButtonFound = false;
 
-        //Loop until the button appears and click it dynamically
-        while (true) {
+        while (!lockAndEditButtonFound && (System.currentTimeMillis() - startTime) < timeoutInSeconds * 1000) {
+            // Click the search button
+            WebElement clickSearchBtn = driver.findElement(By.xpath("//*[@id='Search']"));
+            clickSearchBtn.click();
+
+            // Wait for LockandEditbox to be visible
             try {
-                // Wait for the button to be clickable
-                WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(searchBtn));
-
-                // Click the button
-                searchButton.click();
-
-                // Break out of the loop after clicking
-                break;
+                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20)); // Wait up to 20 seconds for the LockandEditbox to appear
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//button[contains(@class, 'btnList') and contains(@title, 'Lock and Edit Fax')])[last()]")));
+                lockAndEditButtonFound = true; // Exit the loop if LockandEditbox is found
             } catch (org.openqa.selenium.TimeoutException e) {
-                // Continue waiting if the button is not found within the timeout
+                // LockandEditbox is not found yet, continue the loop
             }
         }
-
-
-
-            Thread.sleep(1000 * 20);
-            loginPageObj.ClickSearchBtn.click();
-            Thread.sleep(1000 * 40);
-            loginPageObj.ClickSearchBtn.click();
-            Thread.sleep(1000 * 40);
-            loginPageObj.ClickSearchBtn.click();
-            Thread.sleep(1000 * 40);
-            loginPageObj.ClickSearchBtn.click();
-            Thread.sleep(1000 * 20);
-            loginPageObj.ClickSearchBtn.click();
-
-        WebElement TableScroll1=loginPageObj.Scrollbtn;
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollTop = arguments[1];",TableScroll, 1000);
+        // Click on LockandEditbox if found
+        if (lockAndEditButtonFound) {
+            WebElement lockAndEditbox = driver.findElement(By.xpath("(//button[contains(@class, 'btnList') and contains(@title, 'Lock and Edit Fax')])[last()]"));
+            lockAndEditbox.click();
+        } else {
+            System.out.println("Timeout: Lock and Edit button not found within " + timeoutInSeconds + " seconds.");
+        }
 
             Thread.sleep(1000 * 5);
-            loginPageObj.LockandEditbox.click();
-            Thread.sleep(1000 * 5);
+
+        WebElement DocumentTypeBox1 = loginPageObj.DocumentTypeBox;
+        Select docTypeDropdown = new Select(DocumentTypeBox1);
+        docTypeDropdown.selectByIndex(1);
+
+
+
+            Thread.sleep(1000 * 3);
             loginPageObj.lastName.sendKeys(data.get("name"));
             Thread.sleep(1000 * 5);
-            loginPageObj.Gender.click();
-            Thread.sleep(1000 * 5);
-             loginPageObj.Female.click();
+
+        WebElement Genderbox = loginPageObj.Gender;
+        Select selectfirstGender = new Select(Genderbox);
+        selectfirstGender.selectByIndex(1);
 
 
-//----------------------------------------------------------------------------------------------------------------------------------------
-
-//            WebElement gender = loginPageObj.Gender;
-//            Select genderDropdown = new Select(gender);
-//            List<WebElement> firstOptionText = genderDropdown.getAllSelectedOptions();
-//
-//            for (WebElement option : firstOptionText) {
-//                // Iterate through selected options
-//                String text = option.getText();
-//                assertEquals("Expected Text", text);
-//                System.out.println("chosen option is: " + text);
-
-//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                 Thread.sleep(1000 * 3);
                 loginPageObj.PhoneNumber.click();
                 Thread.sleep(1000 * 3);
@@ -189,19 +155,43 @@ public class OCR_test extends TestBase {
                 JavascriptExecutor js = (JavascriptExecutor) driver;
                 // Scroll down the page by pixel (e.g., 500 pixels)
                 js.executeScript("window.scrollBy(100, 3000)");
+                loginPageObj.FaxComments.sendKeys("Hello World!");
+                Thread.sleep(1000 * 3);
+        WebElement TableScroll1=loginPageObj.Scrollbtn1;
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollTop = arguments[1];",TableScroll1, 1000);
+        Thread.sleep(1000*3);
+        // Parse boolean values from the JSON data
+        boolean useSaveBtn = Boolean.parseBoolean(data.get("useSaveBtn"));
+        boolean useCancelBtn = Boolean.parseBoolean(data.get("useCancelBtn"));
+        boolean useDeleteFaxBtn = Boolean.parseBoolean(data.get("useDeleteFaxBtn"));
+        boolean rotateClockwise = Boolean.parseBoolean(data.get("useRotateClockwise"));
+        boolean rotateCounterClockwise = Boolean.parseBoolean(data.get("rotateCounterClockwise"));
+        boolean removePage = Boolean.parseBoolean(data.get("removePage"));
+        boolean saveAsPDF = Boolean.parseBoolean(data.get("saveasPDF"));
 
-                loginPageObj.FaxComments.sendKeys("HelloWorld!");
+
+       // Now you can use these boolean variables to perform actions
+        loginPageObj.performActionBasedOnFlags(useSaveBtn, useCancelBtn, useDeleteFaxBtn, rotateClockwise,
+                rotateCounterClockwise, removePage, saveAsPDF);
+
+        if (useSaveBtn || useCancelBtn || useDeleteFaxBtn || rotateClockwise || rotateCounterClockwise || removePage || saveAsPDF) {
+            // Close the driver implicitly
+            driver.quit();
+            Thread.sleep(1000*10);
+            String query1 = "SELECT metadata, status ,faxid FROM replixdb.realm_triage_jobs order by faxid desc limit 1;";
+            DataBaseUTIL.executeSQLQueryOCRNew1(query1);
+
+        } else {
+            // Execute the other function
                 Thread.sleep(1000 * 3);
                 loginPageObj.Submitbtn.click();
                 Thread.sleep(1000 * 3);
                 loginPageObj.Closebtn.click();
                 Thread.sleep(1000*40);
-        WebElement TableScroll2=loginPageObj.Scrollbtn;
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollTop = arguments[1];",TableScroll, 1000);
 
-                String query = "SELECT metadata, status ,faxid FROM replixdb.realm_triage_jobs order by faxid desc limit 1;";
-               DataBaseUTIL.executeSQLQueryOCRNew(query);
-
+                String query1 = "SELECT metadata, status ,faxid FROM replixdb.realm_triage_jobs order by faxid desc limit 1;";
+               DataBaseUTIL.executeSQLQueryOCRNew1(query1);
                 DriverFactory.closeDriver();
             }
         }
+}

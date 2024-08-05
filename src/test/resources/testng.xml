@@ -8,9 +8,37 @@
         </classes>
     </test>
 
+    <test name="FaxSentandRecvVerification">
+        <classes>
+            <class name ="testng.FaxSentWithandwithoutCoverpage"/>
+        </classes>
+    </test>
+    <test name="portFaxNumberRequest">
+        <classes>
+            <class name ="testng.PortFaxNumberNontollfree"/>
+        </classes>
+    </test>
+
+    <test name="New_Fax_Number_request_Non_toll_free">
+        <classes>
+            <class name ="testng.faxNumberRequestNonTollFree"/>
+        </classes>
+    </test>
+
+    <test name="OutboundandInboundVerification">
+        <classes>
+            <class name ="testng.FaxSendRecvVerification"/>
+        </classes>
+    </test>
+
     <test name="splitPageFromPortal">
         <classes>
             <class name ="testng.PageSplitSteps"/>
+        </classes>
+    </test>
+    <test name="Specify_Reference_Keywords">
+        <classes>
+            <class name ="testng.RefercKeywords"/>
         </classes>
     </test>
     <test name="SendingWelcomeMail">
@@ -24,7 +52,10 @@
             <class name ="testng.OCR_test"/>
         </classes>
     </test>
-
-
+    <test name="SSO_User">
+        <classes>
+            <class name ="testng.SSO"/>
+        </classes>
+    </test>
 
 </suite>

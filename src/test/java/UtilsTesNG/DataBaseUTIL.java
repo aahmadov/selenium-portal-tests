@@ -13,7 +13,7 @@ public class DataBaseUTIL {
     private static Connection connection;
     private static Connection connection2;
     private static Connection connection3;
-    private static Connection connection81;
+    private static Connection connection84;
     private static Statement statement;
     private static ResultSet resultSet;
 
@@ -40,7 +40,7 @@ public class DataBaseUTIL {
                 ConfigReader.getProperty("replixdb.username"),
                 ConfigReader.getProperty("replixdb.password"));
 
-        connection81 = DriverManager.getConnection(ConfigReader.getProperty("mysql.url_IgnoreBusyFeatureNEw81"),
+        connection84 = DriverManager.getConnection(ConfigReader.getProperty("mysql.url_IgnoreBusyFeatureNEw84"),
                 ConfigReader.getProperty("replixdb.username"),
                 ConfigReader.getProperty("replixdb.password"));
     }
@@ -94,9 +94,35 @@ public class DataBaseUTIL {
         return table;
     }
 
-    public static List<Map<String, Object>> executeSQLQueryOCRNew(String query) throws SQLException {
+    public static List<Map<String, Object>> executeSQLQuery84Database(String query) throws SQLException {
+
         openConnection();
-        statement = connection81.createStatement();
+        statement = connection84.createStatement();
+        resultSet = statement.executeQuery(query);
+
+        ResultSetMetaData metaData = resultSet.getMetaData();
+        int columnCount = metaData.getColumnCount();
+        List<Map<String, Object>> table = new ArrayList<>();
+        while (resultSet.next()) {
+            Map<String, Object> map = new HashMap<>();
+            for (int column = 1; column <= columnCount; column++) {
+                System.out.print(metaData.getColumnName(column) + ":");
+                map.put(metaData.getColumnName(column), resultSet.getObject(column));
+                System.out.println(map.put(metaData.getColumnName(column), resultSet.getObject(column)));
+            }
+
+            System.out.print("\n");
+
+            table.add(map);
+        }
+        closeConnection();
+        return table;
+    }
+
+
+    public static List<Map<String, Object>> executeSQLQueryOCRNew1(String query) throws SQLException {
+        openConnection();
+        statement = connection84.createStatement();
         resultSet = statement.executeQuery(query);
 
         ResultSetMetaData metaData = resultSet.getMetaData();
@@ -162,7 +188,7 @@ public class DataBaseUTIL {
 
     public static void executeSQLUpdateRecvD81(final String query) throws SQLException {
         openConnection();
-        statement = connection81.createStatement();
+        statement = connection84.createStatement();
         int noOfLines = statement.executeUpdate(query);
         closeConnection();
     }

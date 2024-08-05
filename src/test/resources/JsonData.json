@@ -6,6 +6,90 @@
     "fileType": "pdf",
     "pageSize": 2
   },
+  "FaxSentandRecvVerification": {
+    "Username": "admin@auto1",
+    "password": "softlinx",
+    "FaxNumber": "2222222222L",
+    "fileType": "pdf",
+    "pageSize": 2
+  },
+  "FaxSentandRecvVerificationWithCoverPage": {
+    "Username": "admin@auto1",
+    "password": "softlinx",
+    "FaxNumber": "2222222222L",
+    "fileType": "pdf",
+    "pageSize": 2
+  },
+  "New_Fax_Number_request_Non_toll_free": {
+    "Username": "admin@auto1",
+    "password": "softlinx",
+    "NewFaxNumber": "New Fax Number",
+    "portFaxNumber": "Port Fax Number",
+    "fileType": "pdf",
+    "pageSize": 2
+  },
+  "New_Fax_Number_request_toll_free": {
+    "Username": "admin@auto1",
+    "password": "softlinx",
+    "NewFaxNumber": "New Fax Number",
+    "portFaxNumber": "Port Fax Number"
+  },
+  "SSO_User": {
+    "Username": "regression@anatolysoftlinx.onmicrosoft.com",
+    "password": "Softlinx123!"
+  },
+  "portFaxNumberRequest": {
+    "Username": "admin@auto1",
+    "password": "softlinx",
+    "fileType": "pdf",
+    "pageSize": 2,
+    "fileType2": "pdf",
+    "pageSize2": 3,
+    "email": "abbas@softlinx.com",
+    "buildForm": false
+  },
+  "OutboundandInboundVerification": {
+    "Username": "admin@auto1",
+    "password": "softlinx",
+    "FaxNumber": "3333333333L",
+    "fileType": "pdf",
+    "pageSize": 2
+  },
+  "Change_the_From_data_and_do_another_search": {
+    "Username": "admin@auto1",
+    "password": "softlinx",
+    "FaxNumber": "3333333333L",
+    "fileType": "pdf",
+    "fromData": "05/08/2024",
+    "statusAll": "All",
+    "statusSent": "Sent",
+    "statusCompleted": "Completed",
+    "pageSize": 2
+  },
+  "Change_the_From_Inbound_data_and_do_another_search": {
+    "Username": "admin@auto1",
+    "password": "softlinx",
+    "FaxNumber": "3333333333L",
+    "fileType": "pdf",
+    "fromData": "05/08/2024",
+    "pageSize": 2
+  },
+  "FaxSentandRecvWithandwithoutCoverPage": {
+    "Username": "admin@auto1",
+    "password": "softlinx",
+    "FaxNumber": "2222222222L",
+    "attachment": "false",
+    "CoverPage": "false",
+    "fileType": "pdf",
+    "pageSize": 2
+  },
+  "sendFaxForPDFScale": {
+    "Username": "faxsending@auto1",
+    "password": "softlinx",
+    "FaxNumber": "3333333333L",
+    "fileType": "pdf",
+    "pageSize": 1
+  },
   "splitPageFromPortal": {
     "Username": "admin@auto1",
     "password": "softlinx",
@@ -15,6 +99,22 @@
     "pageSize2": 50,
     "claimNumber": 20,
     "ReferenceKeyword": "test",
+    "desired_date": "11/15/2024"
+  },
+  "Specify_Reference_Keywords": {
+    "Username": "admin@auto1",
+    "password": "softlinx",
+    "FaxNumber": "2222222222L",
+    "fileType": "pdf",
+    "pageSize": 100,
+    "ReferenceKeyword": "test"
+  },
+  "Specify_Send_After": {
+    "Username": "admin@auto1",
+    "password": "softlinx",
+    "FaxNumber": "2222222222L",
+    "fileType": "pdf",
+    "pageSize": 100,
     "desired_date": "11/15/2024"
   },
   "sendMailToFaxForPortal": {
@@ -32,14 +132,20 @@
     "USerId": "Test",
     "Email": "auto@softlinx.com",
     "FaxNumber": "2222222222L"
-
   },
   "sendFaxHasOCRdata": {
     "Username": "triage1@auto1",
     "password": "Softlinx1!",
     "FaxNumber": "4443333333L",
-    "name": "Cierra",
+    "name": "Smith",
     "fileType": "txt",
-    "pageSize": 1
+    "pageSize": 1,
+    "useSaveBtn": "false",
+    "useCancelBtn": "false",
+    "useDeleteFaxBtn": "false",
+    "useRotateClockwise":"true",
+    "rotateCounterClockwise":"false",
+    "removePage":"false",
+    "saveasPDF":"false"
   }
 }

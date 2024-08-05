@@ -17,7 +17,7 @@ import java.util.Map;
 
 public class PageSplitSteps extends TestBase {
 
-    @Test(priority = 1, testName = "Send Fax and split page", groups = {"Regression"})
+    @Test(priority = 1, testName = "Send Fax and split page", groups = {"Regression100"})
     public void splitPageFromPortal() throws InterruptedException, AWTException, SQLException {
 
         System.out.println("Test case name: " + testName);

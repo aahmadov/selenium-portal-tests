@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 public class WelcomeMailSteps extends TestBase {
     String from = "no-reply@rpxqa.com";
 
-    @Test(priority = 2, testName = "Send Welcome Mail", groups = {"Regression"})
+    @Test(priority = 2, testName = "Send Welcome Mail", groups = {"Regression100"})
     public void SendingWelcomeMail() throws InterruptedException, AWTException, SQLException {
         // driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
