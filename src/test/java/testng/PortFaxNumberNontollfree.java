@@ -149,40 +149,45 @@ public class PortFaxNumberNontollfree extends TestBase {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
             WebElement inputField = wait.until(ExpectedConditions.visibilityOf(loginPageObj.LetterOfAgencyBTN2));
 
+
             // Click the element using JavaScript
-            js.executeScript("arguments[0].click();", inputField);
+            js.executeScript("arguments[0].scrollIntoView(true);", inputField);
+//            js.executeScript("arguments[0].click();", inputField);
 
             // Use the Robot class to handle the file upload
             Thread.sleep(3000); // Ensure the file dialog is open before performing actions
             File pagesSize1 = FileReader.getFileUsingPageSize(data.get("pageSize"), data.get("fileType"));
-            Robot rb1 = new Robot();
-            rb1.delay(2000);
+//            Robot rb1 = new Robot();
+//            rb1.delay(2000);
 
             // Put the path to the file in clipboard
             StringSelection Filepath = new StringSelection(pagesSize1.getAbsolutePath());
             System.out.println("File Name: " + pagesSize1.getAbsolutePath());
-            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(Filepath, null);
-
-            rb1.delay(2000);
-
-            // Press Enter to focus the file dialog
-            rb1.keyPress(KeyEvent.VK_ENTER);
-            rb1.keyRelease(KeyEvent.VK_ENTER);
-            rb1.delay(1000);
-
-            // Paste the file path
-            rb1.keyPress(KeyEvent.VK_CONTROL);
-            rb1.keyPress(KeyEvent.VK_V);
-            rb1.delay(1000);
-            rb1.keyRelease(KeyEvent.VK_CONTROL);
-            rb1.keyRelease(KeyEvent.VK_V);
-            rb1.delay(300);
-
-            // Press Enter to confirm the file selection
-            rb1.keyPress(KeyEvent.VK_ENTER);
-            rb1.keyRelease(KeyEvent.VK_ENTER);
-            rb1.delay(5000);
+            WebElement ele1 = driver.findElement(By.id("carrierFormFile"));
+            ele1.sendKeys(pagesSize1.getAbsolutePath());
+//            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(Filepath, null);
+//
+//            rb1.delay(2000);
+//
+//            // Press Enter to focus the file dialog
+//            rb1.keyPress(KeyEvent.VK_ENTER);
+//            rb1.keyRelease(KeyEvent.VK_ENTER);
+//            rb1.delay(1000);
+//
+//            // Paste the file path
+//            rb1.keyPress(KeyEvent.VK_CONTROL);
+//            rb1.keyPress(KeyEvent.VK_V);
+//            rb1.delay(1000);
+//            rb1.keyRelease(KeyEvent.VK_CONTROL);
+//            rb1.keyRelease(KeyEvent.VK_V);
+//            rb1.delay(300);
+//
+//            // Press Enter to confirm the file selection
+//            rb1.keyPress(KeyEvent.VK_ENTER);
+//            rb1.keyRelease(KeyEvent.VK_ENTER);
+//            rb1.delay(5000);
             // Scroll down the page to ensure the element is in view
+            Thread.sleep(2000);
             JavascriptExecutor js2 = (JavascriptExecutor) driver;
             js2.executeScript("arguments[0].scrollIntoView(true);", loginPageObj.portSecondPageScroll);
             // Wait for the input field to be present and visible
@@ -190,29 +195,31 @@ public class PortFaxNumberNontollfree extends TestBase {
             WebElement inputField2 = wait2.until(ExpectedConditions.visibilityOf(loginPageObj.MostRecentPhoneBill));
 
             // Click the element using JavaScript
-            js2.executeScript("arguments[0].click();", inputField2);
+//            js2.executeScript("arguments[0].click();", inputField2);
 
             File pagesSize2 = FileReader.getFileUsingPageSize(data.get("pageSize2"), data.get("fileType2"));
-            Robot rb2 = new Robot();
-            rb2.delay(1000 * 2);
+//            Robot rb2 = new Robot();
+//            rb2.delay(1000 * 2);
             //put the path to file in clipboard
             StringSelection Filepath2 = new StringSelection(pagesSize2.toString());
             System.out.println("File Name: " + pagesSize2.toString());
-            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(Filepath2, null);
-            Thread.sleep(1000 * 3);
-            rb2.keyPress(KeyEvent.VK_ENTER);
-            rb2.keyRelease(KeyEvent.VK_ENTER);
-            rb2.delay(1000);
-            rb2.keyPress(KeyEvent.VK_CONTROL);
-            rb2.keyPress(KeyEvent.VK_V);
-            rb2.delay(1000);
-            rb2.keyRelease(KeyEvent.VK_CONTROL);
-            rb2.keyRelease(KeyEvent.VK_V);
-            rb2.delay(300);
-            rb2.keyPress(KeyEvent.VK_ENTER);
-            rb2.keyRelease(KeyEvent.VK_ENTER);
-            rb2.delay(1000 * 5);
-
+            WebElement ele2 = driver.findElement(By.id("phoneBill"));
+            ele2.sendKeys(pagesSize2.getAbsolutePath());
+//            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(Filepath2, null);
+//            Thread.sleep(1000 * 3);
+//            rb2.keyPress(KeyEvent.VK_ENTER);
+//            rb2.keyRelease(KeyEvent.VK_ENTER);
+//            rb2.delay(1000);
+//            rb2.keyPress(KeyEvent.VK_CONTROL);
+//            rb2.keyPress(KeyEvent.VK_V);
+//            rb2.delay(1000);
+//            rb2.keyRelease(KeyEvent.VK_CONTROL);
+//            rb2.keyRelease(KeyEvent.VK_V);
+//            rb2.delay(300);
+//            rb2.keyPress(KeyEvent.VK_ENTER);
+//            rb2.keyRelease(KeyEvent.VK_ENTER);
+//            rb2.delay(1000 * 5);
+Thread.sleep(2000);
             loginPageObj.submit.click();
             Thread.sleep(1000*5);
             loginPageObj.submitConfirmBTN.click();
