@@ -22,7 +22,7 @@ import java.time.Duration;
 import java.util.Map;
 
 public class PortFaxNumberNontollfree extends TestBase {
-    @Test(priority = 1, testName = "Port Fax Number Request toll free from portal ", groups = {"Regression842"})
+    @Test(priority = 1, testName = "Port Fax Number Request toll free from portal ", groups = {"Regression84"})
     public void portFaxNumberRequest() throws InterruptedException, AWTException, SQLException {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
@@ -137,7 +137,7 @@ public class PortFaxNumberNontollfree extends TestBase {
             Thread.sleep(1000 * 10);
 
         }else {
-//C:\Users\faxes\2page.pdf
+          //C:\Users\faxes\2page.pdf
 
 //        JavascriptExecutor js = (JavascriptExecutor) driver;
 //        js.executeScript("window.scrollTo(0, document.body.scrollHeight);");

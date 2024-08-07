@@ -4,6 +4,7 @@ import Pages.LoginPageTestNG;
 import UtilsTesNG.DataBaseUTIL;
 import UtilsTesNG.FileReader;
 import UtilsTesNG.FileReaderTestNG;
+import org.bouncycastle.jcajce.provider.asymmetric.EC;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -22,7 +23,7 @@ import java.util.Map;
 
 public class FaxSendRecvVerification extends TestBase {
 
-    @Test(priority = 1, testName = "Send Fax from portal ", groups = {"Regression84"})
+    @Test(priority = 1, testName = "Send Fax from portal ", groups = {"Regression8412"})
     public void OutboundandInboundVerification() throws InterruptedException, AWTException, SQLException {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
@@ -46,27 +47,54 @@ public class FaxSendRecvVerification extends TestBase {
         Thread.sleep(1000 * 3);
         loginPageObj.coverPage.click();
         loginPageObj.ChoseCoverpage.click();
-        loginPageObj.uploadPage.click();
+//        Thread.sleep(5000 );
+//        loginPageObj.uploadPage.click();
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+//       // WebElement dropzone = wait.until(EC.presence_of_element_located((By.ID, "dropzone")))
+//        WebElement dropzone = wait.until(ExpectedConditions.visibilityOf(By.id,("dropzone"));
+//        dropzone = driver.execute_script("return arguments[0].querySelector('input[type=\"file\"]')", dropzone);
+//        JavascriptExecutor jsnew = (JavascriptExecutor) driver;
+//        // Click the element using JavaScript
+//        jsnew.executeScript("arguments[0].scrollIntoView(true);", dropzone);
         File pagesSize = FileReader.getFileUsingPageSize(data.get("pageSize"), data.get("fileType"));
-        Robot rb = new Robot();
-        rb.delay(1000 * 2);
+//        WebElement ele1 = driver.findElement(By.id("dropzone"));
+//        ele1.sendKeys(pagesSize.getAbsolutePath());
+
+
+            // Wait until the form is visible
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+            WebElement dropzone = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form[@id='dropzone']")));
+
+            // Path to your file
+            File fileToUpload = new File(pagesSize.getAbsolutePath());
+
+            // Execute JavaScript to add the file to Dropzone
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("var dropzone = Dropzone.forElement('#dropzone');" +
+                    "var mockFile = { name: '" + fileToUpload.getName() + "', size: " + fileToUpload.length() + " };" +
+                    "dropzone.emit('addedfile', mockFile);" +
+                    "dropzone.emit('complete', mockFile);");
+
+
+//        Robot rb = new Robot();
+//        rb.delay(1000 * 2);
         //put the path to file in clipboard
-        StringSelection Filepath = new StringSelection(pagesSize.toString());
-        System.out.println("File Name: " + pagesSize.toString());
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(Filepath, null);
-        Thread.sleep(1000 * 3);
-        rb.keyPress(KeyEvent.VK_ENTER);
-        rb.keyRelease(KeyEvent.VK_ENTER);
-        rb.delay(1000);
-        rb.keyPress(KeyEvent.VK_CONTROL);
-        rb.keyPress(KeyEvent.VK_V);
-        rb.delay(1000);
-        rb.keyRelease(KeyEvent.VK_CONTROL);
-        rb.keyRelease(KeyEvent.VK_V);
-        rb.delay(300);
-        rb.keyPress(KeyEvent.VK_ENTER);
-        rb.keyRelease(KeyEvent.VK_ENTER);
-        rb.delay(1000 * 5);
+//        StringSelection Filepath = new StringSelection(pagesSize.toString());
+//        System.out.println("File Name: " + pagesSize.toString());
+//        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(Filepath, null);
+//        rb.keyPress(KeyEvent.VK_ENTER);
+//        rb.keyRelease(KeyEvent.VK_ENTER);
+//        rb.delay(1000);
+//        rb.keyPress(KeyEvent.VK_CONTROL);
+//        rb.keyPress(KeyEvent.VK_V);
+//        rb.delay(1000);
+//        rb.keyRelease(KeyEvent.VK_CONTROL);
+//        rb.keyRelease(KeyEvent.VK_V);
+//        rb.delay(300);
+//        rb.keyPress(KeyEvent.VK_ENTER);
+//        rb.keyRelease(KeyEvent.VK_ENTER);
+//        rb.delay(1000 * 5);
+        Thread.sleep(1000 * 5);
         loginPageObj.ClickSendButton.click();
         Thread.sleep(1000*3);
         loginPageObj.confirmationButton.click();
@@ -76,9 +104,9 @@ public class FaxSendRecvVerification extends TestBase {
         Thread.sleep(1000 * 3);
         loginPageObj.OutboundRadiobox.click();
 
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+        JavascriptExecutor js1 = (JavascriptExecutor) driver;
         // Scroll down the page by pixel (e.g., 500 pixels)
-        js.executeScript("window.scrollBy(100, 3000)");
+        js1.executeScript("window.scrollBy(100, 3000)");
         // Define the timeout duration in seconds
         int timeoutInSeconds = 180; // Adjust the timeout as needed
 
@@ -93,8 +121,8 @@ public class FaxSendRecvVerification extends TestBase {
 
             // Wait for info btn to be visible
             try {
-                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20)); // Wait up to 20 seconds for the info btn to appear
-                wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='outboundFaxes']/tbody/tr[1]//button[5]")));
+                WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(20)); // Wait up to 20 seconds for the info btn to appear
+                wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='outboundFaxes']/tbody/tr[1]//button[5]")));
                 InfoButton = true; // Exit the loop if Info btn is found
             } catch (org.openqa.selenium.TimeoutException e) {
                 // info btn is not found yet, continue the loop
@@ -118,7 +146,7 @@ public class FaxSendRecvVerification extends TestBase {
         // Create a JavaScriptExecutor object
         JavascriptExecutor js2 = (JavascriptExecutor) driver;
         // Scroll down the page by pixel (e.g., 500 pixels)
-        js.executeScript("window.scrollBy(100, 3000)");
+        js2.executeScript("window.scrollBy(100, 3000)");
         int timeoutInSecondsInbound = 300; // Adjust the timeout as needed
 
         // Loop until the info button is visible or timeout occurs
@@ -132,8 +160,8 @@ public class FaxSendRecvVerification extends TestBase {
 
             // Wait for info btn to be visible
             try {
-                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20)); // Wait up to 20 seconds for the info btn to appear
-                wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='inboundFaxes']/tbody/tr[1]//button[5]")));
+                WebDriverWait wait3 = new WebDriverWait(driver, Duration.ofSeconds(20)); // Wait up to 20 seconds for the info btn to appear
+                wait3.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='inboundFaxes']/tbody/tr[1]//button[5]")));
                 InfoButtonInbound = true; // Exit the loop if Info btn is found
             } catch (org.openqa.selenium.TimeoutException e) {
                 // info btn is not found yet, continue the loop
