@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
@@ -47,6 +48,9 @@ public class RefercKeywords extends TestBase {
         loginPageObj.faxNumber.click();
         loginPageObj.faxNumber.sendKeys(String.valueOf(data.get("FaxNumber")));
         loginPageObj.coverPage.click();
+        WebElement stateCoverPage = loginPageObj.coverPage;
+        Select selectCoverPage = new Select(stateCoverPage);
+        selectCoverPage.selectByVisibleText("cover.pdf");
 
         Thread.sleep(1000 * 3);
 //        loginPageObj.uploadPage.click();
@@ -137,6 +141,9 @@ public class RefercKeywords extends TestBase {
         loginPageObj.faxNumber.click();
         loginPageObj.faxNumber.sendKeys(String.valueOf(data.get("FaxNumber")));
         loginPageObj.coverPage.click();
+        WebElement stateCoverPage = loginPageObj.coverPage;
+        Select selectCoverPage = new Select(stateCoverPage);
+        selectCoverPage.selectByVisibleText("cover.pdf");
 
         Thread.sleep(1000 * 3);
 //        loginPageObj.uploadPage.click();
