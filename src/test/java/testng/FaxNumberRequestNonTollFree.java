@@ -4,18 +4,14 @@ import Pages.LoginPageTestNG;
 import UtilsTesNG.FileReaderTestNG;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.awt.*;
 import java.sql.SQLException;
-import java.time.Duration;
-import java.util.List;
 import java.util.Map;
 
-public class faxNumberRequestNonTollFree extends TestBase {
+public class FaxNumberRequestNonTollFree extends TestBase {
 
 
     @Test(priority = 1, testName = "Fax Number Request Non toll free from portal ", groups = {"Regression84"})
