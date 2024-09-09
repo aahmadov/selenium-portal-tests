@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.Map;
 
 public class SSO extends TestBase {
-    @Test(priority = 1, testName = "SSO for a Fax Server ", groups = {"RegressionNew"})
+    @Test(priority = 1, testName = "SSO for a Fax Server ", groups = {"Regression84"})
     public void SSO_User() throws InterruptedException, AWTException, SQLException {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);

@@ -4,11 +4,14 @@ import Pages.LoginPageTestNG;
 import UtilsTesNG.FileReaderTestNG;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.awt.*;
 import java.sql.SQLException;
+import java.time.Duration;
 import java.util.Map;
 
 public class FaxNumberRequestNonTollFree extends TestBase {
@@ -41,9 +44,7 @@ public class FaxNumberRequestNonTollFree extends TestBase {
         loginPageObj.FaxNumberOptionDropdownButton.click();
         Thread.sleep(1000 * 3);
         loginPageObj.FaxNumberOption.click();
-        // Use WebDriverWait to wait until the dropdown options are visible
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//        wait.until(ExpectedConditions.visibilityOfAllElements(loginPageObj.FaxNumberOption));
+
 //
 //        // Locate the dropdown options using the page object method
 //        List<WebElement> options = (List<WebElement>) loginPageObj.FaxNumberOption;
@@ -68,21 +69,39 @@ public class FaxNumberRequestNonTollFree extends TestBase {
        WebElement cityOption = loginPageObj.cityChoose;
        Select selectCity = new Select(cityOption);
        selectCity.selectByVisibleText("Houston");
+        loginPageObj.cityChoose.click();
        Thread.sleep(1000*3);
-        loginPageObj.emailRequired.click();
-        Thread.sleep(1000*3);
-        loginPageObj.emailRequired.clear();
+        loginPageObj.RestrictToDepart.click();
+        WebElement restrictToDepart =  loginPageObj.RestrictToDepart;
+        Select selectDepart = new Select(restrictToDepart);
+        selectDepart.selectByVisibleText("Global (all Departments)");
+        loginPageObj.RestrictToDepart.click();
+        Thread.sleep(1000 * 3);
+        // Use WebDriverWait to wait until the dropdown options are visible
+//        loginPageObj.assignToUserBTn.click();
+//        WebElement userToassign = loginPageObj.assignToUserBTn;
+//        Select selectUser = new Select(userToassign);
+//        selectUser.selectByVisibleText("Unassigned");
+//        loginPageObj.assignToUserBTn.click();
+//        Thread.sleep(1000 * 3);
+        JavascriptExecutor js1 = (JavascriptExecutor) driver;
+        // Scroll down the page by pixel (e.g., 500 pixels)
+        js1.executeScript("window.scrollBy(100, 500)");
+        WebDriverWait wait3 = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebElement emailField3 = wait3.until(ExpectedConditions.visibilityOf(loginPageObj.notifyEmail));
+        emailField3.click();
+        loginPageObj.notifyEmail.clear();
         Thread.sleep(1000*2);
-        loginPageObj.emailRequired.sendKeys("abbas@softlinx.com");
+        loginPageObj.notifyEmail.sendKeys("abbas@softlinx.com");
         Thread.sleep(1000*2);
-        loginPageObj.commentSection.click();
+        loginPageObj.commentfeild.click();
         Thread.sleep(1000*2);
-        loginPageObj.commentSection.sendKeys("HelloWorld");
+        loginPageObj.commentfeild.sendKeys("Hello World!");
         Thread.sleep(1000*3);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         // Scroll down the page by pixel (e.g., 500 pixels)
-        js.executeScript("window.scrollBy(100, 3000)");
-        loginPageObj.submit.click();
+        js.executeScript("window.scrollBy(100, 500)");
+        loginPageObj.submitBtn.click();
         Thread.sleep(1000*5);
         loginPageObj.submitConfirmBTN.click();
         Thread.sleep(1000*25);
@@ -125,17 +144,24 @@ public class FaxNumberRequestNonTollFree extends TestBase {
         Thread.sleep(1000*3);
         loginPageObj.assignToUserbtn.click();
         Thread.sleep(1000*3);
-        loginPageObj.emailRequired.clear();
+        JavascriptExecutor js1 = (JavascriptExecutor) driver;
+        // Scroll down the page by pixel (e.g., 500 pixels)
+        js1.executeScript("window.scrollBy(100, 500)");
+        WebDriverWait wait3 = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebElement emailField3 = wait3.until(ExpectedConditions.visibilityOf(loginPageObj.notifyEmail));
+        emailField3.click();
+        loginPageObj.notifyEmail.clear();
         Thread.sleep(1000*2);
-        loginPageObj.emailRequired.sendKeys("abbas@softlinx.com");
+        loginPageObj.notifyEmail.sendKeys("abbas@softlinx.com");
         Thread.sleep(1000*2);
-        loginPageObj.commentSection.click();
+        loginPageObj.commentfeild.click();
         Thread.sleep(1000*2);
-        loginPageObj.commentSection.sendKeys("HelloWorld");
+        loginPageObj.commentfeild.sendKeys("Hello World!");
+        Thread.sleep(1000*3);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         // Scroll down the page by pixel (e.g., 500 pixels)
-        js.executeScript("window.scrollBy(100, 3000)");
-        loginPageObj.submit.click();
+        js.executeScript("window.scrollBy(100, 500)");
+        loginPageObj.submitBtn.click();
         Thread.sleep(1000*5);
         loginPageObj.submitConfirmBTN.click();
         Thread.sleep(1000*25);

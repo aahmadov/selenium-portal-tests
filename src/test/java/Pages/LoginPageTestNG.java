@@ -178,16 +178,27 @@ public class LoginPageTestNG {
     public WebElement cityChoose;
     @FindBy(xpath = "//input[@type=\"text\" and @id=\"notifyEmailPort\" and @name=\"notifyEmail\" and @class=\"form-control\"]")
     public WebElement emailRequired;
-    @FindBy(xpath = "//*[@id=\"commentPort\"]")
+    @FindBy(xpath = "//*[@id='notifyEmail']")
+    public WebElement notifyEmail;
+
+    @FindBy(xpath = "//*[@id='commentPort']")
     public WebElement commentSection;
 
+    @FindBy(xpath = "//*[@id='comment']")
+    public WebElement commentfeild;
+
     @FindBy(xpath = "//*[@id=\"portRequestCountry\"]")
+
     public WebElement selectCountry;
 
     @FindBy(xpath = "//*[@id=\"restrict_to_dept_port\"]")
     public WebElement selectDepartments;
     @FindBy(xpath = "//div[@class='modal fade show' and @id='port-dialog']//button[@id='addRequestPortSubmit']")
     public WebElement submit;
+
+    @FindBy(xpath = "//*[@id='addRequestSubmit']")
+    public WebElement submitBtn;
+
     @FindBy(xpath = "//button[@class='btn btn-orange btn-sm dialogBtn']")
     public WebElement submitConfirmBTN;
     @FindBy(xpath = "//div[@class='modal fade show']//div[@class='modal-footer']//button[contains(text(),'No')]")
@@ -259,6 +270,9 @@ public class LoginPageTestNG {
 
     @FindBy(xpath = "//*[@id='assigned_to_user_port']")
     public WebElement assignToUserBTn;
+    @FindBy(xpath = "//*[@id='restrict_to_dept']")
+    public WebElement RestrictToDepart;
+
     @FindBy(xpath = "//*[@id='assigned_to_user']")
     public WebElement assignToUserbtn;
 

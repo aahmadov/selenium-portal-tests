@@ -105,7 +105,7 @@ public class OCR_test extends TestBase {
             loginPageObj.SelectQueueBox.click();
             Thread.sleep(1000 * 3);
             loginPageObj.ClickSearchBtn.click();
-            Thread.sleep(1000 * 10);
+            Thread.sleep(1000 * 5);
 
         // Define the timeout duration in seconds
         int timeoutInSeconds = 300; // Adjust the timeout as needed
@@ -114,7 +114,7 @@ public class OCR_test extends TestBase {
         long startTime = System.currentTimeMillis();
         boolean lockAndEditButtonFound = false;
 
-        while (!lockAndEditButtonFound && (System.currentTimeMillis() - startTime) < timeoutInSeconds * 1000) {
+        while (!lockAndEditButtonFound && (System.currentTimeMillis() - startTime) < timeoutInSeconds * 3000) {
             // Click the search button
             WebElement clickSearchBtn = driver.findElement(By.xpath("//*[@id='Search']"));
             clickSearchBtn.click();
