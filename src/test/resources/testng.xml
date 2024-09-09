@@ -21,7 +21,7 @@
 
     <test name="New_Fax_Number_request_Non_toll_free">
         <classes>
-            <class name ="testng.faxNumberRequestNonTollFree"/>
+            <class name ="testng.FaxNumberRequestNonTollFree"/>
         </classes>
     </test>
 
