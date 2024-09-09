@@ -4,7 +4,7 @@
 
     <test name="sendFaxDataFromPortal">
         <classes>
-            <class name ="testng.LoginTestStepsTestNG"/>
+            <class name ="testng.LoginTestStepsTestNG_1_100"/>
         </classes>
     </test>
 
@@ -33,7 +33,7 @@
 
     <test name="splitPageFromPortal">
         <classes>
-            <class name ="testng.PageSplitSteps"/>
+            <class name ="testng.PageSplitSteps_1_100"/>
         </classes>
     </test>
     <test name="Specify_Reference_Keywords">
@@ -43,13 +43,18 @@
     </test>
     <test name="SendingWelcomeMail">
         <classes>
-            <class name ="testng.WelcomeMailSteps"/>
+            <class name ="testng.WelcomeMailSteps_1_100"/>
         </classes>
     </test>
 
     <test name="sendFaxHasOCRdata">
         <classes>
             <class name ="testng.OCR_test"/>
+        </classes>
+    </test>
+    <test name="sendFaxForPDFScale">
+        <classes>
+            <class name ="testng.PdfScan_1_100"/>
         </classes>
     </test>
     <test name="SSO_User">

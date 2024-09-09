@@ -3,12 +3,18 @@ package testng;
 import Pages.LoginPageTestNG;
 import UtilsTesNG.FileReader;
 import UtilsTesNG.FileReaderTestNG;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.time.Duration;
 import java.util.Map;
 
 public class FaxSentWithandwithoutCoverpage extends TestBase {
@@ -34,28 +40,41 @@ public class FaxSentWithandwithoutCoverpage extends TestBase {
         loginPageObj.sendFaxButton.click();
         loginPageObj.faxNumber.click();
         loginPageObj.faxNumber.sendKeys(String.valueOf(data.get("FaxNumber")));
-        Thread.sleep(1000 * 3);
-        loginPageObj.uploadPage.click();
+//        Thread.sleep(1000 * 3);
+//        loginPageObj.uploadPage.click();
             File pagesSize = FileReader.getFileUsingPageSize(data.get("pageSize"), data.get("fileType"));
-            Robot rb = new Robot();
-            rb.delay(1000 * 2);
-            //put the path to file in clipboard
-            StringSelection Filepath = new StringSelection(pagesSize.toString());
-            System.out.println("File Name: " + pagesSize.toString());
-            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(Filepath, null);
-            Thread.sleep(1000 * 3);
-            rb.keyPress(KeyEvent.VK_ENTER);
-            rb.keyRelease(KeyEvent.VK_ENTER);
-            rb.delay(1000);
-            rb.keyPress(KeyEvent.VK_CONTROL);
-            rb.keyPress(KeyEvent.VK_V);
-            rb.delay(1000);
-            rb.keyRelease(KeyEvent.VK_CONTROL);
-            rb.keyRelease(KeyEvent.VK_V);
-            rb.delay(300);
-            rb.keyPress(KeyEvent.VK_ENTER);
-            rb.keyRelease(KeyEvent.VK_ENTER);
-            rb.delay(1000 * 5);
+        // Wait until the form is visible
+        WebDriverWait wait3 = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebElement dropzone = wait3.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form[@id='dropzone']")));
+
+        // Path to your file
+        File fileToUpload = new File(pagesSize.getAbsolutePath());
+
+        // Execute JavaScript to add the file to Dropzone
+        JavascriptExecutor js3 = (JavascriptExecutor) driver;
+        js3.executeScript("var dropzone = Dropzone.forElement('#dropzone');" +
+                "var mockFile = { name: '" + fileToUpload.getName() + "', size: " + fileToUpload.length() + " };" +
+                "dropzone.emit('addedfile', mockFile);" +
+                "dropzone.emit('complete', mockFile);");
+//            Robot rb = new Robot();
+//            rb.delay(1000 * 2);
+//            //put the path to file in clipboard
+//            StringSelection Filepath = new StringSelection(pagesSize.toString());
+//            System.out.println("File Name: " + pagesSize.toString());
+//            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(Filepath, null);
+//            Thread.sleep(1000 * 3);
+//            rb.keyPress(KeyEvent.VK_ENTER);
+//            rb.keyRelease(KeyEvent.VK_ENTER);
+//            rb.delay(1000);
+//            rb.keyPress(KeyEvent.VK_CONTROL);
+//            rb.keyPress(KeyEvent.VK_V);
+//            rb.delay(1000);
+//            rb.keyRelease(KeyEvent.VK_CONTROL);
+//            rb.keyRelease(KeyEvent.VK_V);
+//            rb.delay(300);
+//            rb.keyPress(KeyEvent.VK_ENTER);
+//            rb.keyRelease(KeyEvent.VK_ENTER);
+//            rb.delay(1000 * 5);
             loginPageObj.ClickSendButton.click();
             loginPageObj.confirmationButton.click();
 
@@ -84,27 +103,40 @@ public class FaxSentWithandwithoutCoverpage extends TestBase {
         loginPageObj.faxNumber.sendKeys(String.valueOf(data.get("FaxNumber")));
         loginPageObj.coverPage.click();
         loginPageObj.ChoseCoverpage.click();
-        loginPageObj.uploadPage.click();
+//        loginPageObj.uploadPage.click();
         File pagesSize = FileReader.getFileUsingPageSize(data.get("pageSize"), data.get("fileType"));
-        Robot rb = new Robot();
-        rb.delay(1000 * 2);
-        //put the path to file in clipboard
-        StringSelection Filepath = new StringSelection(pagesSize.toString());
-        System.out.println("File Name: " + pagesSize.toString());
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(Filepath, null);
-        Thread.sleep(1000 * 3);
-        rb.keyPress(KeyEvent.VK_ENTER);
-        rb.keyRelease(KeyEvent.VK_ENTER);
-        rb.delay(1000);
-        rb.keyPress(KeyEvent.VK_CONTROL);
-        rb.keyPress(KeyEvent.VK_V);
-        rb.delay(1000);
-        rb.keyRelease(KeyEvent.VK_CONTROL);
-        rb.keyRelease(KeyEvent.VK_V);
-        rb.delay(300);
-        rb.keyPress(KeyEvent.VK_ENTER);
-        rb.keyRelease(KeyEvent.VK_ENTER);
-        rb.delay(1000 * 5);
+        // Wait until the form is visible
+        WebDriverWait wait3 = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebElement dropzone = wait3.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form[@id='dropzone']")));
+
+        // Path to your file
+        File fileToUpload = new File(pagesSize.getAbsolutePath());
+
+        // Execute JavaScript to add the file to Dropzone
+        JavascriptExecutor js3 = (JavascriptExecutor) driver;
+        js3.executeScript("var dropzone = Dropzone.forElement('#dropzone');" +
+                "var mockFile = { name: '" + fileToUpload.getName() + "', size: " + fileToUpload.length() + " };" +
+                "dropzone.emit('addedfile', mockFile);" +
+                "dropzone.emit('complete', mockFile);");
+//        Robot rb = new Robot();
+//        rb.delay(1000 * 2);
+//        //put the path to file in clipboard
+//        StringSelection Filepath = new StringSelection(pagesSize.toString());
+//        System.out.println("File Name: " + pagesSize.toString());
+//        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(Filepath, null);
+//        Thread.sleep(1000 * 3);
+//        rb.keyPress(KeyEvent.VK_ENTER);
+//        rb.keyRelease(KeyEvent.VK_ENTER);
+//        rb.delay(1000);
+//        rb.keyPress(KeyEvent.VK_CONTROL);
+//        rb.keyPress(KeyEvent.VK_V);
+//        rb.delay(1000);
+//        rb.keyRelease(KeyEvent.VK_CONTROL);
+//        rb.keyRelease(KeyEvent.VK_V);
+//        rb.delay(300);
+//        rb.keyPress(KeyEvent.VK_ENTER);
+//        rb.keyRelease(KeyEvent.VK_ENTER);
+//        rb.delay(1000 * 5);
         loginPageObj.ClickSendButton.click();
         loginPageObj.confirmationButton.click();
 
@@ -139,27 +171,40 @@ public class FaxSentWithandwithoutCoverpage extends TestBase {
             Thread.sleep(1000*3);
             loginPageObj.coverPage.click();
             loginPageObj.ChoseCoverpage.click();
-            loginPageObj.uploadPage.click();
+//            loginPageObj.uploadPage.click();
             File pagesSize = FileReader.getFileUsingPageSize(data.get("pageSize"), data.get("fileType"));
-            Robot rb = new Robot();
-            rb.delay(1000 * 2);
-            //put the path to file in clipboard
-            StringSelection Filepath = new StringSelection(pagesSize.toString());
-            System.out.println("File Name: " + pagesSize.toString());
-            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(Filepath, null);
-            Thread.sleep(1000 * 3);
-            rb.keyPress(KeyEvent.VK_ENTER);
-            rb.keyRelease(KeyEvent.VK_ENTER);
-            rb.delay(1000);
-            rb.keyPress(KeyEvent.VK_CONTROL);
-            rb.keyPress(KeyEvent.VK_V);
-            rb.delay(1000);
-            rb.keyRelease(KeyEvent.VK_CONTROL);
-            rb.keyRelease(KeyEvent.VK_V);
-            rb.delay(300);
-            rb.keyPress(KeyEvent.VK_ENTER);
-            rb.keyRelease(KeyEvent.VK_ENTER);
-            rb.delay(1000 * 5);
+            // Wait until the form is visible
+            WebDriverWait wait3 = new WebDriverWait(driver, Duration.ofSeconds(20));
+            WebElement dropzone = wait3.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form[@id='dropzone']")));
+
+            // Path to your file
+            File fileToUpload = new File(pagesSize.getAbsolutePath());
+
+            // Execute JavaScript to add the file to Dropzone
+            JavascriptExecutor js3 = (JavascriptExecutor) driver;
+            js3.executeScript("var dropzone = Dropzone.forElement('#dropzone');" +
+                    "var mockFile = { name: '" + fileToUpload.getName() + "', size: " + fileToUpload.length() + " };" +
+                    "dropzone.emit('addedfile', mockFile);" +
+                    "dropzone.emit('complete', mockFile);");
+//            Robot rb = new Robot();
+//            rb.delay(1000 * 2);
+//            //put the path to file in clipboard
+//            StringSelection Filepath = new StringSelection(pagesSize.toString());
+//            System.out.println("File Name: " + pagesSize.toString());
+//            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(Filepath, null);
+//            Thread.sleep(1000 * 3);
+//            rb.keyPress(KeyEvent.VK_ENTER);
+//            rb.keyRelease(KeyEvent.VK_ENTER);
+//            rb.delay(1000);
+//            rb.keyPress(KeyEvent.VK_CONTROL);
+//            rb.keyPress(KeyEvent.VK_V);
+//            rb.delay(1000);
+//            rb.keyRelease(KeyEvent.VK_CONTROL);
+//            rb.keyRelease(KeyEvent.VK_V);
+//            rb.delay(300);
+//            rb.keyPress(KeyEvent.VK_ENTER);
+//            rb.keyRelease(KeyEvent.VK_ENTER);
+//            rb.delay(1000 * 5);
             loginPageObj.ClickSendButton.click();
             loginPageObj.confirmationButton.click();
         } else if (coverPageAttach) {
@@ -172,28 +217,41 @@ public class FaxSentWithandwithoutCoverpage extends TestBase {
             loginPageObj.confirmationButton.click();
         } else if (withAttachment) {
             // If only withAttachment is true, handle attachment
-            Thread.sleep(1000*3);
-            loginPageObj.uploadPage.click();
+//            Thread.sleep(1000*3);
+//            loginPageObj.uploadPage.click();
             File pagesSize = FileReader.getFileUsingPageSize(data.get("pageSize"), data.get("fileType"));
-            Robot rb = new Robot();
-            rb.delay(1000 * 2);
-            //put the path to file in clipboard
-            StringSelection Filepath = new StringSelection(pagesSize.toString());
-            System.out.println("File Name: " + pagesSize.toString());
-            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(Filepath, null);
-            Thread.sleep(1000 * 3);
-            rb.keyPress(KeyEvent.VK_ENTER);
-            rb.keyRelease(KeyEvent.VK_ENTER);
-            rb.delay(1000);
-            rb.keyPress(KeyEvent.VK_CONTROL);
-            rb.keyPress(KeyEvent.VK_V);
-            rb.delay(1000);
-            rb.keyRelease(KeyEvent.VK_CONTROL);
-            rb.keyRelease(KeyEvent.VK_V);
-            rb.delay(300);
-            rb.keyPress(KeyEvent.VK_ENTER);
-            rb.keyRelease(KeyEvent.VK_ENTER);
-            rb.delay(1000 * 5);
+            // Wait until the form is visible
+            WebDriverWait wait3 = new WebDriverWait(driver, Duration.ofSeconds(20));
+            WebElement dropzone = wait3.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form[@id='dropzone']")));
+
+            // Path to your file
+            File fileToUpload = new File(pagesSize.getAbsolutePath());
+
+            // Execute JavaScript to add the file to Dropzone
+            JavascriptExecutor js3 = (JavascriptExecutor) driver;
+            js3.executeScript("var dropzone = Dropzone.forElement('#dropzone');" +
+                    "var mockFile = { name: '" + fileToUpload.getName() + "', size: " + fileToUpload.length() + " };" +
+                    "dropzone.emit('addedfile', mockFile);" +
+                    "dropzone.emit('complete', mockFile);");
+//            Robot rb = new Robot();
+//            rb.delay(1000 * 2);
+//            //put the path to file in clipboard
+//            StringSelection Filepath = new StringSelection(pagesSize.toString());
+//            System.out.println("File Name: " + pagesSize.toString());
+//            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(Filepath, null);
+//            Thread.sleep(1000 * 3);
+//            rb.keyPress(KeyEvent.VK_ENTER);
+//            rb.keyRelease(KeyEvent.VK_ENTER);
+//            rb.delay(1000);
+//            rb.keyPress(KeyEvent.VK_CONTROL);
+//            rb.keyPress(KeyEvent.VK_V);
+//            rb.delay(1000);
+//            rb.keyRelease(KeyEvent.VK_CONTROL);
+//            rb.keyRelease(KeyEvent.VK_V);
+//            rb.delay(300);
+//            rb.keyPress(KeyEvent.VK_ENTER);
+//            rb.keyRelease(KeyEvent.VK_ENTER);
+//            rb.delay(1000 * 5);
             loginPageObj.ClickSendButton.click();
             loginPageObj.confirmationButton.click();
         } else {

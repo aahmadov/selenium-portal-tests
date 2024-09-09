@@ -73,6 +73,8 @@ public class faxNumberRequestNonTollFree extends TestBase {
        Select selectCity = new Select(cityOption);
        selectCity.selectByVisibleText("Houston");
        Thread.sleep(1000*3);
+        loginPageObj.emailRequired.click();
+        Thread.sleep(1000*3);
         loginPageObj.emailRequired.clear();
         Thread.sleep(1000*2);
         loginPageObj.emailRequired.sendKeys("abbas@softlinx.com");

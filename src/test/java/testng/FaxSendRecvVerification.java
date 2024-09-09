@@ -23,7 +23,7 @@ import java.util.Map;
 
 public class FaxSendRecvVerification extends TestBase {
 
-    @Test(priority = 1, testName = "Send Fax from portal ", groups = {"Regression8412"})
+    @Test(priority = 1, testName = "Send Fax from portal ", groups = {"Regression84"})
     public void OutboundandInboundVerification() throws InterruptedException, AWTException, SQLException {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
@@ -57,10 +57,6 @@ public class FaxSendRecvVerification extends TestBase {
 //        // Click the element using JavaScript
 //        jsnew.executeScript("arguments[0].scrollIntoView(true);", dropzone);
         File pagesSize = FileReader.getFileUsingPageSize(data.get("pageSize"), data.get("fileType"));
-//        WebElement ele1 = driver.findElement(By.id("dropzone"));
-//        ele1.sendKeys(pagesSize.getAbsolutePath());
-
-
             // Wait until the form is visible
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
             WebElement dropzone = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form[@id='dropzone']")));
@@ -75,25 +71,6 @@ public class FaxSendRecvVerification extends TestBase {
                     "dropzone.emit('addedfile', mockFile);" +
                     "dropzone.emit('complete', mockFile);");
 
-
-//        Robot rb = new Robot();
-//        rb.delay(1000 * 2);
-        //put the path to file in clipboard
-//        StringSelection Filepath = new StringSelection(pagesSize.toString());
-//        System.out.println("File Name: " + pagesSize.toString());
-//        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(Filepath, null);
-//        rb.keyPress(KeyEvent.VK_ENTER);
-//        rb.keyRelease(KeyEvent.VK_ENTER);
-//        rb.delay(1000);
-//        rb.keyPress(KeyEvent.VK_CONTROL);
-//        rb.keyPress(KeyEvent.VK_V);
-//        rb.delay(1000);
-//        rb.keyRelease(KeyEvent.VK_CONTROL);
-//        rb.keyRelease(KeyEvent.VK_V);
-//        rb.delay(300);
-//        rb.keyPress(KeyEvent.VK_ENTER);
-//        rb.keyRelease(KeyEvent.VK_ENTER);
-//        rb.delay(1000 * 5);
         Thread.sleep(1000 * 5);
         loginPageObj.ClickSendButton.click();
         Thread.sleep(1000*3);
@@ -138,8 +115,8 @@ public class FaxSendRecvVerification extends TestBase {
         Thread.sleep(1000*5);
         loginPageObj.closeInfoBtn.click();
         Thread.sleep(1000 * 5);
-        String query = "SELECT JobID,Pages,FaxUserID,JobStatus FROM auto1.sendstatus order by JobID desc limit 1;";
-        DataBaseUTIL.executeSQLQuery84Database(query);
+        String query = "SELECT JobID FROM auto1.recvstatus order by JobID desc limit 1;";
+        String jobId= DataBaseUTIL.executeSQLQuery84Database(query).toString();
 
         Thread.sleep(1000 * 5);
         loginPageObj.InboundRadiobox.click();

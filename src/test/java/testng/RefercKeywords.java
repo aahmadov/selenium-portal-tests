@@ -5,6 +5,11 @@ import UtilsTesNG.DataBaseUTIL;
 import UtilsTesNG.DriverFactory;
 import UtilsTesNG.FileReader;
 import UtilsTesNG.FileReaderTestNG;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.awt.*;
@@ -12,6 +17,7 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.sql.SQLException;
+import java.time.Duration;
 import java.util.Map;
 
 public class RefercKeywords extends TestBase {
@@ -43,24 +49,37 @@ public class RefercKeywords extends TestBase {
         loginPageObj.coverPage.click();
 
         Thread.sleep(1000 * 3);
-        loginPageObj.uploadPage.click();
+//        loginPageObj.uploadPage.click();
 
         File pagesSize = FileReader.getFileUsingPageSize(data.get("pageSize"), data.get("fileType"));
-        Robot rb = new Robot();
-        rb.delay(1000 * 2);
-        //put the path to file in clipboard
-        StringSelection Filepath = new StringSelection(pagesSize.toString());
+        // Wait until the form is visible
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebElement dropzone = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form[@id='dropzone']")));
 
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(Filepath, null);
-        rb.keyPress(KeyEvent.VK_CONTROL);
-        rb.keyPress(KeyEvent.VK_V);
-        rb.delay(1000 * 2);
-        rb.keyRelease(KeyEvent.VK_CONTROL);
-        rb.keyRelease(KeyEvent.VK_V);
+        // Path to your file
+        File fileToUpload = new File(pagesSize.getAbsolutePath());
 
-        rb.keyPress(KeyEvent.VK_ENTER);
-        rb.keyRelease(KeyEvent.VK_ENTER);
-        rb.delay(1000 * 5);
+        // Execute JavaScript to add the file to Dropzone
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("var dropzone = Dropzone.forElement('#dropzone');" +
+                "var mockFile = { name: '" + fileToUpload.getName() + "', size: " + fileToUpload.length() + " };" +
+                "dropzone.emit('addedfile', mockFile);" +
+                "dropzone.emit('complete', mockFile);");
+//        Robot rb = new Robot();
+//        rb.delay(1000 * 2);
+//        //put the path to file in clipboard
+//        StringSelection Filepath = new StringSelection(pagesSize.toString());
+//
+//        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(Filepath, null);
+//        rb.keyPress(KeyEvent.VK_CONTROL);
+//        rb.keyPress(KeyEvent.VK_V);
+//        rb.delay(1000 * 2);
+//        rb.keyRelease(KeyEvent.VK_CONTROL);
+//        rb.keyRelease(KeyEvent.VK_V);
+//
+//        rb.keyPress(KeyEvent.VK_ENTER);
+//        rb.keyRelease(KeyEvent.VK_ENTER);
+//        rb.delay(1000 * 5);
 
 //        loginPageObj.splitCheckPagebox.click();
 //        loginPageObj.claimNumber.click();
@@ -120,24 +139,37 @@ public class RefercKeywords extends TestBase {
         loginPageObj.coverPage.click();
 
         Thread.sleep(1000 * 3);
-        loginPageObj.uploadPage.click();
+//        loginPageObj.uploadPage.click();
 
         File pagesSize = FileReader.getFileUsingPageSize(data.get("pageSize"), data.get("fileType"));
-        Robot rb = new Robot();
-        rb.delay(1000 * 2);
-        //put the path to file in clipboard
-        StringSelection Filepath = new StringSelection(pagesSize.toString());
+        // Wait until the form is visible
+        WebDriverWait wait3 = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebElement dropzone = wait3.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form[@id='dropzone']")));
 
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(Filepath, null);
-        rb.keyPress(KeyEvent.VK_CONTROL);
-        rb.keyPress(KeyEvent.VK_V);
-        rb.delay(1000 * 2);
-        rb.keyRelease(KeyEvent.VK_CONTROL);
-        rb.keyRelease(KeyEvent.VK_V);
+        // Path to your file
+        File fileToUpload = new File(pagesSize.getAbsolutePath());
 
-        rb.keyPress(KeyEvent.VK_ENTER);
-        rb.keyRelease(KeyEvent.VK_ENTER);
-        rb.delay(1000 * 5);
+        // Execute JavaScript to add the file to Dropzone
+        JavascriptExecutor js3 = (JavascriptExecutor) driver;
+        js3.executeScript("var dropzone = Dropzone.forElement('#dropzone');" +
+                "var mockFile = { name: '" + fileToUpload.getName() + "', size: " + fileToUpload.length() + " };" +
+                "dropzone.emit('addedfile', mockFile);" +
+                "dropzone.emit('complete', mockFile);");
+//        Robot rb = new Robot();
+//        rb.delay(1000 * 2);
+//        //put the path to file in clipboard
+//        StringSelection Filepath = new StringSelection(pagesSize.toString());
+//
+//        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(Filepath, null);
+//        rb.keyPress(KeyEvent.VK_CONTROL);
+//        rb.keyPress(KeyEvent.VK_V);
+//        rb.delay(1000 * 2);
+//        rb.keyRelease(KeyEvent.VK_CONTROL);
+//        rb.keyRelease(KeyEvent.VK_V);
+//
+//        rb.keyPress(KeyEvent.VK_ENTER);
+//        rb.keyRelease(KeyEvent.VK_ENTER);
+//        rb.delay(1000 * 5);
 
 
 //        loginPageObj.splitCheckPagebox.click();

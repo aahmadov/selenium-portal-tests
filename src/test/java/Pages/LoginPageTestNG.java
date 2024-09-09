@@ -64,6 +64,16 @@ public class LoginPageTestNG {
     @FindBy(xpath = "//*[@id='alertmessage']")
     public WebElement DateErrorMessage;
 
+    //*[@id="1309_pdfbtn"]
+    @FindBy(xpath = "//*[@id=\"faxing\"]/div/ul/li[2]/a")
+    public WebElement FaxesBTN;
+
+    @FindBy(xpath = "//*[@id=\"SearchForFaxes\"]")
+    public WebElement searchBTN;
+
+    @FindBy(xpath = "//*[@id=\"FilterFaxTypeInbound\"]")
+    public WebElement InboundBtn;
+
     @FindBy(xpath = "//*[@id=\"successmessage\"]")
     public WebElement successMessage;
 

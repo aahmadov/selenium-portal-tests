@@ -18,9 +18,14 @@ public class FileReader {
         String filePath = "src/test/resources/requestBody/pdf/";
         String pdfFile = filePath + filename + ".pdf";
 
-        return new File(pdfFile);
+        return new File((pdfFile));
     }
+    public static File readfile2(String filename) {
+        String filePath = "C:\\Users\\Administrator\\Desktop\\scaling\\Original Source\\";
+        String pdfFile = filePath + filename + ".pdf";
 
+        return new File((pdfFile));
+    }
     public static File randomFileFromFolder() {
         File folder = new File("C:\\Users\\faxes");
         File[] listOfFiles = folder.listFiles((d, name) -> name.endsWith(".pdf"));
