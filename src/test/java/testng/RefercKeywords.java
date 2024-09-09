@@ -22,7 +22,7 @@ import java.util.Map;
 
 public class RefercKeywords extends TestBase {
 
-    @Test(priority = 1, testName = "Send Fax and split page", groups = {"Regression84"})
+    @Test(priority = 1, testName = "Portal:Specify_Reference_Keywords", groups = {"Regression84"})
     public void Specify_Reference_Keywords() throws InterruptedException, AWTException, SQLException {
 
         System.out.println("Test case name: " + testName);
@@ -112,7 +112,7 @@ public class RefercKeywords extends TestBase {
 
     }
 
-    @Test(priority = 2, testName = "Send Fax and split page", groups = {"Regression84"})
+    @Test(priority = 2, testName = "Portal:Specify_Send_After", groups = {"Regression84"})
     public void Specify_Send_After() throws InterruptedException, AWTException, SQLException {
 
         System.out.println("Test case name: " + testName);

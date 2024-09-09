@@ -98,7 +98,7 @@ public class faxNumberRequestNonTollFree extends TestBase {
 
     }
 
-    @Test(priority = 2, testName = "Fax Number Request from portal ", groups = {"Regression84"})
+    @Test(priority = 2, testName = "Fax Number request toll free ", groups = {"Regression84"})
     public void New_Fax_Number_request_toll_free() throws InterruptedException, AWTException, SQLException {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);

@@ -23,7 +23,7 @@ import java.util.Map;
 
 public class FaxSendRecvVerification extends TestBase {
 
-    @Test(priority = 1, testName = "Send Fax from portal ", groups = {"Regression84"})
+    @Test(priority = 1, testName = "Portal:OutboundandInboundVerification ", groups = {"Regression84"})
     public void OutboundandInboundVerification() throws InterruptedException, AWTException, SQLException {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
@@ -158,7 +158,7 @@ public class FaxSendRecvVerification extends TestBase {
 
     }
 
-    @Test(priority = 2, testName = "Send Fax from portal ", groups = {"Regression84"})
+    @Test(priority = 2, testName = "Portal:Change_the_From_data_and_do_another_search ", groups = {"Regression84"})
     public void Change_the_From_data_and_do_another_search() throws InterruptedException, AWTException, SQLException {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
@@ -230,7 +230,7 @@ public class FaxSendRecvVerification extends TestBase {
 
 
     }
-    @Test(priority = 3, testName = "Send Fax from portal ", groups = {"Regression84"})
+    @Test(priority = 3, testName = "Portal:Change_the_From_Inbound_data_and_do_another_search ", groups = {"Regression84"})
     public void Change_the_From_Inbound_data_and_do_another_search() throws InterruptedException, AWTException, SQLException {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
