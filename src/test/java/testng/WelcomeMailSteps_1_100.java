@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class WelcomeMailSteps extends TestBase {
+public class WelcomeMailSteps_1_100 extends TestBase {
     String from = "no-reply@rpxqa.com";
 
     @Test(priority = 2, testName = "Send Welcome Mail", groups = {"Regression100"})
