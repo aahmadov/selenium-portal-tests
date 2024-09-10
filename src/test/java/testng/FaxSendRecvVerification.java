@@ -93,7 +93,7 @@ public class FaxSendRecvVerification extends TestBase {
         boolean InfoButton = false;
 
         while (!InfoButton && (System.currentTimeMillis() - startTime) < timeoutInSeconds * 1000) {
-            // Click the search button
+             //Click the search button
             WebElement clickSearchBtn = driver.findElement(By.xpath("//a[@id='SearchForFaxes']"));
             clickSearchBtn.click();
 
@@ -119,43 +119,47 @@ public class FaxSendRecvVerification extends TestBase {
         String query = "SELECT JobID FROM auto1.recvstatus order by JobID desc limit 1;";
         String jobId= DataBaseUTIL.executeSQLQuery84Database(query).toString();
 
-        Thread.sleep(1000 * 5);
-        loginPageObj.InboundRadiobox.click();
-        // Create a JavaScriptExecutor object
-        JavascriptExecutor js2 = (JavascriptExecutor) driver;
-        // Scroll down the page by pixel (e.g., 500 pixels)
-        js2.executeScript("window.scrollBy(100, 3000)");
-        int timeoutInSecondsInbound = 300; // Adjust the timeout as needed
-
-        // Loop until the info button is visible or timeout occurs
-        long startTimeInbound = System.currentTimeMillis();
-        boolean InfoButtonInbound = false;
-
-        while (!InfoButtonInbound && (System.currentTimeMillis() - startTimeInbound) < timeoutInSecondsInbound * 1000) {
+//        Thread.sleep(1000 * 5);
+//        loginPageObj.InboundRadiobox.click();
+//        Thread.sleep(1000 * 15);
+//        // Create a JavaScriptExecutor object
+//        JavascriptExecutor js2 = (JavascriptExecutor) driver;
+//        // Scroll down the page by pixel (e.g., 500 pixels)
+//        js2.executeScript("window.scrollBy(100, 3000)");
+////        int timeoutInSecondsInbound = 300; // Adjust the timeout as needed
+//        Thread.sleep(1000 * 10);
+//        loginPageObj.SearchAfterradioBtn.click();
+//        // Loop until the info button is visible or timeout occurs
+//        long startTimeInbound = System.currentTimeMillis();
+//        boolean InfoButtonInbound = false;
+//
+//        while (!InfoButtonInbound && (System.currentTimeMillis() - startTimeInbound) < timeoutInSecondsInbound * 1000) {
             // Click the search button
-            WebElement clickSearchBtn = driver.findElement(By.xpath("//a[@id='SearchForFaxes']"));
-            clickSearchBtn.click();
+//            WebElement clickSearchBtn = driver.findElement(By.xpath("//*[@id='SearchForFaxes']"));
+//            clickSearchBtn.click();
 
             // Wait for info btn to be visible
-            try {
-                WebDriverWait wait3 = new WebDriverWait(driver, Duration.ofSeconds(20)); // Wait up to 20 seconds for the info btn to appear
-                wait3.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='inboundFaxes']/tbody/tr[1]//button[5]")));
-                InfoButtonInbound = true; // Exit the loop if Info btn is found
-            } catch (org.openqa.selenium.TimeoutException e) {
-                // info btn is not found yet, continue the loop
-            }
-        }
+//            try {
+//        Thread.sleep(1000*5);
+//        loginPageObj.InboundInfoBtn.click();
+//                WebDriverWait wait3 = new WebDriverWait(driver, Duration.ofSeconds(20)); // Wait up to 20 seconds for the info btn to appear
+//                wait3.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='inboundFaxes']/tbody/tr[1]//button[5]")));
+//                InfoButtonInbound = true; // Exit the loop if Info btn is found
+//            } catch (org.openqa.selenium.TimeoutException e) {
+//                // info btn is not found yet, continue the loop
+//            }
+
         // Click on info btn if found
-        if (InfoButtonInbound) {
-            WebElement infoBtnInbound = driver.findElement(By.xpath("//table[@id='inboundFaxes']/tbody/tr[1]//button[5]"));
-            infoBtnInbound.click();
-        } else {
-            System.out.println("Timeout: Info button not found within " + timeoutInSecondsInbound + " seconds.");
-        }
-        Thread.sleep(1000*5);
-        loginPageObj.closeInfoBtnAfterRecv.click();
-        String queryRecvStatus = "SELECT JobID,Pages,FaxUserID,JobStatus FROM auto1.recvstatus order by JobID desc limit 1";
-        DataBaseUTIL.executeSQLQuery84Database(queryRecvStatus);
+//        if (InfoButtonInbound) {
+//            WebElement infoBtnInbound = driver.findElement(By.xpath("//table[@id='inboundFaxes']/tbody/tr[1]//button[5]"));
+//            infoBtnInbound.click();
+//        } else {
+//            System.out.println("Timeout: Info button not found within " + timeoutInSecondsInbound + " seconds.");
+//        }
+//        Thread.sleep(1000*5);
+//        loginPageObj.closeInfoBtnAfterRecv.click();
+//        String queryRecvStatus = "SELECT JobID,Pages,FaxUserID,JobStatus FROM auto1.recvstatus order by JobID desc limit 1";
+//        DataBaseUTIL.executeSQLQuery84Database(queryRecvStatus);
 
     }
 

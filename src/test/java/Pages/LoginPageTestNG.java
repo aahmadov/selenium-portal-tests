@@ -118,11 +118,11 @@ public class LoginPageTestNG {
     @FindBy(xpath = "//div[@class='dropdown-menu dropdown-menu-right pt-0 pb-0 show']//a[contains(@class, 'nav-link') and contains(text(),'Logout')]")
     public WebElement loginLogoutBTN;
     //div[@class='dropdown-menu dropdown-menu-right pt-0 pb-0 show']//a[contains(@class, 'nav-link') and contains(text(),'Logout')]
-    @FindBy(xpath = "//*[@id='SearchForFaxes']")
+    @FindBy(xpath = "//a[@id='SearchForFaxes']")
     public WebElement SearchAfterradioBtn;
 
-    @FindBy(xpath = "//*[@id=\"outboundFaxes\"]/tbody/tr[1]/td[5]")
-    public WebElement TableBody;
+    @FindBy(xpath = "//table[@id='inboundFaxes']/tbody/tr[1]//button[5")
+    public WebElement InboundInfoBtn;
 
     @FindBy(xpath = "//div[@class='modal-dialog modal-md']//input[@id='portTollFreeNumbers']")
     public WebElement TollFreeNumberBTN;
