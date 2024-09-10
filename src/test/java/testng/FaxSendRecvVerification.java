@@ -163,7 +163,7 @@ public class FaxSendRecvVerification extends TestBase {
 
     }
 
-    @Test(priority = 2, testName = "Portal:Change_the_From_data_and_do_another_search ", groups = {"Regression84"})
+    @Test(priority = 2, testName = "Portal:Change_the_From_data_and_do_another_search ", groups = {"Regression8412"})
     public void Change_the_From_data_and_do_another_search() throws InterruptedException, AWTException, SQLException {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
@@ -180,10 +180,33 @@ public class FaxSendRecvVerification extends TestBase {
         loginPageObj.PasswordTextBox.sendKeys(data.get("password"));
         loginPageObj.loginButton.click();
         Thread.sleep(1000 * 3);
-
-        loginPageObj.AdministrationHeading.click();
+        loginPageObj.FaxingButton.click();
+        loginPageObj.sendFaxButton.click();
+        loginPageObj.faxNumber.click();
+        loginPageObj.faxNumber.sendKeys(String.valueOf(data.get("FaxNumber")));
         Thread.sleep(1000 * 3);
-        loginPageObj.AdministrationfilterFaxstatus.click();
+        File pagesSize = FileReader.getFileUsingPageSize(data.get("pageSize"), data.get("fileType"));
+        // Wait until the form is visible
+        WebDriverWait wait3 = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebElement dropzone = wait3.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form[@id='dropzone']")));
+        // Path to your file
+        File fileToUpload = new File(pagesSize.getAbsolutePath());
+        // Execute JavaScript to add the file to Dropzone
+        JavascriptExecutor js3 = (JavascriptExecutor) driver;
+        js3.executeScript("var dropzone = Dropzone.forElement('#dropzone');" +
+                "var mockFile = { name: '" + fileToUpload.getName() + "', size: " + fileToUpload.length() + " };" +
+                "dropzone.emit('addedfile', mockFile);" +
+                "dropzone.emit('complete', mockFile);");
+        loginPageObj.ClickSendButton.click();
+        Thread.sleep(1000*3);
+        loginPageObj.confirmationButton.click();
+        Thread.sleep(1000 * 3);
+        loginPageObj.FaxingButton.click();
+        Thread.sleep(1000 * 3);
+        loginPageObj.FaxesBTN.click();
+//        loginPageObj.AdministrationHeading.click();
+//        Thread.sleep(1000 * 3);
+//        loginPageObj.AdministrationfilterFaxstatus.click();
         Thread.sleep(1000 * 3);
         loginPageObj.OutboundRadiobox.click();
         Thread.sleep(1000 * 3);

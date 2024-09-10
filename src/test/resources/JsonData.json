@@ -60,11 +60,11 @@
     "password": "softlinx",
     "FaxNumber": "3333333333L",
     "fileType": "pdf",
+    "pageSize": 2,
     "fromData": "05/08/2024",
     "statusAll": "All",
     "statusSent": "Sent",
-    "statusCompleted": "Completed",
-    "pageSize": 2
+    "statusCompleted": "Completed"
   },
   "Change_the_From_Inbound_data_and_do_another_search": {
     "Username": "admin@auto1",
