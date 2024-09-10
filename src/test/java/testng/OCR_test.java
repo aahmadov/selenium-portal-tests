@@ -73,27 +73,7 @@ public class OCR_test extends TestBase {
                 "var mockFile = { name: '" + fileToUpload.getName() + "', size: " + fileToUpload.length() + " };" +
                 "dropzone.emit('addedfile', mockFile);" +
                 "dropzone.emit('complete', mockFile);");
-//            Robot rb = new Robot();
-//            rb.delay(1000 * 2);
-//            //put the path to file in clipboard
-//            StringSelection Filepath = new StringSelection(pagesSize.toString());
-//            System.out.println("File Name: " + pagesSize.toString());
-//            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(Filepath, null);
-//            Thread.sleep(1000 * 3);
-//            rb.keyPress(KeyEvent.VK_ENTER);
-//            rb.keyRelease(KeyEvent.VK_ENTER);
-//            rb.delay(1000);
-//            rb.keyPress(KeyEvent.VK_CONTROL);
-//            rb.keyPress(KeyEvent.VK_V);
-//            rb.delay(1000);
-//            rb.keyRelease(KeyEvent.VK_CONTROL);
-//            rb.keyRelease(KeyEvent.VK_V);
-//            rb.delay(300);
-//
-//            rb.keyPress(KeyEvent.VK_ENTER);
-//            rb.keyRelease(KeyEvent.VK_ENTER);
-//            rb.delay(1000 * 5);
-//
+
             loginPageObj.ClickSendButton.click();
             loginPageObj.confirmationButton.click();
 

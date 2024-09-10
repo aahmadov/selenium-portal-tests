@@ -75,6 +75,7 @@ public class FaxSendRecvVerification extends TestBase {
         loginPageObj.ClickSendButton.click();
         Thread.sleep(1000*3);
         loginPageObj.confirmationButton.click();
+        Thread.sleep(1000*3);
         loginPageObj.AdministrationHeading.click();
         Thread.sleep(1000 * 3);
         loginPageObj.AdministrationfilterFaxstatus.click();

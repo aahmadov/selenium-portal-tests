@@ -78,8 +78,8 @@
     "Username": "admin@auto1",
     "password": "softlinx",
     "FaxNumber": "2222222222L",
-    "attachment": "false",
-    "CoverPage": "false",
+    "attachment": "true",
+    "CoverPage": "true",
     "fileType": "pdf",
     "pageSize": 2
   },

@@ -54,7 +54,7 @@
     </test>
     <test name="sendFaxForPDFScale">
         <classes>
-            <class name ="testng.PdfScan_1_100"/>
+            <class name ="testng.PdfScale_1_100"/>
         </classes>
     </test>
     <test name="SSO_User">

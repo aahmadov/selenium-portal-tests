@@ -15,6 +15,7 @@ public class LoginPageTestNG {
     }
     @FindBy(id = "username")
     public WebElement UsernameTextBox;
+
     @FindBy(name = "password")
     public WebElement PasswordTextBox;
     @FindBy(id = "LoginButton")
@@ -38,7 +39,7 @@ public class LoginPageTestNG {
 
     @FindBy(xpath = "//input[@type='file']")
     public WebElement uploadPageCopy;
-//driver.find_element_by_xpath('//input[@type="file"]').get_attribute('outerHTML')
+
     @FindBy(xpath = "//*[@id='recipientcol']/div[6]")
     public WebElement splitCheckPagebox;
     @FindBy(xpath = "//*[@id='splitfaxID']")
