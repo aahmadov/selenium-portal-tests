@@ -94,7 +94,7 @@ public class FaxSendRecvVerification extends TestBase {
 
         while (!InfoButton && (System.currentTimeMillis() - startTime) < timeoutInSeconds * 1000) {
             // Click the search button
-            WebElement clickSearchBtn = driver.findElement(By.xpath("//*[@id='SearchForFaxes']"));
+            WebElement clickSearchBtn = driver.findElement(By.xpath("//a[@id='SearchForFaxes']"));
             clickSearchBtn.click();
 
             // Wait for info btn to be visible
@@ -133,7 +133,7 @@ public class FaxSendRecvVerification extends TestBase {
 
         while (!InfoButtonInbound && (System.currentTimeMillis() - startTimeInbound) < timeoutInSecondsInbound * 1000) {
             // Click the search button
-            WebElement clickSearchBtn = driver.findElement(By.xpath("//*[@id='SearchForFaxes']"));
+            WebElement clickSearchBtn = driver.findElement(By.xpath("//a[@id='SearchForFaxes']"));
             clickSearchBtn.click();
 
             // Wait for info btn to be visible
