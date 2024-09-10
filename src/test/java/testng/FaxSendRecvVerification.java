@@ -163,7 +163,7 @@ public class FaxSendRecvVerification extends TestBase {
 
     }
 
-    @Test(priority = 2, testName = "Portal:Change_the_From_data_and_do_another_search ", groups = {"Regression84"})
+    @Test(priority = 2, testName = "Portal:Change_the_From_data_and_do_another_search ", groups = {"Regression84issue"})
     public void Change_the_From_data_and_do_another_search() throws InterruptedException, AWTException, SQLException {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
@@ -240,7 +240,7 @@ public class FaxSendRecvVerification extends TestBase {
             // Wait for info btn to be visible
             try {
                 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20)); // Wait up to 20 seconds for the info btn to appear
-                wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='outboundFaxes']/tbody/tr[1]//button[5]")));
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='outboundFaxes']/tbody/tr[1]//button[2]")));
                 InfoButton = true; // Exit the loop if Info btn is found
             } catch (org.openqa.selenium.TimeoutException e) {
                 // info btn is not found yet, continue the loop
@@ -248,7 +248,7 @@ public class FaxSendRecvVerification extends TestBase {
         }
         // Click on info btn if found
         if (InfoButton) {
-            WebElement infoBtn = driver.findElement(By.xpath("//table[@id='outboundFaxes']/tbody/tr[1]//button[5]"));
+            WebElement infoBtn = driver.findElement(By.xpath("//table[@id='outboundFaxes']/tbody/tr[1]//button[2]"));
             infoBtn.click();
         } else {
             System.out.println("Timeout: Info button not found within " + timeoutInSeconds + " seconds.");
