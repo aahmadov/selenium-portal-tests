@@ -127,7 +127,7 @@ public class FaxSentWithandwithoutCoverpage extends TestBase {
         loginPageObj.confirmationButton.click();
 
     }
-    @Test(priority = 3,testName = "Send Fax from portal with coverPage ", groups = {"Regression8412"})
+    @Test(priority = 3,testName = "Send Fax from portal with coverPage ", groups = {"Regression84"})
     public void FaxSentandRecvWithandwithoutCoverPage() throws InterruptedException, AWTException {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
