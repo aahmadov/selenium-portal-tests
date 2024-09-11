@@ -59,7 +59,7 @@ public class LoginPageTestNG {
     public WebElement confirmationButtonForError;
 
 
-    @FindBy(xpath = "/html/body/div[16]/div/div/div[3]/button")
+    @FindBy(xpath = "//div[@class='modal-footer']//button[text()='OK']")
     public WebElement confirmationButton;
 
     @FindBy(xpath = "//*[@id='alertmessage']")
