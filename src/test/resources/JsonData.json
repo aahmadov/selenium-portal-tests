@@ -34,6 +34,14 @@
     "NewFaxNumber": "New Fax Number",
     "portFaxNumber": "Port Fax Number"
   },
+  "Create_User_portal": {
+    "Username": "admin@auto1",
+    "password": "softlinx",
+    "UserID": "Baku52",
+    "UserName": "CreateUser",
+    "EmailField": "auto@softlinx.com",
+    "passwordField": "softlinx"
+  },
   "SSO_User": {
     "Username": "regression@anatolysoftlinx.onmicrosoft.com",
     "password": "Softlinx124!"

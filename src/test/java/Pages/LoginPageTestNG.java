@@ -78,7 +78,7 @@ public class LoginPageTestNG {
     @FindBy(xpath = "//*[@id=\"successmessage\"]")
     public WebElement successMessage;
 
-    @FindBy(xpath = "//*[@id=\"administration-heading\"]/h6")
+    @FindBy(xpath = "//div[@id=\"administration-heading\"]/h6")
     public WebElement AdministrationHeading;
 
     @FindBy(xpath = "//*[@id=\"service-administration\"]/div/ul/li/a")
@@ -397,9 +397,39 @@ public class LoginPageTestNG {
     @FindBy(xpath = "//*[@id='btn-submit']")
     public WebElement Submitbtn;
 
-    //
     @FindBy(xpath = "//*[@id='modalMessage']/div/div/div[3]/button[1]")
     public WebElement Closebtn;
 
-}
+    @FindBy(xpath = "//*[@id=\"manage-adm-submenu-items\"]/li[3]/a")
+    public WebElement manageBTn;
 
+    @FindBy(xpath = "//*[@id=\"manage-adm-submenu-items\"]/li[3]//a[contains(text(),Users)]")
+    public WebElement UserBTN;
+
+    @FindBy(xpath = "//div[@class='col-auto']//button[@class='btn btn-orange dropdown-toggle btn-sm mr-4']")
+    public WebElement optionDropdownBTN;
+
+    @FindBy(xpath = "//a[contains(@href, 'javascript:AddUser()')]")
+    public WebElement CreateUserBtn;
+    @FindBy(xpath = "//*[@id='UserCountryCode']")
+    public WebElement CountryCode;
+    @FindBy(xpath = "//*[@id='UserUserId']")
+    public WebElement userIDfeild;
+    @FindBy(xpath = "//*[@id='UserName']")
+    public WebElement userNamefeild;
+    @FindBy(xpath = "//*[@id='UserPassword']")
+    public WebElement userPasswordfeild;
+    @FindBy(xpath = "//*[@id='UserPasswordRetype']")
+    public WebElement userPasswordRetryfeild;
+    @FindBy(xpath = "//*[@id='UserEmail']")
+    public WebElement userEmailfeild;
+    @FindBy(xpath = "//*[@id='permissions-tab']")
+    public WebElement userPermissionfeild;
+
+    @FindBy(xpath = "//*[@id='UserSaveBtn']")
+    public WebElement SaveBTNfeild;
+    @FindBy(xpath = "//table[@id='users']//tr[1]//button[@title='Delete User']")
+    public WebElement deleteafterCreate;
+    @FindBy(xpath = "(//div[@class='modal-footer']//button[contains(@class, 'btn-orange') and contains(text(), 'Yes')])[last()]")
+    public WebElement deleteconfirmBTN;
+}
