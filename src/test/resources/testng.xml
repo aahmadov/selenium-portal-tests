@@ -51,6 +51,11 @@
             <class name ="testng.Create_User"/>
         </classes>
     </test>
+    <test name="ReprocessDocConversionPortal">
+        <classes>
+            <class name ="testng.ReprocessDocConversion"/>
+        </classes>
+    </test>
 
     <test name="sendFaxHasOCRdata">
         <classes>

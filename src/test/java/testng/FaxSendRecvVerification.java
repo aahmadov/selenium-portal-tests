@@ -46,16 +46,8 @@ public class FaxSendRecvVerification extends TestBase {
         loginPageObj.faxNumber.sendKeys(String.valueOf(data.get("FaxNumber")));
         Thread.sleep(1000 * 3);
         loginPageObj.coverPage.click();
+        Thread.sleep(1000 * 2);
         loginPageObj.ChoseCoverpage.click();
-//        Thread.sleep(5000 );
-//        loginPageObj.uploadPage.click();
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-//       // WebElement dropzone = wait.until(EC.presence_of_element_located((By.ID, "dropzone")))
-//        WebElement dropzone = wait.until(ExpectedConditions.visibilityOf(By.id,("dropzone"));
-//        dropzone = driver.execute_script("return arguments[0].querySelector('input[type=\"file\"]')", dropzone);
-//        JavascriptExecutor jsnew = (JavascriptExecutor) driver;
-//        // Click the element using JavaScript
-//        jsnew.executeScript("arguments[0].scrollIntoView(true);", dropzone);
         File pagesSize = FileReader.getFileUsingPageSize(data.get("pageSize"), data.get("fileType"));
             // Wait until the form is visible
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));

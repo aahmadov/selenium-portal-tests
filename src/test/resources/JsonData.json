@@ -63,6 +63,17 @@
     "fileType": "pdf",
     "pageSize": 2
   },
+  "ReprocessDocConversionPortal": {
+    "put_call_Url": "http://10.250.1.84:8585/api/Registry?app=faxserver&path=\\convertd\\Converter\\ghostscript&key=gshome&value=failTest",
+    "put_call_Url2": "http://10.250.1.84:8585/api/Registry?app=faxserver&path=\\convertd\\Converter\\ghostscript&key=gshome&value=C:\\Softlinx\\ReplixServer\\gs",
+    "post_call_stop/Service":"http://10.250.1.84:8585/api/WinService?action=stop&serviceName=faxserver",
+    "post_call_start/Service":"http://10.250.1.84:8585/api/WinService?action=start&serviceName=faxserver",
+    "Username": "admin@auto1",
+    "password": "softlinx",
+    "FaxNumber": "3333333333L",
+    "fileType": "pdf",
+    "pageSize": 2
+  },
   "Change_the_From_data_and_do_another_search": {
     "Username": "admin@auto1",
     "password": "softlinx",

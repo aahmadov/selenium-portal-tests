@@ -53,8 +53,10 @@ public class LoginPageTestNG {
 
     @FindBy(xpath = "//*[@id=\"sendAfter\"]/div/div")
     public WebElement Send_AfterCalendar;
+
     @FindBy(xpath = "//*[@id='send_fax_btn']")
     public WebElement ClickSendButton;
+
     @FindBy(xpath = "(//button[contains(@class, 'btn btn-orange btn-sm dialogBtn')])")
     public WebElement confirmationButtonForError;
 
@@ -65,7 +67,6 @@ public class LoginPageTestNG {
     @FindBy(xpath = "//*[@id='alertmessage']")
     public WebElement DateErrorMessage;
 
-    //*[@id="1309_pdfbtn"]
     @FindBy(xpath = "//*[@id=\"faxing\"]/div/ul/li[2]/a")
     public WebElement FaxesBTN;
 
@@ -432,4 +433,23 @@ public class LoginPageTestNG {
     public WebElement deleteafterCreate;
     @FindBy(xpath = "(//div[@class='modal-footer']//button[contains(@class, 'btn-orange') and contains(text(), 'Yes')])[last()]")
     public WebElement deleteconfirmBTN;
+
+    @FindBy(xpath = "//*[@id=\"outboundFaxes\"]/tbody/tr[1]/td[10]/span/div/button[1]")
+    public WebElement advancedActionBTN;
+
+
+    @FindBy(xpath = "//*[@id=\"outboundFaxes\"]/tbody/tr[1]/td[10]/span/div/div/button/i")
+    public WebElement ReprocessCoverPandDocConversion;
+
+    @FindBy(xpath = "(//div[@class='modal-footer']//button[contains(@class, 'btn-orange') and contains(text(), 'Yes')])[last()]")
+    public WebElement conversionIssuebeenResolvedBTN;
+
+    @FindBy(xpath = "(//*[@id=\"outboundFaxes\"]/tbody/tr[1]/td[10]/span/button[3]")
+    public WebElement reprocessingINFOBTN;
+
+    @FindBy(xpath = "(//*[@id=\"user-dialog\"]/div/div/div[3]/button[2]")
+    public WebElement closeReprocesingINFOBTN;
+
+
+
 }
