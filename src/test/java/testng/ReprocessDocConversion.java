@@ -24,7 +24,7 @@ import static org.testng.Assert.assertEquals;
 public class ReprocessDocConversion extends TestBase {
 
 
-    @Test(priority = 1, testName = "Portal:ReprocessDOCConversion ", groups = {"Regression84"})
+    @Test(priority = 1, testName = "Portal:ReprocessDOCConversion ", groups = {"Regression84test"})
     public void ReprocessDocConversionPortal() throws InterruptedException, AWTException, SQLException {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
