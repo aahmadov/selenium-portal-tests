@@ -1,31 +1,28 @@
 package testng;
 
 import Pages.LoginPageTestNG;
-import UtilsTesNG.FileReader;
 import UtilsTesNG.FileReaderTestNG;
 import UtilsTesNG.RestRequestUtils;
+import io.restassured.response.Response;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
-import io.restassured.response.Response;
+
 import java.awt.*;
-import java.awt.datatransfer.StringSelection;
-import java.awt.event.KeyEvent;
-import java.io.File;
 import java.sql.SQLException;
 import java.time.Duration;
 import java.util.Map;
 
 import static org.testng.Assert.assertEquals;
 
-public class ReprocessDocConversion extends TestBase {
+public class Resend_Failed_Fax extends TestBase {
 
 
-    @Test(priority = 1, testName = "Portal:ReprocessDOCConversion ", groups = {"Regression84"})
-    public void ReprocessDocConversionPortal() throws InterruptedException, AWTException, SQLException {
+    @Test(priority = 1, testName = "Portal:Resend Failed Fax ", groups = {"Regression84"})
+    public void ResendFailedFaxPortal() throws InterruptedException, AWTException, SQLException {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
         Map<String, String> data = FileReaderTestNG.getDataBasedOnTestCaseNameSelenium(testName);
@@ -34,7 +31,7 @@ public class ReprocessDocConversion extends TestBase {
         Response response = RestRequestUtils.putScenario84Pportal(data.get("put_call_Url"));
         Thread.sleep(1000 * 5);
         Response response2 = RestRequestUtils.reprocessScenario(data.get("post_call_stop/Service"));
-        Thread.sleep(1000*30);
+        Thread.sleep(1000 * 30);
         assertEquals(response.getStatusCode(), 200);
         System.out.println("------------------------------------------------------------------------");
         System.out.println(response.asPrettyString());
@@ -48,10 +45,10 @@ public class ReprocessDocConversion extends TestBase {
         loginPageObj.UsernameTextBox.sendKeys(data.get("Username"));
         loginPageObj.PasswordTextBox.sendKeys(data.get("password"));
         loginPageObj.loginButton.click();
-        Thread.sleep(1000*10);
+        Thread.sleep(1000 * 10);
         Response response3 = RestRequestUtils.reprocessScenario(data.get("post_call_start/Service"));
         System.out.println(response3);
-        Thread.sleep(1000*30);
+        Thread.sleep(1000 * 30);
         loginPageObj.FaxingButton.click();
         loginPageObj.sendFaxButton.click();
         Thread.sleep(1000 * 3);
@@ -59,57 +56,10 @@ public class ReprocessDocConversion extends TestBase {
         Thread.sleep(1000 * 3);
         loginPageObj.faxNumber.sendKeys(String.valueOf(data.get("FaxNumber")));
         Thread.sleep(1000 * 3);
+        loginPageObj.coverPage.click();
+        Thread.sleep(1000 * 3);
+        loginPageObj.ChoseCoverpage.click();
 
-//        File pagesSize = FileReader.getFileUsingPageSize(data.get("pageSize"), data.get("fileType"));
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        WebElement dropzone = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form[@id='dropzone']")));
-        dropzone.click();
-        File pagesSize = FileReader.getFileUsingPageSize(data.get("pageSize"), data.get("fileType"));
-        Robot rb = new Robot();
-        rb.delay(1000 * 2);
-        //put the path to file in clipboard
-        StringSelection Filepath = new StringSelection(pagesSize.toString());
-
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(Filepath, null);
-        rb.keyPress(KeyEvent.VK_CONTROL);
-        rb.keyPress(KeyEvent.VK_V);
-        rb.delay(1000 * 2);
-        rb.keyRelease(KeyEvent.VK_CONTROL);
-        rb.keyRelease(KeyEvent.VK_V);
-
-        rb.keyPress(KeyEvent.VK_ENTER);
-        rb.keyRelease(KeyEvent.VK_ENTER);
-        rb.delay(1000 * 5);
-            // Wait until the form is visible
-//            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-//            WebElement dropzone = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form[@id='dropzone']")));
-//
-//            // Path to your file
-//            File fileToUpload = new File(pagesSize.getAbsolutePath());
-//
-//            // Execute JavaScript to add the file to Dropzone
-//            JavascriptExecutor js = (JavascriptExecutor) driver;
-//            js.executeScript("var dropzone = Dropzone.forElement('#dropzone');" +
-//                    "var mockFile = { name: '" + fileToUpload.getName() + "', size: " + fileToUpload.length() + " };" +
-//                    "dropzone.emit('addedfile', mockFile);" +
-//                    "dropzone.emit('complete', mockFile);");
-//
-////        // Wait until the form is visible
-////        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-////        WebElement dropzone = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form[@id='dropzone']")));
-////
-////        // Path to your file
-////        String pagesSize = "C:\\Users\\faxes\\2page.pdf";
-////        File fileToUpload = new File(pagesSize);
-////        String filePath = fileToUpload.getAbsolutePath();
-////
-////        // Execute JavaScript to add the file to Dropzone
-////        JavascriptExecutor js = (JavascriptExecutor) driver;
-////        js.executeScript(
-////                "var dropzone = Dropzone.forElement('#dropzone');" +
-////                        "var file = new File([''], arguments[0]);" +  // Provide the file name
-////                        "dropzone.addFile(file);", filePath
-////        );
         Thread.sleep(1000*3);
         loginPageObj.ClickSendButton.click();
         Thread.sleep(1000*3);
@@ -164,15 +114,22 @@ public class ReprocessDocConversion extends TestBase {
         loginPageObj.advancedActionBTN.click();
         Thread.sleep(1000 * 2);
         loginPageObj.ReprocessCoverPandDocConversion.click();
+        WebDriverWait wait =new WebDriverWait(driver,Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='ResendFaxSave']"))) ;
+        WebElement clickSubmitBtn = driver.findElement(By.xpath("//*[@id='ResendFaxSave']"));
+        clickSubmitBtn.click();
+//        loginPageObj.submitResendBTN.click();
         Thread.sleep(1000 * 3);
-        loginPageObj.conversionIssuebeenResolvedBTN.click();
+        WebDriverWait wait2 =new WebDriverWait(driver,Duration.ofSeconds(20));
+        wait2.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='modal-footer']//button[contains(@class, 'btn btn-orange btn-sm dialogBtn') and contains(text(), 'OK')]"))) ;
+        WebElement clickSubmitConfirmationBtn = driver.findElement(By.xpath("//div[@class='modal-footer']//button[contains(@class, 'btn btn-orange btn-sm dialogBtn') and contains(text(), 'OK')]"));
+        clickSubmitConfirmationBtn.click();
+//        loginPageObj.confirmationsubmitResendBTN.click();
         Thread.sleep(1000 * 3);
         WebElement clickSearchBtn = driver.findElement(By.xpath("//a[@id='SearchForFaxes']"));
         clickSearchBtn.click();
+        JavascriptExecutor scrollPage2 = (JavascriptExecutor) driver;
+        scrollPage1.executeScript("window.scrollBy(100,3000)");
         Thread.sleep(1000 * 10);
-//        loginPageObj.reprocessingINFOBTN.click();
-//        Thread.sleep(1000 * 2);
-//        loginPageObj.closeReprocesingINFOBTN.click();
-
     }
 }

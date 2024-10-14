@@ -450,6 +450,10 @@ public class LoginPageTestNG {
     @FindBy(xpath = "(//*[@id=\"user-dialog\"]/div/div/div[3]/button[2]")
     public WebElement closeReprocesingINFOBTN;
 
-
+    @FindBy(xpath = "//*[@id='ResendFaxSave']")
+    public WebElement submitResendBTN;
+    @FindBy(xpath = "//div[@class='modal-footer']//button[contains(@class, 'btn btn-orange btn-sm dialogBtn') and contains(text(), 'OK')]")
+    public WebElement confirmationsubmitResendBTN;
 
 }
+
