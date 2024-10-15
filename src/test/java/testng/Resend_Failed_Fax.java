@@ -105,7 +105,6 @@ public class Resend_Failed_Fax extends TestBase {
         scrollPage1.executeScript("window.scrollBy(100,3000)");
         Response response4 = RestRequestUtils.putScenario84Pportal(data.get("put_call_Url2"));
         Thread.sleep(1000 * 30);
-        Thread.sleep(1000 * 5);
         loginPageObj.advancedActionBTN.click();
         Thread.sleep(1000 * 2);
         loginPageObj.ReprocessCoverPandDocConversion.click();
