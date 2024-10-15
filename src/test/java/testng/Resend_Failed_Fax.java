@@ -33,6 +33,7 @@ public class Resend_Failed_Fax extends TestBase {
         Response response2 = RestRequestUtils.reprocessScenario(data.get("post_call_stop/Service"));
         Thread.sleep(1000 * 30);
         assertEquals(response.getStatusCode(), 200);
+        assertEquals(response2.getStatusCode(), 200);
         System.out.println("------------------------------------------------------------------------");
         System.out.println(response.asPrettyString());
         System.out.println(response2.asPrettyString());
