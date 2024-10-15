@@ -46,9 +46,9 @@ public class Resend_Failed_Fax extends TestBase {
 //        loginPageObj.UsernameTextBox.sendKeys(data.get("Username"));
 //        loginPageObj.PasswordTextBox.sendKeys(data.get("password"));
 //        loginPageObj.loginButton.click();
-        Thread.sleep(1000 * 10);
-        Response response3 = RestRequestUtils.reprocessScenario(data.get("post_call_start/Service"));
-        System.out.println(response3);
+//        Thread.sleep(1000 * 10);
+//        Response response3 = RestRequestUtils.reprocessScenario(data.get("post_call_start/Service"));
+//        System.out.println(response3);
 //        Thread.sleep(1000 * 30);
 //        loginPageObj.FaxingButton.click();
 //        loginPageObj.sendFaxButton.click();
@@ -108,7 +108,8 @@ public class Resend_Failed_Fax extends TestBase {
 //        Thread.sleep(1000 * 3);
 //        JavascriptExecutor scrollPage1 = (JavascriptExecutor) driver;
 //        scrollPage1.executeScript("window.scrollBy(100,3000)");
-//
+        Response response3 = RestRequestUtils.putScenario84Pportal(data.get("put_call_Url2"));
+        Thread.sleep(1000 * 30);
 //        Thread.sleep(1000 * 5);
 //        loginPageObj.advancedActionBTN.click();
 //        Thread.sleep(1000 * 2);
