@@ -29,7 +29,7 @@ public class Resend_Failed_Fax extends TestBase {
         assert data != null;
 
         Response response = RestRequestUtils.putScenario84Pportal(data.get("put_call_Url"));
-        Thread.sleep(1000 * 5);
+        Thread.sleep(1000 * 20);
         Response response2 = RestRequestUtils.reprocessScenario(data.get("post_call_stop/Service"));
         Thread.sleep(1000 * 30);
         assertEquals(response.getStatusCode(), 200);
