@@ -21,7 +21,7 @@ import static org.testng.Assert.assertEquals;
 public class Resend_Failed_Fax extends TestBase {
 
 
-    @Test(priority = 1, testName = "Portal:Resend Failed Fax ", groups = {"Regression84Yeni"})
+    @Test(priority = 1, testName = "Portal:Resend Failed Fax ", groups = {"Regression84"})
     public void ResendFailedFaxPortal() throws InterruptedException, AWTException, SQLException {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
