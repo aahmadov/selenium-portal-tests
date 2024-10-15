@@ -35,7 +35,7 @@ public class Resend_Failed_Fax extends TestBase {
         assertEquals(response.getStatusCode(), 200);
         System.out.println("------------------------------------------------------------------------");
         System.out.println(response.asPrettyString());
-        System.out.println("**" + (data.get("put_call_Url")));
+        System.out.println(response2.asPrettyString());
         System.out.println("------------------------------------------------------------------------");
 //        driver.get("http://10.250.1.84:80/");
 //        Thread.sleep(1000 * 3);
