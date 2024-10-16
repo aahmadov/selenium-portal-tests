@@ -38,6 +38,7 @@ public class ReprocessDocConversion extends TestBase {
         assertEquals(response.getStatusCode(), 200);
         System.out.println("------------------------------------------------------------------------");
         System.out.println(response.asPrettyString());
+        System.out.println(response2.asPrettyString());
         System.out.println("**" + (data.get("put_call_Url")));
         System.out.println("------------------------------------------------------------------------");
         driver.get("http://10.250.1.84:80/");
@@ -59,11 +60,16 @@ public class ReprocessDocConversion extends TestBase {
         Thread.sleep(1000 * 3);
         loginPageObj.faxNumber.sendKeys(String.valueOf(data.get("FaxNumber")));
         Thread.sleep(1000 * 3);
+        loginPageObj.uploadPage.click();
 
+//        loginPageObj.coverPage.click();
+//        loginPageObj.ChoseCoverpage.click();
+//        Thread.sleep(1000 * 3);
 //        File pagesSize = FileReader.getFileUsingPageSize(data.get("pageSize"), data.get("fileType"));
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        WebElement dropzone = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form[@id='dropzone']")));
-        dropzone.click();
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+//        WebElement dropzone = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form[@id='dropzone']")));
+//        dropzone.click();
+        Thread.sleep(1000 * 10);
         File pagesSize = FileReader.getFileUsingPageSize(data.get("pageSize"), data.get("fileType"));
         Robot rb = new Robot();
         rb.delay(1000 * 2);
@@ -80,7 +86,8 @@ public class ReprocessDocConversion extends TestBase {
         rb.keyPress(KeyEvent.VK_ENTER);
         rb.keyRelease(KeyEvent.VK_ENTER);
         rb.delay(1000 * 5);
-            // Wait until the form is visible
+
+//             Wait until the form is visible
 //            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 //            WebElement dropzone = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form[@id='dropzone']")));
 //
@@ -93,23 +100,23 @@ public class ReprocessDocConversion extends TestBase {
 //                    "var mockFile = { name: '" + fileToUpload.getName() + "', size: " + fileToUpload.length() + " };" +
 //                    "dropzone.emit('addedfile', mockFile);" +
 //                    "dropzone.emit('complete', mockFile);");
+
+//        // Wait until the form is visible
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+//        WebElement dropzone = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form[@id='dropzone']")));
 //
-////        // Wait until the form is visible
-////        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-////        WebElement dropzone = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form[@id='dropzone']")));
-////
-////        // Path to your file
-////        String pagesSize = "C:\\Users\\faxes\\2page.pdf";
-////        File fileToUpload = new File(pagesSize);
-////        String filePath = fileToUpload.getAbsolutePath();
-////
-////        // Execute JavaScript to add the file to Dropzone
-////        JavascriptExecutor js = (JavascriptExecutor) driver;
-////        js.executeScript(
-////                "var dropzone = Dropzone.forElement('#dropzone');" +
-////                        "var file = new File([''], arguments[0]);" +  // Provide the file name
-////                        "dropzone.addFile(file);", filePath
-////        );
+//        // Path to your file
+//        String pagesSize ="C:\\Users\\faxes\\2page.pdf";
+//        File fileToUpload = new File(pagesSize);
+//        String filePath = fileToUpload.getAbsolutePath();
+//
+//        // Execute JavaScript to add the file to Dropzone
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        js.executeScript(
+//                "var dropzone = Dropzone.forElement('#dropzone');" +
+//                        "var file = new File([''], arguments[0]);" +  // Provide the file name
+//                        "dropzone.addFile(file);", filePath
+//        );
         Thread.sleep(1000*3);
         loginPageObj.ClickSendButton.click();
         Thread.sleep(1000*3);
