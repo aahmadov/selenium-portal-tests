@@ -85,8 +85,8 @@ public class OCR_test extends TestBase {
             loginPageObj.SelectQueueBox.click();
             Thread.sleep(1000 * 3);
             loginPageObj.ClickSearchBtn.click();
-            Thread.sleep(1000 * 5);
-
+            Thread.sleep(1000 * 15);
+            loginPageObj.ClickSearchBtn.click();
         // Define the timeout duration in seconds
         int timeoutInSeconds = 300; // Adjust the timeout as needed
 
@@ -171,7 +171,7 @@ public class OCR_test extends TestBase {
             // Close the driver implicitly
             driver.quit();
             Thread.sleep(1000*10);
-            String query1 = "SELECT metadata, status ,faxid FROM replixdb.realm_triage_jobs order by faxid desc limit 1;";
+            String query1 = "SELECT metadata, status ,faxid FROM replixdb.realm_triage_jobs order by ID desc limit 1;";
             DataBaseUTIL.executeSQLQueryOCRNew1(query1);
 
         } else {
@@ -182,7 +182,7 @@ public class OCR_test extends TestBase {
                 loginPageObj.Closebtn.click();
                 Thread.sleep(1000*40);
 
-                String query1 = "SELECT metadata, status ,faxid FROM replixdb.realm_triage_jobs order by faxid desc limit 1;";
+                String query1 = "SELECT metadata, status ,faxid FROM replixdb.realm_triage_jobs order by ID desc limit 1;";
                DataBaseUTIL.executeSQLQueryOCRNew1(query1);
                 DriverFactory.closeDriver();
             }
