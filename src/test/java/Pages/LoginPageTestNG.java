@@ -293,6 +293,8 @@ public class LoginPageTestNG {
 
     @FindBy(xpath = "//*[@id='btn-save']")
     public WebElement Savebtn;
+    @FindBy(xpath = "//*[@id='UserSaveBtn']")
+    public WebElement SavebtnafterCreateUser;
 
     @FindBy(xpath = "//*[@id='btn-cancel']")
     public WebElement Cancelbtn;
@@ -424,6 +426,8 @@ public class LoginPageTestNG {
     public WebElement userPasswordRetryfeild;
     @FindBy(xpath = "//*[@id='UserEmail']")
     public WebElement userEmailfeild;
+    @FindBy(xpath = "//*[@id='UserDepartment']")
+    public WebElement department;
     @FindBy(xpath = "//*[@id='permissions-tab']")
     public WebElement userPermissionfeild;
 
@@ -437,7 +441,7 @@ public class LoginPageTestNG {
     @FindBy(xpath = "//*[@id=\"outboundFaxes\"]/tbody/tr[1]/td[10]/span/div/button[1]")
     public WebElement advancedActionBTN;
 
-
+    //*[@id='UserDepartment']
     @FindBy(xpath = "//*[@id=\"outboundFaxes\"]/tbody/tr[1]/td[10]/span/div/div/button/i")
     public WebElement ReprocessCoverPandDocConversion;
 
@@ -454,6 +458,40 @@ public class LoginPageTestNG {
     public WebElement submitResendBTN;
     @FindBy(xpath = "//div[@class='modal-footer']//button[contains(@class, 'btn btn-orange btn-sm dialogBtn') and contains(text(), 'OK')]")
     public WebElement confirmationsubmitResendBTN;
+
+    @FindBy(xpath = "//a[@class='nav-link dropdown-toggle' and contains(., 'Fax Administrator')]")
+    public WebElement faxAdminDropdown;
+
+    @FindBy(xpath = " //a[@class='nav-link dropdown-toggle' and contains(., 'Baku52')]")
+    public WebElement Baku52Dropdown;
+
+    @FindBy(xpath = "(//a[@class='nav-link text-left p-2 text-primary w-100' and contains(., 'Logout')])[2]")
+    public WebElement logoutBTN;
+
+    @FindBy(xpath = "//div[@class='card-body p-0 m-0']//a[@class='nav-link text-left p-2 text-primary w-100' and contains(., 'Logout')]")
+    public WebElement logoutBTN2ndpage;
+
+    @FindBy(xpath = "//a[@id='permissions-tab']")
+    public WebElement permisionBTN;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for='TypeDeptAdmin']")
+    public WebElement departmentAdminBTN;
+
+    @FindBy(xpath = "//input[@id='deptperm_3']")
+    public WebElement chooseDepartmentBtn;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for='APIAdmin']")
+    public WebElement APIPermissionRadioBTN;
+    @FindBy(xpath = "//div[@id='deptadmin-heading']")
+    public WebElement departmentAdmisntrationBTN2ndPage;
+    @FindBy(xpath = "//div[@id='deptadmin-heading']")
+    public WebElement selectDepartmentfrom2Page;
+    @FindBy(xpath = "//*[@id='dept-administration']//div/ul/li[2]//a")
+    public WebElement user2ndPage;
+    @FindBy(xpath = "//*[@id='users']/tbody/tr[1]/td[7]/span/button[3]/i")
+    public WebElement deleteUserBTN;
+
+    @FindBy(xpath = "//*[@id='users']/tbody/tr[1]/td[7]/span/button[1]/i")
+    public WebElement infoBTNUser;
+
 
 }
 

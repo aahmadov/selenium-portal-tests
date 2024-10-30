@@ -51,6 +51,16 @@
             <class name ="testng.Create_User"/>
         </classes>
     </test>
+    <test name="DepartmentAdminUserTable">
+        <classes>
+            <class name ="testng.UserTable_Departments"/>
+        </classes>
+    </test>
+    <test name="SendFaxWithAttachments">
+        <classes>
+            <class name ="testng.Send_fax_with_Attachment_in_iteration"/>
+        </classes>
+    </test>
     <test name="ReprocessDocConversionPortal">
         <classes>
             <class name ="testng.ReprocessDocConversion"/>

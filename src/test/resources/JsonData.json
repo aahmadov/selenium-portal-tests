@@ -42,6 +42,17 @@
     "EmailField": "auto@softlinx.com",
     "passwordField": "softlinx"
   },
+  "DepartmentAdminUserTable": {
+    "Username": "admin@auto1",
+    "password": "softlinx",
+    "UserID": "Baku52",
+    "UserName": "Baku52",
+    "EmailField": "auto@softlinx.com",
+    "passwordField": "softlinx",
+    "department": "DepartmentNew",
+    "NewUsername": "Baku52@auto1",
+    "Newpassword": "softlinx"
+  },
   "SSO_User": {
     "Username": "regression@anatolysoftlinx.onmicrosoft.com",
     "password": "Softlinx124!"
@@ -60,6 +71,13 @@
     "Username": "admin@auto1",
     "password": "softlinx",
     "FaxNumber": "3333333333L",
+    "fileType": "pdf",
+    "pageSize": 2
+  },
+  "SendFaxWithAttachments": {
+    "Username": "abbas@demossoa",
+    "password": "Softlinx1!",
+    "FaxNumber": "6172244504L",
     "fileType": "pdf",
     "pageSize": 2
   },
