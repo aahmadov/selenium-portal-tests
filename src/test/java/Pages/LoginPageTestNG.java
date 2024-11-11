@@ -492,6 +492,23 @@ public class LoginPageTestNG {
     @FindBy(xpath = "//*[@id='users']/tbody/tr[1]/td[7]/span/button[1]/i")
     public WebElement infoBTNUser;
 
+    @FindBy(xpath = "//button[@title='Create Department']")
+    public WebElement createDepartment;
+
+    @FindBy(xpath = "//input[@type='text' and @id='DeptName']")
+    public WebElement writeDepartment;
+
+    @FindBy(xpath = "//button[@id='DeptSaveBtn']")
+    public WebElement deptSaveBTN;
+
+    @FindBy(xpath = "//*[@id='manage-adm-submenu-items']/li[4]/a")
+    public WebElement departmentField;
+
+    @FindBy(xpath = "//table[@id='deptTable']//tbody//tr[last()]/td[5]//button[@title='Delete Department']")
+    public WebElement deleteDepartmentAfterCreate;
+
+    @FindBy(xpath = "//div[@class='modal-footer']//button[@class='btn btn-orange btn-sm dialogBtn' and contains (text(), 'Yes')]")
+    public WebElement deleteDepartmentAfterCreateConfirmationBTN;
 
 }
 

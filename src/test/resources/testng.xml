@@ -51,6 +51,11 @@
             <class name ="testng.Create_User"/>
         </classes>
     </test>
+    <test name="Create_Department">
+        <classes>
+            <class name ="testng.CreateDepartment"/>
+        </classes>
+    </test>
     <test name="DepartmentAdminUserTable">
         <classes>
             <class name ="testng.UserTable_Departments"/>

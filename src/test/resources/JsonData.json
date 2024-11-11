@@ -42,6 +42,11 @@
     "EmailField": "auto@softlinx.com",
     "passwordField": "softlinx"
   },
+  "Create_Department": {
+    "Username": "admin@auto1",
+    "password": "softlinx",
+    "departmentName": "TestDepartment"
+  },
   "DepartmentAdminUserTable": {
     "Username": "admin@auto1",
     "password": "softlinx",
