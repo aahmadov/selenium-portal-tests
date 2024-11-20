@@ -93,4 +93,10 @@
         </classes>
     </test>
 
+    <test name="Settings_FaxSearchPageRadio_btn_check">
+        <classes>
+            <class name ="testng.Settings_FaxSearchPage"/>
+        </classes>
+    </test>
+
 </suite>

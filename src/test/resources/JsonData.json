@@ -86,6 +86,22 @@
     "fileType": "pdf",
     "pageSize": 2
   },
+  "Radio_btn_check": {
+    "Username": "admin@auto1",
+    "password": "softlinx"
+  },
+  "Settings_FaxSearchPageRadio_btn_check": {
+    "Username": "admin@auto1",
+    "password": "softlinx"
+  },
+  "MiscellaneousPageRadio_btn_check": {
+    "Username": "admin@auto1",
+    "password": "softlinx"
+  },
+  "BroadcastandMailmerge": {
+    "Username": "admin@auto1",
+    "password": "softlinx"
+  },
   "ReprocessDocConversionPortal": {
     "put_call_Url": "http://10.250.1.84:8585/api/Registry?app=faxserver&path=\\convertd\\Converter\\ghostscript&key=gshome&value=failTest",
     "put_call_Url2": "http://10.250.1.84:8585/api/Registry?app=faxserver&path=\\convertd\\Converter\\ghostscript&key=gshome&value=C:\\Softlinx\\ReplixServer\\gs",

@@ -510,5 +510,182 @@ public class LoginPageTestNG {
     @FindBy(xpath = "//div[@class='modal-footer']//button[@class='btn btn-orange btn-sm dialogBtn' and contains (text(), 'Yes')]")
     public WebElement deleteDepartmentAfterCreateConfirmationBTN;
 
+    @FindBy(xpath = "//*[@id='manage-adm-settings']")
+    public WebElement settingsField;
+    @FindBy(xpath = "//*[@id='manage-adm-settings-items']/li[2]/a")
+    public WebElement portUI;
+
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for= 'globalglobalRestrictRecipientToPBYes']")
+    public WebElement globalrecipientYEs;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for= 'globalglobalRestrictRecipientToPBNo' and text()='No']")
+    public WebElement globalrecipientNo;
+
+    @FindBy(xpath = "//button[@id='saveBtn']")
+    public WebElement SaveBTN;
+    @FindBy(xpath = "//div[@class='modal-footer']//button[contains(text(), 'OK')]")
+    public WebElement SaveConfirmationBTn;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for='globalglobalShowRecentFaxesYes' ]")
+    public WebElement ShowRecentFaxesYes;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for='globalglobalShowRecentFaxesNo' ]")
+    public WebElement ShowRecentFaxesNo;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for='globalglobalShowIDRecentFaxesYes' ]")
+    public WebElement ShowIDRecentFaxesYes;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for='globalglobalShowIDRecentFaxesNo' ]")
+    public WebElement ShowIDRecentFaxesNo;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for='globalglobalShowActionsRecentFaxesYes' ]")
+    public WebElement ShowActionRecentFaxesYes;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for='globalglobalShowActionsRecentFaxesNo' ]")
+    public WebElement ShowActionRecentFaxesNO;
+
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for='globalglobalShowSplit1' ]")
+    public WebElement globalShowSplit1;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for='globalglobalShowSplit2' ]")
+    public WebElement globalShowSplit2;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for='globalglobalShowSplit0' ]")
+    public WebElement globalShowSplit0;
+
+    @FindBy(xpath = "//input[@id='globalSplitLabel']")
+    public WebElement FaxIdentiferLabel;
+
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for='globalglobalShowSendCoverPageYes' ]")
+    public WebElement ShowSendCoverPageYes;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for='globalglobalShowSendCoverPageNo' ]")
+    public WebElement ShowSendCoverPageNo;
+
+
+
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for='globalglobalShowSendKeywordYes' ]")
+    public WebElement ShowSendKeywordYes;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for='globalglobalShowSendKeywordNo' ]")
+    public WebElement ShowSendKeywordNo;
+
+
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for='globalglobalShowSendAfterYes' ]")
+    public WebElement ShowSendAfterYes;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for='globalglobalShowSendAfterNo' ]")
+    public WebElement ShowSendAfterNo;
+
+
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for='globalglobalShowSendEmailYes' ]")
+    public WebElement ShowSendEmailYes;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for='globalglobalShowSendEmailNo' ]")
+    public WebElement ShowSendEmailNo;
+
+    @FindBy(xpath = "//a[@id='faxsearch-tab']")
+    public WebElement FaxSearchPage;
+
+    /*
+    SecondFaxServicePage
+     */
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalShowDMYes']")
+    public WebElement ShowDeleveryManagerBTNYes;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalShowDMNo']")
+    public WebElement ShowDeleveryManagerBTNNo;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalAllowFaxMarkingYes']")
+    public WebElement AllowFaxMarketingBTNyes;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalAllowFaxMarkingNo']")
+    public WebElement AllowFaxMarketingBTNo;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalAllowFaxDeleteYes']")
+    public WebElement AllowfaxDeleteBTNYes;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalAllowFaxDeleteNo']")
+    public WebElement AllowfaxDeleteBTNNo;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalDownloadOptionall']")
+    public WebElement DownloadFaxBothImage;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalDownloadOptionpdf']")
+    public WebElement DownloadFaxImagePDF;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalDownloadOptiontiff']")
+    public WebElement DownloadFaxImageTiff;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globaloutconfirmPDFnone']")
+    public WebElement confirmationPageInPDFNONEbtn;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globaloutconfirmPDFprepend']")
+    public WebElement globaloutconfirmPDFprepend;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globaloutconfirmPDFappend']")
+    public WebElement DownloadFaxImageAppend;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalAllowInbondKeywordEditYes']")
+    public WebElement inboundKeyboardeditYes;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalAllowInbondKeywordEditNo']")
+    public WebElement inboundKeyboardeditNo;
+
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalSearchForFaxNumYes']")
+    public WebElement SerachforFaxnumberBTNYes;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalSearchForFaxNumNo']")
+    public WebElement SerachforFaxnumberBTNNo;
+
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalSearchForBatchNameNo']")
+    public WebElement SerachforbatchNameBTNNo;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalSearchForBatchNameYes']")
+    public WebElement SerachforbatchNameBTNYes;
+
+    /*
+    miscellaneous section
+    */
+    @FindBy(xpath = "//a[@id='misc-tab']")
+    public WebElement MiscellaneousTab;
+
+    @FindBy(xpath = "//*[@id='globalSessionTimeoutMinutes']")
+    public WebElement SessionTimeout;
+    @FindBy(xpath = "//*[@id='globalSessionLoginURL']")
+    public WebElement LoginBtnURL;
+    @FindBy(xpath = "//*[@id='globalSessionLogoutURL']")
+    public WebElement LogoutBtn;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalPreferenceshide']")
+    public WebElement UserPreferencesHide;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalPreferencespassword']")
+    public WebElement UserPreferencesPass;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalPreferencesall']")
+    public WebElement UserPreferencesPassAll;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalShowUserUsageYes']")
+    public WebElement UserUsageYes;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalShowUserUsageNo']")
+    public WebElement UserUsageNo;
+    @FindBy(xpath = " //select[@id='globalShowPB']")
+    public WebElement ShowContactList;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalForcePwdChangeYes']")
+    public WebElement PassChangeDefaultYes;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalForcePwdChangeNo']")
+    public WebElement PassChangeDefaultNo;
+
+
+    /*
+    Broadcast/MailMarge
+    */
+
+    @FindBy(xpath = "//a[@id='broadcast-tab']")
+    public WebElement Broadcast_Mailmerge;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalAllowBroadcastYes']")
+    public WebElement allowBroadfaxYes;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalAllowBroadcastNo']")
+    public WebElement allowBroadfaxNo;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalBroadcastShowSendCoverPageYes']")
+    public WebElement showCoverPageYes;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalBroadcastShowSendCoverPageNo']")
+    public WebElement showCoverPageNo;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalBroadcastShowSendCoverPageMessageYes']")
+    public WebElement showCoverPageMessageYes;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalBroadcastShowSendCoverPageMessageNo']")
+    public WebElement showCoverPageMessageNo;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalBroadcastShowNotifyYes']")
+    public WebElement showNotifyYes;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalBroadcastShowNotifyNo']")
+    public WebElement showNotifyNo;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalBroadcastShowSendAfterYes']")
+    public WebElement showSendAfterYes;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalBroadcastShowSendAfterNo']")
+    public WebElement showSendAfterNo;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalBroadcastShowSendEmailYes']")
+    public WebElement showEmailYes;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalBroadcastShowSendEmailNo']")
+    public WebElement showEmailNo;
+
+
+
+
+
+
+
+
+
+
+
 }
 
