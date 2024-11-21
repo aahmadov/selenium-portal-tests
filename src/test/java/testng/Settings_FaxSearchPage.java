@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class Settings_FaxSearchPage extends TestBase {
 
-    @Test(priority = 1, testName = "Portal:Radio Button check", groups = {"Regression84TestUcn2"})
+    @Test(priority = 1, testName = "Portal:Radio Button check", groups = {"Regression84"})
     public void Radio_btn_check() throws InterruptedException, AWTException, SQLException {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name" + testName);
@@ -127,7 +127,7 @@ public class Settings_FaxSearchPage extends TestBase {
 
     }
 
-    @Test(priority = 2, testName = "Portal:FaxSearchPage Radio Button's check", groups = {"Regression84TestUcn2"})
+    @Test(priority = 2, testName = "Portal:FaxSearchPage Radio Button's check", groups = {"Regression84"})
     public void Settings_FaxSearchPageRadio_btn_check() throws InterruptedException, AWTException, SQLException {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name" + testName);
@@ -228,7 +228,7 @@ public class Settings_FaxSearchPage extends TestBase {
     }
 
 
-    @Test(priority = 3, testName = "Settings:Miscellaneous Radio Button's check", groups = {"Regression84TestUcn2"})
+    @Test(priority = 3, testName = "Settings:Miscellaneous Radio Button's check", groups = {"Regression84"})
     public void MiscellaneousPageRadio_btn_check() throws InterruptedException, AWTException, SQLException {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name" + testName);
@@ -321,7 +321,7 @@ public class Settings_FaxSearchPage extends TestBase {
         loginPageObj.SaveConfirmationBTn.click();
         Thread.sleep(1000 * 5);
     }
-    @Test(priority = 4, testName = "Settings:BroadCast&Mailmerge Radio Button's check", groups = {"Regression84TestUcn2"})
+    @Test(priority = 4, testName = "Settings:BroadCast&Mailmerge Radio Button's check", groups = {"Regression84"})
     public void BroadcastandMailmerge() throws InterruptedException, AWTException, SQLException {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name" + testName);
