@@ -32,7 +32,7 @@ public class LoginPageTestNG {
     @FindBy(xpath = "//*[@id='coverpageTemplate']")
     public WebElement coverPage;
 
-    @FindBy(xpath = "//*[@id='coverpageTemplate']/option[3]")
+    @FindBy(xpath = "//*[@id='coverpageTemplate']/option[2]")
     public WebElement ChoseCoverpage;
     @FindBy(xpath = "//*[@id='dropzone']/div/button")
     public WebElement uploadPage;
