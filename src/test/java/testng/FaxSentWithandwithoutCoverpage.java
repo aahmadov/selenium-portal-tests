@@ -20,7 +20,7 @@ import java.util.Map;
 
 public class FaxSentWithandwithoutCoverpage extends TestBase {
 
-    @Test(priority = 1,testName = "Send Fax from portal with valid credentials", groups = {"Regression8412"})
+    @Test(priority = 1,testName = "Send Fax from portal with valid credentials", groups = {"Regression84"})
     public void FaxSentandRecvVerification() throws InterruptedException, AWTException {
          //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
@@ -63,7 +63,7 @@ public class FaxSentWithandwithoutCoverpage extends TestBase {
 //            Thread.sleep(1000 * 10);
 }
 
-    @Test(priority = 2,testName = "Send Fax from portal with coverPage ", groups = {"Regression8412"})
+    @Test(priority = 2,testName = "Send Fax from portal with coverPage ", groups = {"Regression84"})
     public void FaxSentandRecvVerificationWithCoverPage() throws InterruptedException, AWTException {
        // driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
@@ -97,7 +97,7 @@ public class FaxSentWithandwithoutCoverpage extends TestBase {
         loginPageObj.confirmationButton.click();
 
     }
-    @Test(priority = 3,testName = "Send Fax from portal withNo coverPage ", groups = {"Regression8412"})
+    @Test(priority = 3,testName = "Send Fax from portal withNo coverPage ", groups = {"Regression84"})
     public void FaxSentandRecvWithandwithoutCoverPage() throws InterruptedException, AWTException {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
