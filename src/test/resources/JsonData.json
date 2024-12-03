@@ -152,6 +152,13 @@
     "fileType": "pdf",
     "pageSize": 2
   },
+  "SFTP_push_Server": {
+    "Username": "admin@auto1",
+    "password": "softlinx",
+    "FaxNumber": "2222222222L",
+    "fileType": "pdf",
+    "pageSize": 2
+  },
   "sendFaxForPDFScale": {
     "Username": "faxsending@auto1",
     "password": "softlinx",

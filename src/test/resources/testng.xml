@@ -76,6 +76,11 @@
             <class name ="testng.Resend_Failed_Fax"/>
         </classes>
     </test>
+    <test name="SFTP_push_Server">
+        <classes>
+            <class name ="testng.SFT_Push"/>
+        </classes>
+    </test>
 
     <test name="sendFaxHasOCRdata">
         <classes>

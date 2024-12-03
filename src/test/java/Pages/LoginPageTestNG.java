@@ -514,14 +514,54 @@ public class LoginPageTestNG {
     public WebElement settingsField;
     @FindBy(xpath = "//*[@id='manage-adm-settings-items']/li[2]/a")
     public WebElement portUI;
+    @FindBy(xpath = "//ul[@id='manage-adm-settings-items']//li[5]/a")
+    public WebElement SFTP;
 
+
+    @FindBy(xpath = "//select[@id='field_for_file']")
+    public WebElement FileNameFormat;
+
+
+    @FindBy(xpath = "//input[@id='file_format']")
+    public WebElement FileNameFormatField;
+
+    @FindBy(xpath = "//a[@id='add_Field_to_file']")
+    public WebElement FileNameFormatplusBTN;
+
+
+    @FindBy(xpath = "//a[@id='add_Field_to_folder']/i")
+    public WebElement FieldplusBTN;
+    @FindBy(xpath = "//a[@id='test_sftp']")
+    public WebElement SFTPtestlink;
+    @FindBy(xpath = "//div[@class='modal-footer']//button[@class='btn btn-orange btn-sm dialogBtn' and contains (text(), 'OK')]")
+    public WebElement SFTPtestlinkConfimOk;
+    @FindBy(xpath = "//a[@id='options-tab']")
+    public WebElement OptionTab;
+
+    @FindBy(xpath = "//a[@id='users-tab']")
+    public WebElement UsersTab;
+    @FindBy(xpath = "//button[@id='saveBtn']")
+    public WebElement SaveBTN;
+
+    @FindBy(xpath = "//button[@id='UserSaveBtn']")
+    public WebElement UsersRuleSaveBTN;
     @FindBy(xpath = "//label[@class='custom-control-label' and @for= 'globalglobalRestrictRecipientToPBYes']")
     public WebElement globalrecipientYEs;
     @FindBy(xpath = "//label[@class='custom-control-label' and @for= 'globalglobalRestrictRecipientToPBNo' and text()='No']")
     public WebElement globalrecipientNo;
 
-    @FindBy(xpath = "//button[@id='saveBtn']")
-    public WebElement SaveBTN;
+    @FindBy(xpath = "//select[@id='user_to_poll']")
+    public WebElement AllUsersDropdown;
+
+    @FindBy(xpath = "//*[@id='field_for_folder']")
+    public WebElement Folderformat;
+
+    @FindBy(xpath = "//*[@id='output_folder']")
+    public WebElement FoldertypeFeild;
+
+    @FindBy(xpath = "//*[@id='myUsers']/tbody/tr/td[4]/span/button[1]")
+    public WebElement EditBtn;
+
     @FindBy(xpath = "//div[@class='modal-footer']//button[contains(text(), 'OK')]")
     public WebElement SaveConfirmationBTn;
     @FindBy(xpath = "//label[@class='custom-control-label' and @for='globalglobalShowRecentFaxesYes' ]")
