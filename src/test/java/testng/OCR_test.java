@@ -132,7 +132,10 @@ public class OCR_test extends TestBase {
                     Thread.sleep(80000);
                     // Refresh the search to load the latest button
                     clickSearchBtn.click();
-                    Thread.sleep(40000);
+                    JavascriptExecutor js6 = (JavascriptExecutor) driver;
+                    // Scroll down the page by pixel (e.g., 500 pixels)
+                    js6.executeScript("window.scrollBy(100, 3000)");
+                    Thread.sleep(60000);
                     clickSearchBtn.click();
                     // Scroll down again to ensure the new button becomes visible
                    JavascriptExecutor js5 = (JavascriptExecutor) driver;
