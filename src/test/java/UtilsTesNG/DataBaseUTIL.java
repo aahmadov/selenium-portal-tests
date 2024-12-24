@@ -27,7 +27,7 @@ public class DataBaseUTIL {
             System.out.println("Ooops error!");
             e.printStackTrace();
         }
-        connection = DriverManager.getConnection(ConfigReader.getProperty("mysql.url"),
+        connection = DriverManager.getConnection(ConfigReader.getProperty("mysql.url_IgnoreBusyFeature"),
                 ConfigReader.getProperty("replixdb.username"),
                 ConfigReader.getProperty("replixdb.password"));
 
@@ -48,7 +48,7 @@ public class DataBaseUTIL {
     public static List<Map<String, Object>> executeSQLQuery(String query) throws SQLException {
 
         openConnection();
-        statement = connection.createStatement();
+        statement = connection84.createStatement();
         resultSet = statement.executeQuery(query);
 
         ResultSetMetaData metaData = resultSet.getMetaData();
@@ -72,7 +72,7 @@ public class DataBaseUTIL {
     public static List<Map<String, Object>> executeSQLQueryRecvD(String query) throws SQLException {
 
         openConnection();
-        statement = connection3.createStatement();
+        statement = connection84.createStatement();
         resultSet = statement.executeQuery(query);
 
         ResultSetMetaData metaData = resultSet.getMetaData();

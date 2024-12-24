@@ -129,10 +129,10 @@ public class OCR_test extends TestBase {
                 if (latestButton1 != null && latestButton1.isDisplayed()) {
                     System.out.println("WAITING_OCR status found, refreshing search to reveal the latest button...");
                     // Wait for 60 seconds before refreshing the search
-                    Thread.sleep(60000);
+                    Thread.sleep(80000);
                     // Refresh the search to load the latest button
                     clickSearchBtn.click();
-                    Thread.sleep(20000);
+                    Thread.sleep(40000);
                     clickSearchBtn.click();
                     // Scroll down again to ensure the new button becomes visible
                    JavascriptExecutor js5 = (JavascriptExecutor) driver;
