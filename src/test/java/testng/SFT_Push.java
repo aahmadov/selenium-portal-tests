@@ -58,19 +58,19 @@ public class SFT_Push extends TestBase {
          */
         loginPageObj.AllUsersDropdown.click();
         Select select = new Select(loginPageObj.AllUsersDropdown);
-        int AllEements = select.getAllSelectedOptions().size();
+        int AllElements = select.getAllSelectedOptions().size();
         // Select option by index
-        for (int i = 0; i <AllEements; i++) {
+        for (int i = 0; i <AllElements; i++) {
             select.selectByIndex(i);
             // Print selected option text (Optional)
             String elements = select.getFirstSelectedOption().getText();
             System.out.println("Elements :"+elements);
             // Check if this is the last option
-            if (i==AllEements-1){
-                select.selectByIndex(1);
-                System.out.println("Reset to first option: " + select.getFirstSelectedOption().getText());
+            if (i==AllElements-1){
+            select.selectByIndex(1);
+            System.out.println("Reset to first option: " + select.getFirstSelectedOption().getText());
 
-                break;
+            break;
             }
         }
         loginPageObj.UsersRuleSaveBTN.click();
@@ -91,8 +91,8 @@ public class SFT_Push extends TestBase {
             System.out.println("Elements :"+elements);
             // Check if this is the last option
             if (i==ElementsOptions-1){
-                selectFolderformatOption.selectByIndex(0);
-                System.out.println("Reset to first option: " + selectFolderformatOption.getFirstSelectedOption().getText());
+            selectFolderformatOption.selectByIndex(0);
+            System.out.println("Reset to first option: " + selectFolderformatOption.getFirstSelectedOption().getText());
 
                 break;
             }
@@ -136,15 +136,38 @@ public class SFT_Push extends TestBase {
             System.out.println("Elements :"+elements);
             // Check if this is the last option
             if (i==ElementsOptions2-1){
-                selectFolderformatOption2.selectByIndex(0);
-                System.out.println("Reset to first option: " + selectFolderformatOption2.getFirstSelectedOption().getText());
-                break;
+            selectFolderformatOption2.selectByIndex(0);
+            System.out.println("Reset to first option: " + selectFolderformatOption2.getFirstSelectedOption().getText());
+
+            break;
             }
         }
+        loginPageObj.UsersRuleSaveBTN.click();
+        Thread.sleep(1000*3);
+        loginPageObj.EditBtn.click();
+        Thread.sleep(1000*2);
+        loginPageObj.FileNameFormatField.click();
+        Thread.sleep(1000);
+        loginPageObj.FileNameFormatField.clear();
+        Thread.sleep(1000*2);
+
+        Select FaxStatus = new Select (loginPageObj.FileNameFormat);
+        FaxStatus.selectByVisibleText("Fax Status");
+        loginPageObj.FileNameFormatplusBTN.click();
+        Thread.sleep(1000);
+        loginPageObj.UsersRuleSaveBTN.click();
+
+        Thread.sleep(1000*2);
+        loginPageObj.EditBtn.click();
+        Thread.sleep(1000*2);
         loginPageObj.FileNameFormatField.click();
         loginPageObj.FileNameFormatField.clear();
-        Thread.sleep(1000);
+        Thread.sleep(1000*2);
+        loginPageObj.FileNameFormat.click();
+        Select FaxId = new Select (loginPageObj.FileNameFormat);
+        FaxId.selectByVisibleText("Fax Id");
         loginPageObj.FileNameFormatplusBTN.click();
+        Thread.sleep(1000);
         loginPageObj.UsersRuleSaveBTN.click();
         Thread.sleep(1000*4);
     }

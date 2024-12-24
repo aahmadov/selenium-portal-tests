@@ -11,6 +11,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -77,62 +78,113 @@ public class OCR_test extends TestBase {
             loginPageObj.ClickSendButton.click();
             loginPageObj.confirmationButton.click();
 
-            Thread.sleep(1000 * 3);
+            Thread.sleep(1000 * 2);
             loginPageObj.TriageQueueBox.click();
-            Thread.sleep(1000 * 3);
+            Thread.sleep(1000 * 2);
             loginPageObj.SelectQueue.click();
-            Thread.sleep(1000 * 3);
+            Thread.sleep(1000 * 2);
             loginPageObj.SelectQueueBox.click();
             Thread.sleep(1000 * 3);
             loginPageObj.ClickSearchBtn.click();
+            Thread.sleep(1000 * 3);
+            JavascriptExecutor js1 = (JavascriptExecutor) driver;
+            // Scroll down the page by pixel (e.g., 500 pixels)
+            js1.executeScript("window.scrollBy(100, 3000)");
             Thread.sleep(1000 * 15);
             loginPageObj.ClickSearchBtn.click();
+        Thread.sleep(1000 * 3);
+        JavascriptExecutor js3 = (JavascriptExecutor) driver;
+        // Scroll down the page by pixel (e.g., 500 pixels)
+        js3.executeScript("window.scrollBy(100, 3000)");
+
         // Define the timeout duration in seconds
         int timeoutInSeconds = 300; // Adjust the timeout as needed
-
-     // Loop until the Lock and Edit button is visible or timeout occurs
         long startTime = System.currentTimeMillis();
         boolean lockAndEditButtonFound = false;
 
-        while (!lockAndEditButtonFound && (System.currentTimeMillis() - startTime) < timeoutInSeconds * 3000) {
-            // Click the search button
-            WebElement clickSearchBtn = driver.findElement(By.xpath("//*[@id='Search']"));
-            clickSearchBtn.click();
-
-            // Wait for LockandEditbox to be visible
+        while (!lockAndEditButtonFound && (System.currentTimeMillis() - startTime) < timeoutInSeconds * 1000) {
             try {
-                WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(20)); // Wait up to 20 seconds for the LockandEditbox to appear
-                wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//button[contains(@class, 'btnList') and contains(@title, 'Lock and Edit Fax')])[last()]")));
-                lockAndEditButtonFound = true; // Exit the loop if LockandEditbox is found
-            } catch (org.openqa.selenium.TimeoutException e) {
-                // LockandEditbox is not found yet, continue the loop
+                // Click the search button
+                WebElement clickSearchBtn = driver.findElement(By.xpath("//*[@id='Search']"));
+                clickSearchBtn.click();
+                Thread.sleep(1000 * 3);
+                JavascriptExecutor js4 = (JavascriptExecutor) driver;
+                // Scroll down the page by pixel (e.g., 500 pixels)
+                js4.executeScript("window.scrollBy(100, 3000)");
+                Thread.sleep(1000 * 3);
+//             // Locate the scrollable div and scroll to the bottom
+//                WebElement scrollableDiv = driver.findElement(By.xpath("//div[@class='dt-scroll-body']"));
+//                JavascriptExecutor js2 = (JavascriptExecutor) driver;
+//                js2.executeScript("arguments[0].scrollTop = arguments[0].scrollHeight;", scrollableDiv);
+
+
+
+                // Wait for the 'WAITING_OCR' status in the last row
+                WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(20));
+                WebElement latestButton1 = wait2.until(ExpectedConditions.presenceOfElementLocated(By.xpath(
+                        "//table[@id='triageList']/tbody//tr[last()]/td[contains(text(),'WAITING_OCR')]"
+                )));
+
+                // If 'WAITING_OCR' is found, click the search button again to refresh the view
+                if (latestButton1 != null && latestButton1.isDisplayed()) {
+                    System.out.println("WAITING_OCR status found, refreshing search to reveal the latest button...");
+                    // Wait for 60 seconds before refreshing the search
+                    Thread.sleep(60000);
+                    // Refresh the search to load the latest button
+                    clickSearchBtn.click();
+                    Thread.sleep(20000);
+                    clickSearchBtn.click();
+                    // Scroll down again to ensure the new button becomes visible
+                   JavascriptExecutor js5 = (JavascriptExecutor) driver;
+                    // Scroll down the page by pixel (e.g., 500 pixels)
+                    js5.executeScript("window.scrollBy(100, 3000)");
+
+                    // Wait for the latest 'Lock and Edit Fax' button
+                    WebElement latestButton = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(
+                            "(//button[contains(@class, 'btnList') and contains(@title, 'Lock and Edit Fax')])[last()]"
+                    )));
+
+                    // If the button is found and visible, click it
+                    if (latestButton != null && latestButton.isDisplayed()) {
+                        lockAndEditButtonFound = true;
+                        latestButton.click();
+                        System.out.println("Clicked on the latest Lock and Edit button.");
+                    }
+                }
+            } catch (TimeoutException e) {
+                // Handle timeout, retry by continuing the loop
+                System.out.println("Retrying... Waiting for elements to load.");
             }
         }
-        // Click on LockandEditbox if found
-        if (lockAndEditButtonFound) {
-            WebElement lockAndEditbox = driver.findElement(By.xpath("(//button[contains(@class, 'btnList') and contains(@title, 'Lock and Edit Fax')])[last()]"));
-            lockAndEditbox.click();
-        } else {
+
+           // Final timeout message
+        if (!lockAndEditButtonFound) {
             System.out.println("Timeout: Lock and Edit button not found within " + timeoutInSeconds + " seconds.");
         }
 
-            Thread.sleep(1000 * 5);
+        Thread.sleep(1000 * 5);
 
-        WebElement DocumentTypeBox1 = loginPageObj.DocumentTypeBox;
+        WebElement DocumentTypeBox1 = driver.findElement(By.xpath("//select[@id='doc1_type']"));
         Select docTypeDropdown = new Select(DocumentTypeBox1);
         docTypeDropdown.selectByIndex(1);
 
-
+        Thread.sleep(1000 * 3);
+        loginPageObj.firstName.sendKeys(data.get("firstName"));
+        Thread.sleep(1000 * 5);
 
             Thread.sleep(1000 * 3);
-            loginPageObj.lastName.sendKeys(data.get("name"));
+            loginPageObj.lastName2.sendKeys(data.get("lastName"));
             Thread.sleep(1000 * 5);
 
-        WebElement Genderbox = loginPageObj.Gender;
-        Select selectfirstGender = new Select(Genderbox);
-        selectfirstGender.selectByIndex(1);
+            WebElement Genderbox = loginPageObj.Gender;
+            Select selectfirstGender = new Select(Genderbox);
+            selectfirstGender.selectByIndex(1);
 
 
+                Thread.sleep(1000 * 3);
+                loginPageObj.DOB.click();
+                Thread.sleep(1000 * 3);
+                loginPageObj.DOB.sendKeys("07/03/2015");
                 Thread.sleep(1000 * 3);
                 loginPageObj.PhoneNumber.click();
                 Thread.sleep(1000 * 3);
@@ -145,9 +197,9 @@ public class OCR_test extends TestBase {
                 loginPageObj.Exam.sendKeys("77");
                 loginPageObj.ExamKey.click();
                 Thread.sleep(1000 * 3);
-                JavascriptExecutor js1 = (JavascriptExecutor) driver;
+                JavascriptExecutor js2 = (JavascriptExecutor) driver;
                 // Scroll down the page by pixel (e.g., 500 pixels)
-                js1.executeScript("window.scrollBy(100, 3000)");
+                js2.executeScript("window.scrollBy(100, 3000)");
                 loginPageObj.FaxComments.sendKeys("Hello World!");
                 Thread.sleep(1000 * 3);
         WebElement TableScroll1=loginPageObj.Scrollbtn1;
@@ -170,7 +222,7 @@ public class OCR_test extends TestBase {
         if (useSaveBtn || useCancelBtn || useDeleteFaxBtn || rotateClockwise || rotateCounterClockwise || removePage || saveAsPDF) {
             // Close the driver implicitly
             driver.quit();
-            Thread.sleep(1000*10);
+            Thread.sleep(1000*20);
             String query1 = "SELECT metadata, status ,faxid FROM replixdb.realm_triage_jobs order by ID desc limit 1;";
             DataBaseUTIL.executeSQLQueryOCRNew1(query1);
 

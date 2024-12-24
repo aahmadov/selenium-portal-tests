@@ -159,6 +159,17 @@
     "fileType": "pdf",
     "pageSize": 2
   },
+  "SingleSing_ON": {
+    "Username": "admin@auto1",
+    "password": "softlinx"
+  },
+  "Client_License_data_edit": {
+    "Username": "abbas@replixdb",
+    "password": "softlinx",
+    "macAddress": "12222222222",
+    "ExpirationData": "12/23/2024",
+    "ExpirationDataNew": "10/20/2025"
+  },
   "sendFaxForPDFScale": {
     "Username": "faxsending@auto1",
     "password": "softlinx",
@@ -213,13 +224,14 @@
     "Username": "triage1@auto1",
     "password": "Softlinx1!",
     "FaxNumber": "4443333333L",
-    "name": "Smith",
+    "firstName": "Smith",
+    "lastName": "Addison",
     "fileType": "txt",
     "pageSize": 1,
     "useSaveBtn": "false",
     "useCancelBtn": "false",
     "useDeleteFaxBtn": "false",
-    "useRotateClockwise":"true",
+    "useRotateClockwise":"false",
     "rotateCounterClockwise":"false",
     "removePage":"false",
     "saveasPDF":"false"

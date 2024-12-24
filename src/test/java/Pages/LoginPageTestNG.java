@@ -348,7 +348,7 @@ public class LoginPageTestNG {
             SaveasPDF.click();
             // Handle saveAsPDF action
         } else {
-            System.out.println("No action specified in JSON data.");
+            System.out.println(": No action specified in JSON data (JsonData.json).");
         }
 
     }
@@ -372,16 +372,22 @@ public class LoginPageTestNG {
     @FindBy(xpath = "//*[@id='right-sidebar']/div")
     public WebElement Scrollbtn1;
 
-    @FindBy(xpath = "//*[@id='doc1_type_fields']/div/div/table/tbody/tr[3]/td[2]/input")
-    public WebElement lastName;
+    @FindBy(xpath = "//*[@id='accordionExample']/div[1]/div/table/tbody/tr[1]/td[2]/input")
+    public WebElement firstName;
+
+    @FindBy(xpath = "//*[@id='accordionExample']/div[1]/div/table/tbody/tr[3]/td[2]/input")
+    public WebElement lastName2;
+    @FindBy(xpath = "//*[@id='real_date_6']")
+    public WebElement DOB;
+
 
     @FindBy(xpath = "//select[@id='opt_1_2']")
     public WebElement Gender;
 
-    @FindBy(xpath = "//*[@id='doc1_type_fields']/div/div/table/tbody/tr[6]/td[2]/input")
+    @FindBy(xpath = "//*[@id='accordionExample']/div[1]/div/table/tbody/tr[6]/td[2]/input")
     public WebElement PhoneNumber;
 
-
+//*[@id='doc1_type_fields']/div/div/table/tbody/tr[6]/td[2]/input
     @FindBy(xpath = "//*[@id='vopt_1_7']")
     public WebElement Physician;
 
@@ -719,8 +725,60 @@ public class LoginPageTestNG {
 
 
 
+    @FindBy(xpath = "//ul[@id='manage-adm-settings-items']//li[4]/a")
+    public WebElement Single_sign_BTN;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for='globalglobalSSO_EnableNo' ]")
+    public WebElement EnableSSONo;
+
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for='globalglobalSSO_EnableYes' ]")
+    public WebElement EnableSSOYes;
+    @FindBy(xpath = "//input[@id='SP_Name']")
+    public WebElement SP_name;
+
+    @FindBy(xpath = "//input[@id='IDP_Name']")
+    public WebElement Idp_name;
+    @FindBy(xpath = "//input[@id='IDP_URL']")
+    public WebElement IDP_URL;
+    @FindBy(xpath = "//input[@id='IDP_SSO_URL']")
+    public WebElement Single_Sign_on_Service_URL;
+
+    @FindBy(xpath = "//input[@id='IDP_SLO_URL']")
+    public WebElement Single_Logoff_Service_URL;
+
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalSSO_SignLogoutRequestYes']")
+    public WebElement Sing_Logout_requestYes;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalSSO_SignLogoutRequestNo']")
+    public WebElement Sing_Logout_requestNo;
 
 
+
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalSSO_WantLogoutResponseSignedYes']")
+    public WebElement Want_Logout_Response_SignedYes;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalSSO_WantLogoutResponseSignedNo']")
+    public WebElement Want_Logout_Response_SignedNo;
+
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalSSO_SignAuthnRequestYes']")
+    public WebElement Sign_Authn_RequestYes;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalSSO_SignAuthnRequestNo']")
+    public WebElement Sign_Authn_RequestNo;
+
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalSSO_IdIsEmailNo']")
+    public WebElement SSO_ID_is_Email_AddressNo;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalSSO_IdIsEmailYes']")
+    public WebElement SSO_ID_is_Email_AddressYes;
+
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalSSO_RealmInASCNo']")
+    public WebElement IdP_Assertion_is_using_ACSNo;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalSSO_RealmInASCYes']")
+    public WebElement IdP_Assertion_is_using_ACSYes;
+
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalSSO_SetPermissionsAtLoginYes']")
+    public WebElement Set_Permissions_at_LoginYes;
+    @FindBy(xpath = "//label[@class='custom-control-label' and @for ='globalglobalSSO_SetPermissionsAtLoginNo']")
+    public WebElement Set_Permissions_at_LoginNo;
+
+    @FindBy(xpath = "//textarea[@id='IDP_Cert']")
+    public WebElement Certificate;
 
 
 

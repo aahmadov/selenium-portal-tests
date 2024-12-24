@@ -97,6 +97,16 @@
             <class name ="testng.SSO"/>
         </classes>
     </test>
+    <test name="SingleSing_ON">
+        <classes>
+            <class name ="testng.Single_sing_ON_Portal"/>
+        </classes>
+    </test>
+    <test name="Client_License_data_edit">
+        <classes>
+            <class name ="testng.Client_License_data"/>
+        </classes>
+    </test>
 
     <test name="Settings_FaxSearchPageRadio_btn_check">
         <classes>
