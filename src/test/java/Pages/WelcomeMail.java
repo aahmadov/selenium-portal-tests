@@ -66,6 +66,63 @@ public class WelcomeMail {
     @FindBy(xpath = "//*[@class='btn btn-orange btn-sm dialogBtn']")
     public WebElement confirmButton2;
 
+    @FindBy(xpath = "//select[@id='realmListForSystem']")
+    public WebElement selectORG;
 
+    @FindBy(xpath = "//*[@id='users']/tbody/tr[4]/td[7]/span/button[1]")
+    public WebElement faxsendingEditBTN;
 
+    @FindBy(xpath = "//input[@id='UserPassword']")
+    public WebElement passwordChange;
+
+    @FindBy(xpath = "//input[@id='UserPasswordRetype']")
+    public WebElement confirmPassword;
+
+    @FindBy(xpath = "//input[@id='UserEmail']")
+    public WebElement Email;
+
+    @FindBy(xpath = "//button[@id='UserSaveBtn']")
+    public WebElement SaveBTN;
+
+    @FindBy(xpath = "//div[@class='modal-footer']//button[@class='btn btn-orange btn-sm dialogBtn' and contains (text(), 'OK')]")
+    public WebElement ErrorMessageOK;
+
+    @FindBy(xpath = "//div[@class='modal-body']//span[@id='alertmessage' and contains (text(), 'There was an error updating user information. " +
+            "Cannot change email address and password together Try again. If problem persists, contact your administrator.')]")
+    public WebElement ErrorMessage;
+
+    @FindBy(xpath = "//*[@id='manage-adm-submenu']")
+    public WebElement manageDropdown;
+
+    @FindBy(xpath = " //li[@id='manage-adm-t-submenu']/a")
+    public WebElement TriageDropdown;
+
+    @FindBy(xpath = " //ul[@id='manage-adm-t-submenu-items']//li[3]/a")
+    public WebElement TriageField;
+
+    @FindBy(xpath = "//button[@class='btn btn-orange dropdown-toggle btn-sm mr-4']")
+    public WebElement OptionField;
+
+    @FindBy(xpath = "//div[@id='foo']/a")
+    public WebElement CreateField;
+
+    @FindBy(xpath = "//input[@id='name']")
+    public WebElement NameField;
+
+    @FindBy(xpath = "//input[@id='label']")
+    public WebElement LabelField;
+
+    @FindBy(xpath = "//input[@id='ocr_name']")
+    public WebElement OCRName;
+
+    @FindBy(xpath = "//select[@id='datatype']")
+    public WebElement DataType;
+
+    @FindBy(xpath = "//button[@id='SaveBtn']")
+    public WebElement SaveBTN2;
+    @FindBy(xpath = " //button[contains(@onclick, \"DeleteField\") and contains(@onclick, \"'10'\")]")
+    public WebElement deleteAfterFieldCreated;
+
+    @FindBy(xpath = " //div[@class='modal-footer']//button[@class='btn btn-orange btn-sm dialogBtn' and contains (text(), 'Yes')]")
+    public WebElement deleteAfterFieldCreatedConfirm;
 }

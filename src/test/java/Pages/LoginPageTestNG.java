@@ -447,7 +447,7 @@ public class LoginPageTestNG {
     @FindBy(xpath = "//*[@id=\"outboundFaxes\"]/tbody/tr[1]/td[10]/span/div/button[1]")
     public WebElement advancedActionBTN;
 
-    //*[@id='UserDepartment']
+
     @FindBy(xpath = "//*[@id=\"outboundFaxes\"]/tbody/tr[1]/td[10]/span/div/div/button/i")
     public WebElement ReprocessCoverPandDocConversion;
 

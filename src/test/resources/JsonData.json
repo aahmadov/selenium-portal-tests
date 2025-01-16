@@ -47,6 +47,13 @@
     "password": "softlinx",
     "departmentName": "TestDepartment"
   },
+  "Add_Triage_field": {
+    "UserName": "admin@auto1",
+    "password": "softlinx",
+    "name": "softlinx",
+    "label": "TestLabel3",
+    "OCR": "TestOCR3"
+  },
   "DepartmentAdminUserTable": {
     "Username": "admin@auto1",
     "password": "softlinx",
@@ -219,6 +226,15 @@
     "USerId": "Test",
     "Email": "auto@softlinx.com",
     "FaxNumber": "2222222222L"
+  },
+  "Email_address_change_email_Notification": {
+    "UserName": "admin@auto1",
+    "Password": "softlinx",
+    "userPassword": "Test",
+    "userPasswordConfirm": "Test",
+    "Email": "auto@softlinx.com",
+    "withEmail": "false"
+
   },
   "sendFaxHasOCRdata": {
     "Username": "triage1@auto1",

@@ -34,8 +34,8 @@ public class ReceiveMail {
 
             // 1) create the session
             Properties props = new Properties();
-            //props.setProperty("mail.imap.starttls.enable", "true");
-            //props.setProperty("mail.imap.port", "143");
+            props.setProperty("mail.imap.starttls.enable", "true");
+//            props.setProperty("mail.imap.port", "143");
             props.setProperty("mail.imap.port", "993");
             //props.setProperty("mail.imap.connectiontimeout", "30000"); // 30 seconds
             props.setProperty("mail.imap.timeout", "30000"); // 30 seconds
@@ -92,6 +92,8 @@ public class ReceiveMail {
 
         return result;
     }
+
+
 
     }
 

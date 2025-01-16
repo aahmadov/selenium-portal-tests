@@ -107,6 +107,16 @@
             <class name ="testng.Client_License_data"/>
         </classes>
     </test>
+    <test name="Email_address_change_email_Notification">
+        <classes>
+            <class name ="testng.User_invalid_Email_password_notification"/>
+        </classes>
+    </test>
+    <test name="Add_Triage_field">
+        <classes>
+            <class name ="testng.Triage_field"/>
+        </classes>
+    </test>
 
     <test name="Settings_FaxSearchPageRadio_btn_check">
         <classes>
