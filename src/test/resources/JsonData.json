@@ -67,7 +67,7 @@
   },
   "SSO_User": {
     "Username": "regression@anatolysoftlinx.onmicrosoft.com",
-    "password": "Softlinx124!"
+    "password": "Aydin1234!"
   },
   "portFaxNumberRequest": {
     "Username": "admin@auto1",
@@ -230,8 +230,8 @@
   "Email_address_change_email_Notification": {
     "UserName": "admin@auto1",
     "Password": "softlinx",
-    "userPassword": "Test",
-    "userPasswordConfirm": "Test",
+    "userPassword": "test",
+    "userPasswordConfirm": "test",
     "Email": "auto@softlinx.com",
     "withEmail": "false"
 

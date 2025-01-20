@@ -79,7 +79,6 @@ public class User_invalid_Email_password_notification extends TestBase {
 
             Boolean result = ReceiveMailOutlook.receiveEmail2(from, emailSubject);
             if (!result) {
-                // System.out.println("*** after 5 min iteration, there is not a expected notification");
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 String startTimeString = formatter.format(startTime);
                 Date endTime = Calendar.getInstance().getTime();
@@ -87,6 +86,7 @@ public class User_invalid_Email_password_notification extends TestBase {
 
                 System.out.println("Start time message: " + startTimeString);
                 System.out.println("End time message: " + endTimeString);
+                System.out.println("*** No expected notification received. Negative scenario triggered. ***");
             }
         }
     }

@@ -12,7 +12,7 @@ import java.util.Properties;
         private static String host = "imap.gmail.com"; // IMAP host for gmail
         private static String mailStoreType = "imap";
         private static String username = "amansurov485@gmail.com"; // Replace with your Outlook email
-        private static String password = "abbas1234!"; // Replace with your Outlook password
+        private static String password = "hgwf xvsu uywh uqpo"; // Replace with your Outlook password
 
         public static Boolean receiveEmail2(String mailFrom, String subjectFilter) throws InterruptedException {
 
@@ -29,7 +29,7 @@ import java.util.Properties;
                 Store emailStore = session.getStore(mailStoreType);
                 emailStore.connect(host, username, password);
 
-                // 3) Create the folder object and open it with read and write permissions
+                // 3) Create the folder object and open it with read and write permissions;
                 Folder emailFolder = emailStore.getFolder("INBOX");
                 emailFolder.open(Folder.READ_WRITE);
 
@@ -49,6 +49,12 @@ import java.util.Properties;
                     emailFolder.close(false);
                     emailFolder.open(Folder.READ_WRITE);
                     messages = emailFolder.search(condition);
+                }
+                if (messages.length == 0) {
+                    // Negative scenario: No email found after retries
+                    System.out.println("No email found from: " + mailFrom + " with subject: " + subjectFilter);
+                    System.out.println("Retries attempted: " + noOfTimes);
+                    return result; // Return false indicating the negative scenario
                 }
 
                 for (int i = 0; i < messages.length; i++) {
@@ -73,5 +79,3 @@ import java.util.Properties;
             return result;
         }
     }
-
-
