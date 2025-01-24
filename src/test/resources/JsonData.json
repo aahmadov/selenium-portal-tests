@@ -243,6 +243,13 @@
     "fileType": "pdf",
     "pageSize": 2
   },
+  "optionally_specify_to_and_company_when_s_ending_a_fax": {
+    "Username": "admin@auto1",
+    "password": "softlinx",
+    "FaxNumber": "2222222222L",
+    "fileType": "pdf",
+    "pageSize": 2
+  },
   "sendFaxHasOCRdata": {
     "Username": "triage1@auto1",
     "password": "Softlinx1!",

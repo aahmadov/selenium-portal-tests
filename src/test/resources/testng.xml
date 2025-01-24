@@ -117,6 +117,11 @@
             <class name ="testng.Specify_recipient_name"/>
         </classes>
     </test>
+    <test name="optionally_specify_to_and_company_when_s_ending_a_fax">
+        <classes>
+            <class name ="testng.SpecifyToandCompanyName"/>
+        </classes>
+    </test>
     <test name="Add_Triage_field">
         <classes>
             <class name ="testng.Triage_field"/>
