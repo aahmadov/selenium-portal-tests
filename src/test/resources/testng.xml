@@ -112,6 +112,11 @@
             <class name ="testng.User_invalid_Email_password_notification"/>
         </classes>
     </test>
+    <test name="Allow_User_to_specify_recipient_name">
+        <classes>
+            <class name ="testng.Specify_recipient_name"/>
+        </classes>
+    </test>
     <test name="Add_Triage_field">
         <classes>
             <class name ="testng.Triage_field"/>

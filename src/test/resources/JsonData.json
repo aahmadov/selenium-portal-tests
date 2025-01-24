@@ -236,6 +236,13 @@
     "withEmail": "false"
 
   },
+  "Allow_User_to_specify_recipient_name": {
+    "Username": "admin@auto1",
+    "password": "softlinx",
+    "FaxNumber": "2222222222L",
+    "fileType": "pdf",
+    "pageSize": 2
+  },
   "sendFaxHasOCRdata": {
     "Username": "triage1@auto1",
     "password": "Softlinx1!",
