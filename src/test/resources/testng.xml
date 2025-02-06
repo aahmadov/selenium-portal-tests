@@ -112,6 +112,11 @@
             <class name ="testng.User_invalid_Email_password_notification"/>
         </classes>
     </test>
+    <test name="Portal_needs_to_check_all_of_DeptAmin_departments">
+        <classes>
+            <class name ="testng.Check_all_of_DeptAmin_departments"/>
+        </classes>
+    </test>
     <test name="Allow_User_to_specify_recipient_name">
         <classes>
             <class name ="testng.Specify_recipient_name"/>

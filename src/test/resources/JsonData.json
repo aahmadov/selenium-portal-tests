@@ -42,6 +42,20 @@
     "EmailField": "auto@softlinx.com",
     "passwordField": "softlinx"
   },
+  "Portal_needs_to_check_all_of_DeptAmin_departments": {
+    "Username": "admin@auto1",
+    "password": "softlinx",
+    "Username2": "jsmith2@auto1",
+    "UserID": "jsmith2",
+    "UserName": "jsmith2",
+    "EmailField": "auto@softlinx.com",
+    "passwordField": "softlinx",
+    "departmentName": "IT2",
+    "departmentName2": "ACCT3",
+    "UserID2": "jdoe3",
+    "UserName2": "jdoe3",
+    "number": "13433434347(Assigned)"
+  },
   "Create_Department": {
     "Username": "admin@auto1",
     "password": "softlinx",
