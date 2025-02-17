@@ -34,6 +34,8 @@ public class LoginPageTestNG {
 
     @FindBy(xpath = "//*[@id='coverpageTemplate']/option[2]")
     public WebElement ChoseCoverpage;
+    @FindBy(xpath = "//*[@id='coverpageTemplate']/option[1]")
+    public WebElement ChoseCoverpage46;
     @FindBy(xpath = "//*[@id='dropzone']/div/button")
     public WebElement uploadPage;
 

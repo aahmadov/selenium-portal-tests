@@ -63,6 +63,9 @@ public class WelcomeMail {
     @FindBy(xpath = "//button[@id='UserSaveBtn']")
     public WebElement SaveBTN;
 
+    @FindBy(xpath = "//button[@id='saveBtn']")
+    public WebElement SaveBTNFaxOption;
+
     @FindBy(xpath = "//div[@class='modal-footer']//button[contains(text(), 'OK')]")
     public WebElement SaveConfirmationBTn;
     @FindBy(xpath = "//div[@class='modal-footer']//button[text()='OK']")

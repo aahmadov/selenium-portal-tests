@@ -126,7 +126,119 @@ public class Settings_FaxSearchPage extends TestBase {
         Thread.sleep(1000 * 4);
 
     }
+    @Test(priority = 1, testName = "Portal:Radio Button check", groups = {"Regression46"})
+    public void Radio_btn_check46() throws InterruptedException, AWTException, SQLException {
+        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        System.out.println("Test case name" + testName);
+        Map<String, String> data = FileReaderTestNG.getDataBasedOnTestCaseNameSelenium46(testName);
+        assert data != null;
+        driver.get("http://10.250.1.46:8585/");
+        Thread.sleep(1000 * 3);
+        driver.manage().window().maximize();
+        LoginPageTestNG loginPageObj = new LoginPageTestNG(driver);
 
+        loginPageObj.UsernameTextBox.sendKeys(data.get("Username"));
+        loginPageObj.PasswordTextBox.sendKeys(data.get("password"));
+        loginPageObj.loginButton.click();
+        Thread.sleep(1000 * 3);
+        loginPageObj.AdministrationHeading.click();
+        Thread.sleep(1000 * 3);
+        loginPageObj.manageDropdown.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.settingsField.click();
+        loginPageObj.portUI.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.globalrecipientYEs.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        loginPageObj.globalrecipientNo.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        loginPageObj.ShowRecentFaxesNo.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        loginPageObj.ShowRecentFaxesYes.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        loginPageObj.ShowRecentFaxesYes.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        loginPageObj.ShowActionRecentFaxesYes.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        loginPageObj.ShowActionRecentFaxesNO.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        loginPageObj.ShowIDRecentFaxesYes.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        loginPageObj.ShowIDRecentFaxesNo.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        loginPageObj.globalShowSplit1.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        loginPageObj.globalShowSplit0.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        loginPageObj.globalShowSplit2.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.FaxIdentiferLabel.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.FaxIdentiferLabel.clear();
+        loginPageObj.FaxIdentiferLabel.sendKeys("claimNumber");
+        Thread.sleep(1000 * 2);
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        loginPageObj.ShowSendCoverPageNo.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        loginPageObj.ShowSendCoverPageYes.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        loginPageObj.ShowSendKeywordNo.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.ShowSendKeywordYes.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.ShowSendAfterNo.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.ShowSendAfterYes.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.ShowSendEmailYes.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.ShowSendEmailNo.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 4);
+
+    }
     @Test(priority = 2, testName = "Portal:FaxSearchPage Radio Button's check", groups = {"Regression84"})
     public void Settings_FaxSearchPageRadio_btn_check() throws InterruptedException, AWTException, SQLException {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -226,7 +338,105 @@ public class Settings_FaxSearchPage extends TestBase {
         loginPageObj.SaveConfirmationBTn.click();
         Thread.sleep(1000 * 2);
     }
+    @Test(priority = 2, testName = "Portal:FaxSearchPage Radio Button's check", groups = {"Regression46"})
+    public void Settings_FaxSearchPageRadio_btn_check46() throws InterruptedException, AWTException, SQLException {
+        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        System.out.println("Test case name" + testName);
+        Map<String, String> data = FileReaderTestNG.getDataBasedOnTestCaseNameSelenium46(testName);
+        assert data != null;
+        driver.get("http://10.250.1.46:8585/");
+        Thread.sleep(1000 * 3);
+        driver.manage().window().maximize();
+        LoginPageTestNG loginPageObj = new LoginPageTestNG(driver);
 
+        loginPageObj.UsernameTextBox.sendKeys(data.get("Username"));
+        loginPageObj.PasswordTextBox.sendKeys(data.get("password"));
+        loginPageObj.loginButton.click();
+        Thread.sleep(1000 * 3);
+        loginPageObj.AdministrationHeading.click();
+        Thread.sleep(1000 * 3);
+        loginPageObj.manageDropdown.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.settingsField.click();
+        loginPageObj.portUI.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.FaxSearchPage.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.ShowDeleveryManagerBTNYes.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        loginPageObj.ShowDeleveryManagerBTNNo.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.AllowFaxMarketingBTNyes.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.AllowFaxMarketingBTNo.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.AllowfaxDeleteBTNYes.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.AllowfaxDeleteBTNNo.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.DownloadFaxImageTiff.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.DownloadFaxImagePDF.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.DownloadFaxBothImage.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+
+        Thread.sleep(1000 * 2);
+        loginPageObj.DownloadFaxImageAppend.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.globaloutconfirmPDFprepend.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.confirmationPageInPDFNONEbtn.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.inboundKeyboardeditYes.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.inboundKeyboardeditNo.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.SerachforFaxnumberBTNYes.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.SerachforFaxnumberBTNNo.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.SerachforbatchNameBTNYes.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.SerachforbatchNameBTNNo.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+    }
 
     @Test(priority = 3, testName = "Settings:Miscellaneous Radio Button's check", groups = {"Regression84"})
     public void MiscellaneousPageRadio_btn_check() throws InterruptedException, AWTException, SQLException {
@@ -235,6 +445,100 @@ public class Settings_FaxSearchPage extends TestBase {
         Map<String, String> data = FileReaderTestNG.getDataBasedOnTestCaseNameSelenium(testName);
         assert data != null;
         driver.get("http://10.250.1.84:80/");
+        Thread.sleep(1000 * 3);
+        driver.manage().window().maximize();
+        LoginPageTestNG loginPageObj = new LoginPageTestNG(driver);
+
+        loginPageObj.UsernameTextBox.sendKeys(data.get("Username"));
+        loginPageObj.PasswordTextBox.sendKeys(data.get("password"));
+        loginPageObj.loginButton.click();
+        Thread.sleep(1000 * 3);
+        loginPageObj.AdministrationHeading.click();
+        Thread.sleep(1000 * 3);
+        loginPageObj.manageDropdown.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.settingsField.click();
+        loginPageObj.portUI.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.MiscellaneousTab.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.SessionTimeout.click();
+        loginPageObj.SessionTimeout.clear();
+        loginPageObj.SessionTimeout.sendKeys("50");
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.SessionTimeout.click();
+        loginPageObj.SessionTimeout.clear();
+        loginPageObj.SessionTimeout.sendKeys("60");
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.UserPreferencesPassAll.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.UserPreferencesPass.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.UserPreferencesHide.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.UserUsageYes.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.UserUsageNo.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.ShowContactList.click();
+
+        WebElement contactList = driver.findElement(By.xpath("//select[@id='globalShowPB']"));
+        Select contactList1 = new  Select(contactList);
+        int optionsCount = contactList1.getOptions().size();
+
+        for (int i = 0; i < optionsCount; i++) {
+            // Select option by index
+            contactList1.selectByIndex(i);
+
+
+            // Print selected option text (Optional)
+            String selectedOption = contactList1.getFirstSelectedOption().getText();
+            System.out.println("Selected Option: " + selectedOption);
+
+            // Check if this is the last option
+            if (i == optionsCount - 1) {
+                // Reset to the first option
+                contactList1.selectByIndex(0);
+                System.out.println("Reset to first option: " + contactList1.getFirstSelectedOption().getText());
+                break; // Exit the loop
+
+            }
+        }
+        Thread.sleep(1000 * 2);
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.PassChangeDefaultYes.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.PassChangeDefaultNo.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 5);
+    }
+
+    @Test(priority = 3, testName = "Settings:Miscellaneous Radio Button's check", groups = {"Regression46"})
+    public void MiscellaneousPageRadio_btn_check46() throws InterruptedException, AWTException, SQLException {
+        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        System.out.println("Test case name" + testName);
+        Map<String, String> data = FileReaderTestNG.getDataBasedOnTestCaseNameSelenium46(testName);
+        assert data != null;
+        driver.get("http://10.250.1.46:8585/");
         Thread.sleep(1000 * 3);
         driver.manage().window().maximize();
         LoginPageTestNG loginPageObj = new LoginPageTestNG(driver);
@@ -398,36 +702,84 @@ public class Settings_FaxSearchPage extends TestBase {
         loginPageObj.SaveConfirmationBTn.click();
         Thread.sleep(1000 * 4);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
+    @Test(priority = 4, testName = "Settings:BroadCast&Mailmerge Radio Button's check", groups = {"Regression46"})
+    public void BroadcastandMailmerge46() throws InterruptedException, AWTException, SQLException {
+        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        System.out.println("Test case name" + testName);
+        Map<String, String> data = FileReaderTestNG.getDataBasedOnTestCaseNameSelenium46(testName);
+        assert data != null;
+        driver.get("http://10.250.1.46:8585/");
+        Thread.sleep(1000 * 3);
+        driver.manage().window().maximize();
+        LoginPageTestNG loginPageObj = new LoginPageTestNG(driver);
+        loginPageObj.UsernameTextBox.sendKeys(data.get("Username"));
+        loginPageObj.PasswordTextBox.sendKeys(data.get("password"));
+        loginPageObj.loginButton.click();
+        Thread.sleep(1000 * 3);
+        loginPageObj.AdministrationHeading.click();
+        Thread.sleep(1000 * 3);
+        loginPageObj.manageDropdown.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.settingsField.click();
+        loginPageObj.portUI.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.Broadcast_Mailmerge.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.allowBroadfaxYes.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.allowBroadfaxNo.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.showCoverPageNo.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.showCoverPageYes.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.showCoverPageMessageNo.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.showCoverPageMessageYes.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.showNotifyNo.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.showNotifyNo.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.showNotifyYes.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.showSendAfterNo.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.showSendAfterYes.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.showEmailNo.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.showEmailYes.click();
+        loginPageObj.SaveBTN.click();
+        loginPageObj.SaveConfirmationBTn.click();
+        Thread.sleep(1000 * 4);
 
     }
-
 
     }

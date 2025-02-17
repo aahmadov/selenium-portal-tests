@@ -30,6 +30,18 @@ public class FileReaderTestNG {
         }
         return null;
     }
+    public static Map<String, String> getDataBasedOnTestCaseNameSelenium46(final String testcaseName) {
+        try {
+            File file = readJsonFileSelenium("TestData.json");
+            File finalFile = file.exists() ? file : readJsonFileSelenium("JsonData46.json");
+            Map<String, HashMap<String, String>> testCases = mapper.readValue(finalFile, new TypeReference<>() {
+            });
+            return testCases.get(testcaseName);
+        } catch (Exception exception) {
+            System.out.println("Exception while reading data from json file. Exception: " + exception.getMessage());
+        }
+        return null;
+    }
     public static List<String> convertToList(final List<String[]> values) {
         return values.stream().map(value -> value[0]).collect(Collectors.toList());
     }
