@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class Specify_recipient_name extends TestBase {
 
-    @Test(priority = 1, testName = "Portal:allow user to specify recipient name when sending a fax ", groups = {"Regression8412"})
+    @Test(priority = 1, testName = "Portal:allow user to specify recipient name when sending a fax ", groups = {"Regression84"})
     public void Allow_User_to_specify_recipient_name() throws InterruptedException, AWTException, SQLException {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);

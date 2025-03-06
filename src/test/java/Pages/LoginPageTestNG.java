@@ -41,7 +41,12 @@ public class LoginPageTestNG {
 
     @FindBy(xpath = "//input[@type='file']")
     public WebElement uploadPageCopy;
-
+    @FindBy(xpath = "//select[@id='realmListForSystem']")
+    public WebElement selectORG1;
+    @FindBy(xpath = "//*[@id=\"top-org-menu-grp\"]/div/div[2]/button")
+    public WebElement selectORG;
+    @FindBy(xpath = "//*[@id=\"top-org-menu-grp\"]/div/div[2]/div/div[2]/ul/li[4]/a")
+    public WebElement selectAuto1;
     @FindBy(xpath = "//*[@id='recipientcol']/div[6]")
     public WebElement splitCheckPagebox;
     @FindBy(xpath = "//*[@id='splitfaxID']")
@@ -541,8 +546,12 @@ public class LoginPageTestNG {
     public WebElement FieldplusBTN;
     @FindBy(xpath = "//a[@id='test_sftp']")
     public WebElement SFTPtestlink;
+    @FindBy(xpath = "//ul[@id='manage-adm-settings-items']/li[8]/a")
+    public WebElement SFTPtestlink2;
+
     @FindBy(xpath = "//div[@class='modal-footer']//button[@class='btn btn-orange btn-sm dialogBtn' and contains (text(), 'OK')]")
     public WebElement SFTPtestlinkConfimOk;
+
     @FindBy(xpath = "//a[@id='options-tab']")
     public WebElement OptionTab;
 

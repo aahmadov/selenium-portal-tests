@@ -174,8 +174,8 @@
     "pageSize": 2
   },
   "SFTP_push_Server": {
-    "Username": "admin@auto1",
-    "password": "softlinx",
+    "Username": "abbas@replixdb",
+    "password": "Softlinx_1234!",
     "FaxNumber": "2222222222L",
     "fileType": "pdf",
     "pageSize": 2
@@ -248,7 +248,6 @@
     "userPasswordConfirm": "test",
     "Email": "auto@softlinx.com",
     "withEmail": "false"
-
   },
   "Allow_User_to_specify_recipient_name": {
     "Username": "admin@auto1",

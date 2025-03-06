@@ -54,6 +54,11 @@ public class WelcomeMail {
     @FindBy(xpath = "//*[@id=\"manage-adm-submenu\"]")
     public WebElement SubMenuManage;
 
+    @FindBy(xpath = "//*[@id=\"top-org-menu-grp\"]/div/div[2]/button")
+    public WebElement selectORG;
+
+    @FindBy(xpath = "//*[@id=\"top-org-menu-grp\"]/div/div[2]/div/div[2]/ul/li[4]/a/span/text()")
+    public WebElement selectAuto1;
 
     @FindBy(xpath = "//*[@id='manage-adm-submenu-items']/li[3]/a")
     public WebElement Users;
@@ -163,7 +168,7 @@ public class WelcomeMail {
     public WebElement confirmButton2;
 
     @FindBy(xpath = "//select[@id='realmListForSystem']")
-    public WebElement selectORG;
+    public WebElement selectORG1;
 
     @FindBy(xpath = "//*[@id='users']/tbody/tr[4]/td[7]/span/button[1]")
     public WebElement faxsendingEditBTN;

@@ -52,20 +52,8 @@ public class LoginPageSecond {
     @FindBy(xpath = "//button[contains(@class, 'btnList') and contains(@title, 'Edit')][last()]")
     public WebElement EditBTN;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "//select[@id='realmListForSystem']")
+    public WebElement selectORG1;
 
 
 

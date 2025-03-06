@@ -38,8 +38,15 @@ public class SFT_Push extends TestBase {
         loginPageObj.settingsField.click();
         loginPageObj.SFTP.click();
         Thread.sleep(1000 * 2);
+        loginPageObj.selectORG.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.selectAuto1.click();
+        Thread.sleep(1000 * 2);
+        loginPageObj.SFTPtestlink2.click();
+        Thread.sleep(1000 * 2);
         loginPageObj.SFTPtestlink.click();
         Thread.sleep(1000 * 2);
+        loginPageObj.SFTPtestlinkConfimOk.click();
         loginPageObj.SaveBTN.click();
         Thread.sleep(1000 * 2);
         loginPageObj.SFTPtestlinkConfimOk.click();
