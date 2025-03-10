@@ -16,7 +16,7 @@ import java.util.Map;
 
 public class SFT_Push extends TestBase {
 
-    @Test(priority = 1, testName = "Portal:SFTP push check", groups = {"Regression841"})
+    @Test(priority = 1, testName = "Portal:SFTP push check", groups = {"Regression84"})
     public void SFTP_push_Server() throws InterruptedException, AWTException, SQLException {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name" + testName);
