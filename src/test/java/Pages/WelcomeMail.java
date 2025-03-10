@@ -164,6 +164,10 @@ public class WelcomeMail {
     @FindBy(xpath = "(//a[contains(@href,'Logout')])[2]")
     public WebElement Logout;
 
+    @FindBy(xpath = "//a[@class='nav-link dropdown-toggle' and strong[text()='Fax Administrator']]")
+    public WebElement LogoutFaxAdminBox;
+
+
     @FindBy(xpath = "//*[@class='btn btn-orange btn-sm dialogBtn']")
     public WebElement confirmButton2;
 

@@ -246,6 +246,8 @@
     "Password": "softlinx",
     "userPassword": "test",
     "userPasswordConfirm": "test",
+    "userPassword2": "softlinx",
+    "userPasswordConfirm2": "softlinx",
     "Email": "auto@softlinx.com",
     "withEmail": "false"
   },

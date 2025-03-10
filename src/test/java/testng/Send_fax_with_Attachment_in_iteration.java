@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class Send_fax_with_Attachment_in_iteration extends TestBase {
 
-    @Test(priority = 1, testName = "Portal:Send Fax with Attachment ", groups = {"Regression84test"})
+    @Test(priority = 1, testName = "Portal:Send Fax with Attachment ", groups = {"Regression84test"}) //it's not for regression ,it just required for one time test!
     public void SendFaxWithAttachments() throws InterruptedException, AWTException, SQLException {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
