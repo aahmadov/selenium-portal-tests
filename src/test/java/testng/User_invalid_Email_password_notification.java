@@ -18,8 +18,8 @@ public class User_invalid_Email_password_notification extends TestBase {
 
     String from = "no-reply@rpxqa.com";
 
-    //
-    @Test(priority = 2, testName = "Email notifications when password & Email address is changed", groups = {"Regression843"})
+
+    @Test(priority = 2, testName = "Email notifications when password & Email address is changed", groups = {"Regression84"})
     public void Email_address_change_email_Notification() throws InterruptedException, AWTException, SQLException {
         // driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
@@ -89,5 +89,30 @@ public class User_invalid_Email_password_notification extends TestBase {
                 System.out.println("*** No expected notification received. Negative scenario triggered. ***");
             }
         }
+        Oj.LogoutFaxAdminBox.click();
+        Thread.sleep(1000 * 2);
+        Oj.Logout.click();
+        driver.get("http://10.250.1.84:80/");
+        /*This operation will maximize window*/
+        driver.manage().window().maximize();
+        Oj.UsernameTextBox.sendKeys(data.get("UserName"));
+        Oj.PasswordTextBox.sendKeys(data.get("Password"));
+        Oj.loginButton.click();
+        Oj.AdministrationHeading.click();
+        Oj.SubMenuManage.click();
+        Oj.Users.click();
+        Thread.sleep(1000 * 2);
+        Oj.faxsendingEditBTN.click();
+        Thread.sleep(1000 * 2);
+        Oj.passwordChange.click();
+        Thread.sleep(1000 * 2);
+        Oj.passwordChange.sendKeys(data.get("userPassword2"));
+        Thread.sleep(1000 * 2);
+        Oj.confirmPassword.click();
+        Thread.sleep(1000 * 2);
+        Oj.confirmPassword.sendKeys(data.get("userPasswordConfirm2"));
+        Thread.sleep(1000 * 2);
+        Oj.SaveBTN.click();
+        Thread.sleep(1000 * 5);
     }
 }
