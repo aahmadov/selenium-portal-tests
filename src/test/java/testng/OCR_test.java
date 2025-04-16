@@ -32,7 +32,7 @@ import static org.junit.Assert.assertEquals;
 
 public class OCR_test extends TestBase {
 
-    @Test(testName = "Send Fax from portal with valid credentials", groups = {"Regression84"})
+    @Test(testName = "Send Fax from portal with valid credentials", groups = {"Regression8412"})
     public void sendFaxHasOCRdata() throws InterruptedException, AWTException, SQLException, IOException {
         // driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
@@ -52,6 +52,7 @@ public class OCR_test extends TestBase {
         Thread.sleep(1000 * 3);
         loginPageObj.FaxingButton.click();
         loginPageObj.sendFaxButton.click();
+        Thread.sleep(1000 * 2);
         loginPageObj.faxNumber.click();
         loginPageObj.faxNumber.sendKeys(String.valueOf(data.get("FaxNumber")));
         loginPageObj.coverPage.click();
