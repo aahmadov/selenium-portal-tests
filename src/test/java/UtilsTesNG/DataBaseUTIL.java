@@ -266,6 +266,12 @@ public class DataBaseUTIL {
         int noOfLines = statement.executeUpdate(query);
         closeConnection();
     }
+    public static void executeSQLUpdateRecvD46(final String query) throws SQLException {
+        openConnection();
+        statement = connection46.createStatement();
+        int noOfLines = statement.executeUpdate(query);
+        closeConnection();
+    }
 
 
     public static void closeConnection() {

@@ -530,6 +530,24 @@ public class LoginPageTestNG {
     @FindBy(xpath = "//ul[@id='manage-adm-settings-items']//li[5]/a")
     public WebElement SFTP;
 
+    @FindBy(xpath = "//a[@class='nav-link dropdown-toggle' and strong[text()='Fax Administrator']]")
+    public WebElement LogoutFaxAdminBox;
+    @FindBy(xpath = "(//a[contains(@href,'Logout')])[2]")
+    public WebElement Logout2;
+    @FindBy(xpath = "(//input[@id='UserMustChangePwdYes' and @type='radio']")
+    public WebElement changeUserPassYes;
+
+    @FindBy(xpath = "(//input[@id='password']")
+    public WebElement currentPass;
+
+    @FindBy(xpath = "(//input[@id='passwordnew']")
+    public WebElement newPass;
+
+    @FindBy(xpath = "(//input[@id='passwordnew2']")
+    public WebElement newPassConfirm;
+
+    @FindBy(xpath = "(//a[@id='LoginButton']")
+    public WebElement changePassBTN;
 
     @FindBy(xpath = "//select[@id='field_for_file']")
     public WebElement FileNameFormat;

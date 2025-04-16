@@ -85,6 +85,12 @@ public class WelcomeMail {
     public WebElement UserBTN;
     @FindBy(xpath = "//div[@class='col-auto']//button[@class='btn btn-orange dropdown-toggle btn-sm mr-4']")
     public WebElement optionDropdownBTN;
+
+    @FindBy(xpath = "//*[@id=\"top-org-menu-grp\"]/div/div[2]")
+    public WebElement OrgDropdownBTN;
+    @FindBy(xpath = "//*[@id='realmListForSystem']")
+    public WebElement selectOrg;
+    //*[@id='realmListForSystem']
     @FindBy(xpath = "//a[contains(@href, 'javascript:AddUser()')]")
     public WebElement CreateUserBtn;
     @FindBy(xpath = "//*[@id='UserUserId']")
@@ -93,8 +99,25 @@ public class WelcomeMail {
     public WebElement userNamefeild;
     @FindBy(xpath = "//*[@id='UserPassword']")
     public WebElement userPasswordfeild;
+    @FindBy(xpath = "//a[@id='test_sftp']")
+    public WebElement SFTPtestlink;
     @FindBy(xpath = "//*[@id='UserPasswordRetype']")
     public WebElement userPasswordRetryfeild;
+
+    @FindBy(xpath = "//input[@id='sftp_host']")
+    public WebElement SFTP_field;
+
+    @FindBy(xpath = "//ul[@id='manage-adm-settings-items']//li[5]/a")
+    public WebElement SFTP;
+
+    @FindBy(xpath = "//ul[@id='manage-adm-settings-items']//li[8]/a")
+    public WebElement SFTP_For_replixdb;
+
+    @FindBy(xpath = "//ul[@id='manage-adm-settings-items']/li[8]/a")
+    public WebElement SFTPtestlink2;
+
+    @FindBy(xpath = "//div[@class='modal-footer']//button[@class='btn btn-orange btn-sm dialogBtn' and contains (text(), 'OK')]")
+    public WebElement SFTPtestlinkConfimOk;
     @FindBy(xpath = "//*[@id='UserEmail']")
     public WebElement userEmailfeild;
     @FindBy(xpath = "//*[@id='permissions-tab']")
@@ -174,8 +197,20 @@ public class WelcomeMail {
     @FindBy(xpath = "//select[@id='realmListForSystem']")
     public WebElement selectORG1;
 
+    @FindBy(xpath = "//*[@id=\"top-org-menu-grp\"]/div/div[2]/div/div[2]/ul/li[4]/a/span")
+    public WebElement selectORG3;
+
     @FindBy(xpath = "//*[@id='users']/tbody/tr[4]/td[7]/span/button[1]")
     public WebElement faxsendingEditBTN;
+
+    @FindBy(xpath = "//*[@id='users']/tbody/tr[2]/td[7]/span/button[1]")
+    public WebElement faxsendingEditBTN46;
+
+    @FindBy(xpath = "//*[@id='top-org-menu-grp']/div/div[2]")
+    public WebElement OrgChooseDropdown;
+
+    @FindBy(xpath = "//input[@id ='UserFaxNumberInbound']")
+    public WebElement numberChange;
 
     @FindBy(xpath = "//*[@id='users']/tbody/tr[td[contains(text(), 'jdoe3')]]//button[@title='Edit User']")
     public WebElement jdoe3EditBTN;

@@ -122,6 +122,19 @@
             <class name ="testng.Specify_recipient_name"/>
         </classes>
     </test>
+
+    <test name="SFTP_push_Host_Name_change_email_notify46">
+        <classes>
+            <class name ="testng.Email_when_sftp_changes"/>
+        </classes>
+    </test>
+
+    <test name="cpgen_no_did_1_User_has_a_DID_number">
+        <classes>
+            <class name ="testng.Pgen_no_did_for_From_DID_NUMBER"/>
+        </classes>
+    </test>
+
     <test name="optionally_specify_to_and_company_when_s_ending_a_fax">
         <classes>
             <class name ="testng.SpecifyToandCompanyName"/>
@@ -136,6 +149,11 @@
     <test name="Settings_FaxSearchPageRadio_btn_check">
         <classes>
             <class name ="testng.Settings_FaxSearchPage"/>
+        </classes>
+    </test>
+    <test name="User_change_password_upon_login">
+        <classes>
+            <class name ="testng.User_is_required_to_change_their_password_upon_login"/>
         </classes>
     </test>
 

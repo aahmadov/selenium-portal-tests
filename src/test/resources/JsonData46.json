@@ -180,6 +180,13 @@
     "fileType": "pdf",
     "pageSize": 2
   },
+  "SFTP_push_Host_Name_change_email_notify46": {
+    "Username": "abbas@replixdb",
+    "password": "Softlinx_1234!",
+    "FaxNumber": "2222222222L",
+    "fileType": "pdf",
+    "pageSize": 2
+  },
   "SingleSing_ON46": {
     "Username": "admin@auto1",
     "password": "softlinx"
@@ -279,5 +286,28 @@
     "rotateCounterClockwise":"false",
     "removePage":"false",
     "saveasPDF":"false"
+  },
+  "cpgen_no_did_1_User_has_a_DID_number46": {
+    "UserName": "admin@auto1",
+    "Password": "softlinx",
+    "faxNumber": "12332332333",
+    "post_call_Url": "http://10.250.1.46:8585/softlinx/replixfax/restapi/v1/outboundfaxes",
+    "get_call_Url": "http://10.250.1.46:8585/softlinx/replixfax/restapi/v1/outboundfaxes",
+    "credentialInbound": "faxsending@auto1:softlinx",
+    "credentials": "faxsending@auto1:softlinx",
+    "CoverPage": "true",
+    "recipient": "1(333)-333-3333",
+    "statusCodeOfGetCall": "200",
+    "expectedStatusCode": "201"
+  },
+  "Email_address_change_email_Notification46": {
+    "UserName": "admin@auto1",
+    "Password": "softlinx",
+    "userPassword": "test",
+    "userPasswordConfirm": "test",
+    "userPassword2": "softlinx",
+    "userPasswordConfirm2": "softlinx",
+    "Email": "auto@softlinx.com",
+    "withEmail": "false"
   }
 }

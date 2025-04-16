@@ -42,6 +42,16 @@
     "EmailField": "auto@softlinx.com",
     "passwordField": "softlinx"
   },
+  "User_change_password_upon_login": {
+    "Username": "admin@auto1",
+    "Username2": "Baku52@auto1",
+    "password": "softlinx",
+    "UserID": "Baku52",
+    "UserName": "Baku52",
+    "EmailField": "auto@softlinx.com",
+    "passwordField2":"Softlinx_123!",
+    "NewPasswordField":"Softlinx_1234!"
+  },
   "Portal_needs_to_check_all_of_DeptAmin_departments": {
     "Username": "admin@auto1",
     "password": "softlinx",
@@ -258,6 +268,20 @@
     "fileType": "pdf",
     "pageSize": 2
   },
+  "cpgen_no_did_1_User_has_a_DID_number": {
+    "UserName": "admin@auto1",
+    "Password": "softlinx",
+    "faxNumber": "12332332333",
+    "post_call_Url": "http://10.250.1.84:8080/softlinx/replixfax/restapi/v1/outboundfaxes",
+    "get_call_Url": "http://10.250.1.84:8080/softlinx/replixfax/restapi/v1/outboundfaxes",
+    "credentialInbound": "faxsending@auto1:softlinx",
+    "credentials": "faxsending@auto1:softlinx",
+    "CoverPage": "true",
+    "recipient": "1(333)-333-3333",
+    "statusCodeOfGetCall": "200",
+    "expectedStatusCode": "201"
+  },
+
   "optionally_specify_to_and_company_when_s_ending_a_fax": {
     "Username": "admin@auto1",
     "password": "softlinx",
