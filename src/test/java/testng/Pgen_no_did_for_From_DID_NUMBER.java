@@ -16,7 +16,7 @@ import static org.testng.Assert.assertTrue;
 
 public class Pgen_no_did_for_From_DID_NUMBER extends TestBase {
 
-    @Test(priority = 1, testName = "If user dosen't hava a DID number Cover Page to be empty)", groups = {"Regression84"})
+    @Test(priority = 1, testName = "If user dosen't hava a DID number Cover Page to be empty)", groups = {"Regression84123"})
     public void cpgen_no_did_1_User_has_a_DID_number() throws InterruptedException, AWTException, SQLException {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);

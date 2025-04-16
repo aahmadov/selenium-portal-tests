@@ -39,6 +39,7 @@ public class FaxSentWithandwithoutCoverpage extends TestBase {
         Thread.sleep(1000 * 3);
         loginPageObj.FaxingButton.click();
         loginPageObj.sendFaxButton.click();
+        Thread.sleep(1000 * 2);
         loginPageObj.faxNumber.click();
         loginPageObj.faxNumber.sendKeys(String.valueOf(data.get("FaxNumber")));
 
@@ -82,6 +83,7 @@ public class FaxSentWithandwithoutCoverpage extends TestBase {
         Thread.sleep(1000 * 3);
         loginPageObj.FaxingButton.click();
         loginPageObj.sendFaxButton.click();
+        Thread.sleep(1000 * 2);
         loginPageObj.faxNumber.click();
         loginPageObj.faxNumber.sendKeys(String.valueOf(data.get("FaxNumber")));
 
@@ -193,6 +195,7 @@ public class FaxSentWithandwithoutCoverpage extends TestBase {
         Thread.sleep(1000 * 3);
         loginPageObj.FaxingButton.click();
         loginPageObj.sendFaxButton.click();
+        Thread.sleep(1000 * 2);
         loginPageObj.faxNumber.click();
         loginPageObj.faxNumber.sendKeys(String.valueOf(data.get("FaxNumber")));
         Thread.sleep(1000 * 3);
