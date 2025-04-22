@@ -175,8 +175,8 @@ public class Check_all_of_DeptAmin_departments extends TestBase {
         Oj.writeDepartment.sendKeys(data.get("departmentName"));
         Thread.sleep(1000 * 2);
         Oj.deptSaveBTN.click();
-        Oj.departmentField.click();
         Oj.createDepartment.click();
+        Thread.sleep(1000 * 2);
         Oj.writeDepartment.click();
         Oj.writeDepartment.sendKeys(data.get("departmentName2"));
         Thread.sleep(1000 * 2);

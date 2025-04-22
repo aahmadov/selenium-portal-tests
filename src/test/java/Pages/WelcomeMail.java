@@ -280,7 +280,7 @@ public class WelcomeMail {
 
     @FindBy(xpath = "//button[@id='SaveBtn']")
     public WebElement SaveBTN2;
-    @FindBy(xpath = " //button[contains(@onclick, \"DeleteField\") and contains(@onclick, \"'10'\")]")
+    @FindBy(xpath = " //button[contains(@onclick, \"DeleteField\") and contains(@onclick, \"'9'\")]")
     public WebElement deleteAfterFieldCreated;
 
     @FindBy(xpath = " //div[@class='modal-footer']//button[@class='btn btn-orange btn-sm dialogBtn' and contains (text(), 'Yes')]")

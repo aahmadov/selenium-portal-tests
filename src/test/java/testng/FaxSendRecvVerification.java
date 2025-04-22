@@ -154,7 +154,7 @@ public class FaxSendRecvVerification extends TestBase {
 //        DataBaseUTIL.executeSQLQuery84Database(queryRecvStatus);
 
     }
-    @Test(priority = 1, testName = "Portal:OutboundandInboundVerification ", groups = {"Regression46123"})
+    @Test(priority = 1, testName = "Portal:OutboundandInboundVerification ", groups = {"Regression46"})
     public void OutboundandInboundVerification46() throws InterruptedException, AWTException, SQLException {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
@@ -452,7 +452,7 @@ public class FaxSendRecvVerification extends TestBase {
         Thread.sleep(1000 * 5);
         loginPageObj.closeInfoBtnAfterRecv.click();
     }
-    @Test(priority = 3, testName = "Portal:Change_the_From_Inbound_data_and_do_another_search ", groups = {"Regression46123"})
+    @Test(priority = 3, testName = "Portal:Change_the_From_Inbound_data_and_do_another_search ", groups = {"Regression46"})
     public void Change_the_From_Inbound_data_and_do_another_search46() throws InterruptedException, AWTException, SQLException {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
