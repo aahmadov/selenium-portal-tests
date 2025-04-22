@@ -90,10 +90,7 @@ public class Client_License_data extends TestBase {
         Thread.sleep(1000 * 2);
         LoginPageObj2.LicenseBTN.click();
         Thread.sleep(1000 * 2);
-        LoginPageObj2.DeletingFieldBTN.click();
-        Thread.sleep(1000 * 2);
-        LoginPageObj2.DeletingConfirmdBTN.click();
-        Thread.sleep(1000 * 2);
+
         LoginPageObj2.NewBTN.click();
         Thread.sleep(1000 * 2);
 
@@ -124,5 +121,9 @@ public class Client_License_data extends TestBase {
         Thread.sleep(1000 * 2);
         LoginPageObj2.SaveBTn.click();
         Thread.sleep(1000 * 5);
+        LoginPageObj2.DeletingFieldBTN.click();
+        Thread.sleep(1000 * 2);
+        LoginPageObj2.DeletingConfirmdBTN.click();
+        Thread.sleep(1000 * 2);
     }
 }

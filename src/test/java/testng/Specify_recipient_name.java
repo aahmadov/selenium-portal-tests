@@ -108,7 +108,7 @@ public class Specify_recipient_name extends TestBase {
         Thread.sleep(1000 * 3);
         Oj.DeleteFaxAfterSendNo.click();
         Thread.sleep(1000 * 3);
-        Oj.SaveBTN.click();
+        Oj.SaveBTNFaxOption.click();
         Oj.confirmButton.click();
         Thread.sleep(1000 * 2);
         Oj.sendFaxOptionField.click();
@@ -138,7 +138,7 @@ public class Specify_recipient_name extends TestBase {
         Thread.sleep(1000 * 3);
         Oj.DeleteFaxAfterSendYes.click();
         Thread.sleep(1000 * 3);
-        Oj.SaveBTN.click();
+        Oj.SaveBTNFaxOption.click();
         Oj.confirmButton.click();
         Thread.sleep(1000 * 3);
         Oj.AdministrationfilterFaxstatus.click();

@@ -139,6 +139,7 @@ public class RefercKeywords extends TestBase {
         loginPageObj.FaxingButton.click();
 
         loginPageObj.sendFaxButton.click();
+        Thread.sleep(1000*2);
         loginPageObj.faxNumber.click();
         loginPageObj.faxNumber.sendKeys(String.valueOf(data.get("FaxNumber")));
         loginPageObj.coverPage.click();
@@ -324,6 +325,7 @@ public class RefercKeywords extends TestBase {
         loginPageObj.FaxingButton.click();
 
         loginPageObj.sendFaxButton.click();
+        Thread.sleep(1000*2);
         loginPageObj.faxNumber.click();
         loginPageObj.faxNumber.sendKeys(String.valueOf(data.get("FaxNumber")));
         loginPageObj.coverPage.click();
