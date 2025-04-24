@@ -29,6 +29,7 @@ public class LoginPageSecond {
     @FindBy(xpath = "//ul[@id='manage-sys-submenu-items']//li[1]/a")
     public WebElement LicenseBTN;
 
+
     @FindBy(xpath = "//*[@id='license_table']/tbody/tr/td[6]/span/button[last()]")
     public WebElement DeletingFieldBTN;
 

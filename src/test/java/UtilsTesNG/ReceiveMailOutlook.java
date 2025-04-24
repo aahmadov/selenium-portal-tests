@@ -79,7 +79,7 @@ import java.util.Properties;
                     System.out.println("Email Number " + (i + 1));
                     System.out.println("Subject: " + message.getSubject());
                     System.out.println("From: " + message.getFrom()[0]);
-//                  System.out.println("Text: " + message.getContent().toString());
+                    System.out.println("Text: " + message.getContent().toString());
                     Object content = message.getContent();
                     if (content instanceof String) {
                         System.out.println("Text: " + content);

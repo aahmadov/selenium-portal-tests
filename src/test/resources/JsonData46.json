@@ -42,6 +42,24 @@
     "EmailField": "auto@softlinx.com",
     "passwordField": "softlinx"
   },
+  "User_change_password_upon_login46": {
+    "Username": "admin@auto1",
+    "Username2": "Baku52@auto1",
+    "password": "softlinx",
+    "UserID": "Baku52",
+    "UserName": "Baku52",
+    "EmailField": "abbas@softlinx.com",
+    "passwordField2":"Softlinx_123!",
+    "NewPasswordField":"Softlinx_1234!"
+  },
+  "Welcome_Email_notification_functionality": {
+    "Username": "admin@auto1",
+    "password": "softlinx",
+    "UserID": "CreateUser",
+    "UserName": "CreateUser",
+    "EmailField": "abbas@softlinx.com",
+    "passwordField": "softlinx"
+  },
   "Portal_needs_to_check_all_of_DeptAmin_departments46": {
     "Username": "admin@auto1",
     "password": "softlinx",

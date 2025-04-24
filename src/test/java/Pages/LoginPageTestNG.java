@@ -31,7 +31,8 @@ public class LoginPageTestNG {
     public WebElement faxNumber;
     @FindBy(xpath = "//*[@id='coverpageTemplate']")
     public WebElement coverPage;
-
+    @FindBy(xpath = "//*[@id='UserNotifyCreateYes']")
+    public WebElement clickYesbtn;
     @FindBy(xpath = "//*[@id='coverpageTemplate']/option[2]")
     public WebElement ChoseCoverpage;
     @FindBy(xpath = "//*[@id='coverpageTemplate']/option[1]")
