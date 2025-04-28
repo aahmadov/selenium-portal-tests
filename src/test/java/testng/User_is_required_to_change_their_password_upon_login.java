@@ -125,7 +125,7 @@ public class User_is_required_to_change_their_password_upon_login extends TestBa
         loginPageObj.deleteconfirmBTN.click();
 
     }
-    @Test(priority =1,testName ="Forced change password page not accepting password change", groups = {"Regression46123"})
+    @Test(priority =1,testName ="Forced change password page not accepting password change", groups = {"Regression46"})
     public void User_change_password_upon_login46() throws InterruptedException {
 
         System.out.println("Test case name" + testName);
