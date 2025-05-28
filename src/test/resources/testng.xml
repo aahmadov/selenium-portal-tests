@@ -140,6 +140,11 @@
             <class name ="testng.SpecifyToandCompanyName"/>
         </classes>
     </test>
+    <test name="set_faxnum_and_date_format_for_coverpage">
+        <classes>
+            <class name ="testng.DataFormatofCoverPage"/>
+        </classes>
+    </test>
     <test name="Add_Triage_field">
         <classes>
             <class name ="testng.Triage_field"/>

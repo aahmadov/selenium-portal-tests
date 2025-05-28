@@ -25,7 +25,7 @@ public class Email_when_sftp_changes extends TestBase {
         System.out.println("Test case name" + testName);
         Map<String, String> data = FileReaderTestNG.getDataBasedOnTestCaseNameSelenium46(testName);
         assert data != null;
-        driver.get("http://10.250.1.46:8585/");
+        driver.get("https://regression.rpxqa.com/");
         Thread.sleep(1000 * 3);
         driver.manage().window().maximize();
         WelcomeMail Oj = new WelcomeMail(driver);

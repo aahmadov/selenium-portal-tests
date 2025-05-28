@@ -24,7 +24,7 @@ public class User_invalid_Email_password_notification extends TestBase {
         System.out.println("Test case name: " + testName);
         Map<String, String> data = FileReaderTestNG.getDataBasedOnTestCaseNameSelenium(testName);
         assert data != null;
-        driver.get("http://10.250.1.84:80/");
+        driver.get("https://regression.rpxqa.com/");
         /*This operation will maximize window*/
         driver.manage().window().maximize();
         WelcomeMail Oj = new WelcomeMail(driver);
@@ -88,7 +88,7 @@ public class User_invalid_Email_password_notification extends TestBase {
         Oj.LogoutFaxAdminBox.click();
         Thread.sleep(1000 * 2);
         Oj.Logout.click();
-        driver.get("http://10.250.1.84:80/");
+        driver.get("https://regression.rpxqa.com/");
         /*This operation will maximize window*/
         driver.manage().window().maximize();
         Oj.UsernameTextBox.sendKeys(data.get("UserName"));

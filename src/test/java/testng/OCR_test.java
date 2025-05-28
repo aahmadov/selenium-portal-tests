@@ -9,6 +9,7 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.jayway.jsonpath.JsonPath;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TimeoutException;
@@ -32,14 +33,14 @@ import static org.junit.Assert.assertEquals;
 
 public class OCR_test extends TestBase {
 
-    @Test(testName = "Send Fax from portal with valid credentials", groups = {"Regression8412"})
+    @Test(testName = "Send Fax from portal with valid credentials", groups = {"Regression84"})
     public void sendFaxHasOCRdata() throws InterruptedException, AWTException, SQLException, IOException {
         // driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
         Map<String, String> data = FileReaderTestNG.getDataBasedOnTestCaseNameSelenium(testName);
         assert data != null;
 
-        driver.get("http://10.250.1.84:80/");
+        driver.get("https://regression.rpxqa.com/");
         Thread.sleep(1000 * 3);
         /*This operation will maximize window*/
         driver.manage().window().maximize();
@@ -244,7 +245,7 @@ public class OCR_test extends TestBase {
             }
         }
 
-    @Test(testName = "Send Fax from portal with valid credentials", groups = {"Regression46"})
+    @Test(testName = "Send Fax from portal with valid credentials", groups = {"Regression46SomeWeirdIssue"})
     public void sendFaxHasOCRdata46() throws InterruptedException, AWTException, SQLException, IOException {
         // driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
@@ -264,6 +265,7 @@ public class OCR_test extends TestBase {
         Thread.sleep(1000 * 3);
         loginPageObj.FaxingButton.click();
         loginPageObj.sendFaxButton.click();
+        Thread.sleep(1000*2);
         loginPageObj.faxNumber.click();
         loginPageObj.faxNumber.sendKeys(String.valueOf(data.get("FaxNumber")));
         loginPageObj.coverPage.click();
@@ -288,9 +290,12 @@ public class OCR_test extends TestBase {
                 "dropzone.emit('complete', mockFile);");
 
         loginPageObj.ClickSendButton.click();
+        Thread.sleep(1000*10);
         loginPageObj.confirmationButton.click();
+        Thread.sleep(1000*2);
 
-        Thread.sleep(1000 * 2);
+
+
         loginPageObj.TriageQueueBox.click();
         Thread.sleep(1000 * 2);
         loginPageObj.SelectQueue.click();

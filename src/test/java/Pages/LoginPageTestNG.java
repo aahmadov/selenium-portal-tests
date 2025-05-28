@@ -526,10 +526,29 @@ public class LoginPageTestNG {
 
     @FindBy(xpath = "//*[@id='manage-adm-settings']")
     public WebElement settingsField;
+
     @FindBy(xpath = "//*[@id='manage-adm-settings-items']/li[2]/a")
     public WebElement portUI;
+    @FindBy(xpath = "//*[@id='manage-adm-settings-items']/li[3]/a")
+    public WebElement FaxOption;
     @FindBy(xpath = "//ul[@id='manage-adm-settings-items']//li[5]/a")
     public WebElement SFTP;
+
+    @FindBy(xpath = "//*[@id='globalCoverpage']")
+    public WebElement CoverPagechoose;
+
+    @FindBy(xpath = "//*[@id='faxnum_format']")
+    public WebElement PhoneNumberFormat;
+
+    @FindBy(xpath = "//*[@id='date_format']")
+    public WebElement DataFormat;
+
+    @FindBy(xpath = "//*[@id='time_format']")
+    public WebElement TimeFormat;
+
+//    @FindBy(xpath = "//button[@id='saveBtn']")
+//    public WebElement SaveBTN;
+
 
     @FindBy(xpath = "//a[@class='nav-link dropdown-toggle' and strong[text()='Fax Administrator']]")
     public WebElement LogoutFaxAdminBox;
@@ -600,6 +619,9 @@ public class LoginPageTestNG {
 
     @FindBy(xpath = "//div[@class='modal-footer']//button[contains(text(), 'OK')]")
     public WebElement SaveConfirmationBTn;
+    @FindBy(xpath = "//button[@class='btn btn-orange btn-sm dialogBtn' and text()='OK']")
+    public WebElement SaveConfirmationBTnOriginal;
+
     @FindBy(xpath = "//label[@class='custom-control-label' and @for='globalglobalShowRecentFaxesYes' ]")
     public WebElement ShowRecentFaxesYes;
     @FindBy(xpath = "//label[@class='custom-control-label' and @for='globalglobalShowRecentFaxesNo' ]")

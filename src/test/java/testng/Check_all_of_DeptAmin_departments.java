@@ -21,7 +21,7 @@ public class Check_all_of_DeptAmin_departments extends TestBase {
         Map<String, String> data = FileReaderTestNG.getDataBasedOnTestCaseNameSelenium(testName);
         assert data != null;
 
-        driver.get("http://10.250.1.84:80/");
+        driver.get("https://regression.rpxqa.com/");
         /*This operation will maximize window*/
         driver.manage().window().maximize();
         WelcomeMail Oj = new WelcomeMail(driver);
@@ -106,7 +106,7 @@ public class Check_all_of_DeptAmin_departments extends TestBase {
         Oj.faxAdminDropdown.click();
         Thread.sleep(1000 * 3);
         Oj.Logout.click();
-        driver.get("http://10.250.1.84:80/");
+        driver.get("https://regression.rpxqa.com/");
         /*This operation will maximize window*/
         driver.manage().window().maximize();
 
@@ -127,7 +127,7 @@ public class Check_all_of_DeptAmin_departments extends TestBase {
         Thread.sleep(1000 * 3);
         Oj.Logout.click();
         Thread.sleep(1000 * 2);
-        driver.get("http://10.250.1.84:80/");
+        driver.get("https://regression.rpxqa.com/");
         /*This operation will maximize window*/
         driver.manage().window().maximize();
         Oj.UsernameTextBox.sendKeys(data.get("Username"));

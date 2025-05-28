@@ -20,7 +20,7 @@ public class Specify_recipient_name extends TestBase {
         Map<String, String> data = FileReaderTestNG.getDataBasedOnTestCaseNameSelenium(testName);
         assert data != null;
 
-        driver.get("http://10.250.1.84:80/");
+        driver.get("https://regression.rpxqa.com/");
         Thread.sleep(1000 * 3);
         /*This operation will maximize window*/
         driver.manage().window().maximize();

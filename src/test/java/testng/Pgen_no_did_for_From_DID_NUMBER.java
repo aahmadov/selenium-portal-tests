@@ -16,13 +16,13 @@ import static org.testng.Assert.assertTrue;
 
 public class Pgen_no_did_for_From_DID_NUMBER extends TestBase {
 
-    @Test(priority = 1, testName = "If user dosen't hava a DID number Cover Page to be empty)", groups = {"Regression84123"})
+    @Test(priority = 1, testName = "If user dosen't hava a DID number Cover Page to be empty)", groups = {"Regression841235"})
     public void cpgen_no_did_1_User_has_a_DID_number() throws InterruptedException, AWTException, SQLException {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println("Test case name: " + testName);
         Map<String, String> data = FileReaderTestNG.getDataBasedOnTestCaseNameSelenium(testName);
         assert data != null;
-        driver.get("http://10.250.1.84:80/");
+        driver.get("https://regression.rpxqa.com/");
         /*This operation will maximize window*/
         driver.manage().window().maximize();
         WelcomeMail Oj = new WelcomeMail(driver);

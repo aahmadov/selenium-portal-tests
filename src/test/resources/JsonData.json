@@ -121,6 +121,11 @@
     "Username": "admin@auto1",
     "password": "softlinx"
   },
+  "set_faxnum_and_date_format_for_coverpage": {
+    "Username": "faxsending@auto1",
+    "password": "softlinx",
+    "FaxNumber": "3333333333L"
+  },
   "Settings_FaxSearchPageRadio_btn_check": {
     "Username": "admin@auto1",
     "password": "softlinx"

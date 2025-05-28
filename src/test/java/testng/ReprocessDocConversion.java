@@ -41,7 +41,7 @@ public class ReprocessDocConversion extends TestBase {
 //        System.out.println(response2.asPrettyString());
 //        System.out.println("**" + (data.get("put_call_Url")));
 //        System.out.println("------------------------------------------------------------------------");
-        driver.get("http://10.250.1.84:80/");
+        driver.get("https://regression.rpxqa.com/");
         Thread.sleep(1000 * 3);
         /*This operation will maximize window*/
         driver.manage().window().maximize();

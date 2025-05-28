@@ -21,7 +21,7 @@ public class User_is_required_to_change_their_password_upon_login extends TestBa
         System.out.println("Test case name" + testName);
         Map<String,String> data = FileReaderTestNG.getDataBasedOnTestCaseNameSelenium(testName);
         assert data != null;
-        driver.get("http://10.250.1.84:80/");
+        driver.get("https://regression.rpxqa.com/");
         Thread.sleep(1000*3);
         driver.manage().window().maximize();
         LoginPageTestNG loginPageObj = new LoginPageTestNG(driver);
@@ -65,7 +65,7 @@ public class User_is_required_to_change_their_password_upon_login extends TestBa
         loginPageObj.LogoutFaxAdminBox.click();
         Thread.sleep(1000 * 2);
         loginPageObj.Logout2.click();
-        driver.get("http://10.250.1.84:80/");
+        driver.get("https://regression.rpxqa.com/");
         /*This operation will maximize window*/
         driver.manage().window().maximize();
         loginPageObj.UsernameTextBox.sendKeys(data.get("Username2"));
@@ -115,10 +115,13 @@ public class User_is_required_to_change_their_password_upon_login extends TestBa
         loginPageObj.UsernameTextBox.sendKeys(data.get("Username"));
         loginPageObj.PasswordTextBox.sendKeys(data.get("password"));
         loginPageObj.loginButton.click();
+        Thread.sleep(1000 * 2);
         loginPageObj.AdministrationHeading.click();
+        Thread.sleep(1000 * 2);
         loginPageObj.manageDropdown.click();
+        Thread.sleep(1000 * 2);
         loginPageObj.UserBTN.click();
-        loginPageObj.optionDropdownBTN.click();
+       // loginPageObj.optionDropdownBTN.click();
         Thread.sleep(1000 * 3);
         loginPageObj.deleteafterCreate.click();
         Thread.sleep(1000 * 3);

@@ -16,7 +16,7 @@ public class UserTable_Departments extends TestBase {
         System.out.println("Test case name" + testName);
         Map<String, String> data = FileReaderTestNG.getDataBasedOnTestCaseNameSelenium(testName);
         assert data != null;
-        driver.get("http://10.250.1.84:80/");
+        driver.get("https://regression.rpxqa.com/");
         Thread.sleep(1000 * 3);
         driver.manage().window().maximize();
         LoginPageTestNG loginPageObj = new LoginPageTestNG(driver);
@@ -69,7 +69,7 @@ public class UserTable_Departments extends TestBase {
         Thread.sleep(1000 * 3);
         loginPageObj.logoutBTN.click();
         Thread.sleep(1000 * 3);
-        driver.get("http://10.250.1.84:80/");
+        driver.get("https://regression.rpxqa.com/");
         Thread.sleep(1000 * 3);
         driver.manage().window().maximize();
         loginPageObj.UsernameTextBox.sendKeys(data.get("NewUsername"));
@@ -86,7 +86,7 @@ public class UserTable_Departments extends TestBase {
         Thread.sleep(1000 * 5);
         loginPageObj.logoutBTN2ndpage.click();
         Thread.sleep(1000 * 3);
-        driver.get("http://10.250.1.84:80/");
+        driver.get("https://regression.rpxqa.com/");
         Thread.sleep(1000 * 3);
         driver.manage().window().maximize();
         loginPageObj.UsernameTextBox.sendKeys(data.get("Username"));
