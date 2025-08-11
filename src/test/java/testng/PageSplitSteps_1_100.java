@@ -15,8 +15,8 @@ import java.sql.SQLException;
 import java.util.Map;
 
 public class PageSplitSteps_1_100 extends TestBase {
-
-    @Test(priority = 1, testName = "Send Fax and split page", groups = {"Regression100"})
+    //is not exist anymore
+    @Test(priority = 1, testName = "Send Fax and split page", groups = {"Regression100 "})
     public void splitPageFromPortal() throws InterruptedException, AWTException, SQLException {
 
         System.out.println("Test case name: " + testName);
