@@ -30,6 +30,7 @@ import java.time.Duration;
 import java.util.Map;
 
 public class PdfScale_1_100 extends TestBase {
+    //this case is not is canceled!
     @Test(testName = "Send Fax from portal with valid credentials", groups = {"Regression10012"})
     public void sendFaxForPDFScale() throws InterruptedException, AWTException, SQLException {
         // driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
