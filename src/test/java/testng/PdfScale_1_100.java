@@ -89,6 +89,7 @@ public class PdfScale_1_100 extends TestBase {
         Thread.sleep(1000 * 3);
         loginPageObj.searchBTN.click();
 
+        loginPageObj.allowBroadfaxYes.click();
         JavascriptExecutor js1 = (JavascriptExecutor) driver;
         // Scroll down the page by pixel (e.g., 500 pixels)
         js1.executeScript("window.scrollBy(100, 3000)");
